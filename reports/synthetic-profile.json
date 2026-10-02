@@ -1,0 +1,72 @@
+{
+  "profile_version": "1.0",
+  "hardware_kind": "npu",
+  "hardware_id": "synthetic-npu-v1",
+  "measurement_scope": "compute_only",
+  "status": "synthetic",
+  "source": [
+    "synthetic linear fixture; not hardware measurements"
+  ],
+  "records_sha256": "13c0a09942679759f254e09d5cd1b9a8927c07ed8f3d95401be7ce6994b3930f",
+  "hardware_overrides": {
+    "gemm_ps_per_flop": 2.0,
+    "gemm_launch_ps": 1000,
+    "attention_ps_per_flop": 3.0,
+    "attention_launch_ps": 1500,
+    "grouped_gemm_ps_per_flop": 4.0,
+    "grouped_gemm_launch_ps": 2000
+  },
+  "operators": {
+    "gemm": {
+      "model": "launch_ps + flops * ps_per_flop",
+      "training_flops_range": [
+        1024,
+        262144
+      ],
+      "fit_error": {
+        "count": 3,
+        "mape_percent": 0.0,
+        "max_abs_percent": 0.0
+      },
+      "held_out_error": {
+        "count": 1,
+        "mape_percent": 0.0,
+        "max_abs_percent": 0.0
+      }
+    },
+    "attention": {
+      "model": "launch_ps + flops * ps_per_flop",
+      "training_flops_range": [
+        1024,
+        262144
+      ],
+      "fit_error": {
+        "count": 3,
+        "mape_percent": 0.0,
+        "max_abs_percent": 0.0
+      },
+      "held_out_error": {
+        "count": 1,
+        "mape_percent": 0.0,
+        "max_abs_percent": 0.0
+      }
+    },
+    "grouped_gemm": {
+      "model": "launch_ps + flops * ps_per_flop",
+      "training_flops_range": [
+        1024,
+        262144
+      ],
+      "fit_error": {
+        "count": 3,
+        "mape_percent": 0.0,
+        "max_abs_percent": 0.0
+      },
+      "held_out_error": {
+        "count": 1,
+        "mape_percent": 0.0,
+        "max_abs_percent": 0.0
+      }
+    }
+  }
+}

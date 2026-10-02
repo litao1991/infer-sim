@@ -1,0 +1,28 @@
+# Synthetic example: 2 racks x 2 nodes per rack x 2 GPUs per node.
+hardware:
+  kind: nvidia_gpu
+  hardware_id: demo-gpu-8card-crossrack
+  devices: 8
+  peak_tflops: 0.5
+  compute_efficiency: 0.5
+  hbm_capacity_bytes: 1048576
+  hbm_profile: hbm3_6400
+  hbm_bandwidth_GBps: 1000
+  kernel_launch_ps: 10000
+  fabric_topology: nvswitch
+  collective: hierarchical
+  nvlink_gbps: 100
+  nvlink_latency_ps: 10000
+  device_nodes: [0, 0, 1, 1, 2, 2, 3, 3]
+  node_racks: [0, 0, 1, 1]
+  nic_gbps: 100
+  nic_latency_ps: 20000
+  rack_gbps: 200
+  rack_latency_ps: 20000
+  cross_rack_gbps: 25
+  cross_rack_latency_ps: 100000
+parallel:
+  tp: 8
+  pp: 1
+  dp: 1
+  ep: 1

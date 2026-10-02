@@ -1,0 +1,14 @@
+{
+  "model.top_k": [
+    1,
+    2
+  ],
+  "model.dtype_bytes": [
+    1,
+    2
+  ],
+  "hardware.collective": [
+    "ring",
+    "hierarchical"
+  ]
+}

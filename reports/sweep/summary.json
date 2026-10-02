@@ -1,0 +1,159 @@
+{
+  "config_version": "1.0",
+  "runs": [
+    {
+      "run": 0,
+      "changes": {
+        "model.top_k": 1,
+        "model.dtype_bytes": 1,
+        "hardware.collective": "ring"
+      },
+      "status": "ok",
+      "report": "run-000.json",
+      "scenario_sha256": "ef826eaa59b132401805e684791fd6ffd414dbfee1ed5a813e39c88eb18aa3b9",
+      "makespan_ps": 6269975,
+      "mean_ttft_ps": 3929855,
+      "mean_tpot_ps": 1161935,
+      "tokens_per_second": 797451,
+      "compute_flops": 209536,
+      "fabric_bytes": 448,
+      "peak_hbm_bytes_per_device": 11392,
+      "bottleneck": "memory"
+    },
+    {
+      "run": 1,
+      "changes": {
+        "model.top_k": 1,
+        "model.dtype_bytes": 1,
+        "hardware.collective": "hierarchical"
+      },
+      "status": "ok",
+      "report": "run-001.json",
+      "scenario_sha256": "b483bd6da43b28805efe64b9bbd5791256d0121c1059be028161128d733f1b5b",
+      "makespan_ps": 6269975,
+      "mean_ttft_ps": 3929855,
+      "mean_tpot_ps": 1161935,
+      "tokens_per_second": 797451,
+      "compute_flops": 209536,
+      "fabric_bytes": 448,
+      "peak_hbm_bytes_per_device": 11392,
+      "bottleneck": "memory"
+    },
+    {
+      "run": 2,
+      "changes": {
+        "model.top_k": 1,
+        "model.dtype_bytes": 2,
+        "hardware.collective": "ring"
+      },
+      "status": "ok",
+      "report": "run-002.json",
+      "scenario_sha256": "7ad66deda884f29dfbf0e3ab41be83a23516df4bb88b21fe90fa2ede1f71269c",
+      "makespan_ps": 11734890,
+      "mean_ttft_ps": 7504770,
+      "mean_tpot_ps": 2139851,
+      "tokens_per_second": 426080,
+      "compute_flops": 209536,
+      "fabric_bytes": 896,
+      "peak_hbm_bytes_per_device": 22784,
+      "bottleneck": "memory"
+    },
+    {
+      "run": 3,
+      "changes": {
+        "model.top_k": 1,
+        "model.dtype_bytes": 2,
+        "hardware.collective": "hierarchical"
+      },
+      "status": "ok",
+      "report": "run-003.json",
+      "scenario_sha256": "933c3443d3d9f9742a68d1a350fc55a2be8ab96c20e0d6a4978d6ae356b7d747",
+      "makespan_ps": 11734890,
+      "mean_ttft_ps": 7504770,
+      "mean_tpot_ps": 2139851,
+      "tokens_per_second": 426080,
+      "compute_flops": 209536,
+      "fabric_bytes": 896,
+      "peak_hbm_bytes_per_device": 22784,
+      "bottleneck": "memory"
+    },
+    {
+      "run": 4,
+      "changes": {
+        "model.top_k": 2,
+        "model.dtype_bytes": 1,
+        "hardware.collective": "ring"
+      },
+      "status": "ok",
+      "report": "run-004.json",
+      "scenario_sha256": "71955a91cd8f3a4bdee5bdbf83fb76e8bcb6518305c469e305a839d1ecbab871",
+      "makespan_ps": 6600245,
+      "mean_ttft_ps": 4070005,
+      "mean_tpot_ps": 1273870,
+      "tokens_per_second": 757548,
+      "compute_flops": 289408,
+      "fabric_bytes": 704,
+      "peak_hbm_bytes_per_device": 11520,
+      "bottleneck": "memory"
+    },
+    {
+      "run": 5,
+      "changes": {
+        "model.top_k": 2,
+        "model.dtype_bytes": 1,
+        "hardware.collective": "hierarchical"
+      },
+      "status": "ok",
+      "report": "run-005.json",
+      "scenario_sha256": "987066059fdaad54e9cec25207f7321a85ab873d5086d9130265cd726adc70c0",
+      "makespan_ps": 6600245,
+      "mean_ttft_ps": 4070005,
+      "mean_tpot_ps": 1273870,
+      "tokens_per_second": 757548,
+      "compute_flops": 289408,
+      "fabric_bytes": 704,
+      "peak_hbm_bytes_per_device": 11520,
+      "bottleneck": "memory"
+    },
+    {
+      "run": 6,
+      "changes": {
+        "model.top_k": 2,
+        "model.dtype_bytes": 2,
+        "hardware.collective": "ring"
+      },
+      "status": "ok",
+      "report": "run-006.json",
+      "scenario_sha256": "f065bdaf1076a06a830b93a8e3b2f93583c9be6810a0ba8bec90802d90ff5223",
+      "makespan_ps": 12505430,
+      "mean_ttft_ps": 7881380,
+      "mean_tpot_ps": 2386806,
+      "tokens_per_second": 399826,
+      "compute_flops": 289408,
+      "fabric_bytes": 1408,
+      "peak_hbm_bytes_per_device": 23040,
+      "bottleneck": "memory"
+    },
+    {
+      "run": 7,
+      "changes": {
+        "model.top_k": 2,
+        "model.dtype_bytes": 2,
+        "hardware.collective": "hierarchical"
+      },
+      "status": "ok",
+      "report": "run-007.json",
+      "scenario_sha256": "24af782db6cf92f15b26c28c9c6ac9f23afed4e58f68492ba5166e26654903cf",
+      "makespan_ps": 12505430,
+      "mean_ttft_ps": 7881380,
+      "mean_tpot_ps": 2386806,
+      "tokens_per_second": 399826,
+      "compute_flops": 289408,
+      "fabric_bytes": 1408,
+      "peak_hbm_bytes_per_device": 23040,
+      "bottleneck": "memory"
+    }
+  ],
+  "succeeded": 8,
+  "failed": 0
+}

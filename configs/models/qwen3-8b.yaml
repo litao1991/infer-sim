@@ -1,0 +1,35 @@
+# Official config dimensions; block-level simulation scope.
+model:
+  kind: dense
+  layers: 36
+  hidden: 4096
+  heads: 32
+  kv_heads: 8
+  head_dim: 128
+  ffn: 12288
+  dtype_bytes: 2
+model_metadata:
+  model_id: Qwen/Qwen3-8B
+  model_type: qwen3
+  source_url: https://huggingface.co/Qwen/Qwen3-8B/resolve/b968826d9c46dd6066d109eabc6255188de91218/config.json
+  revision: b968826d9c46dd6066d109eabc6255188de91218
+  source_sha256: f7c4eadfbbf522470667b797a3c89be2524832d2d599797248dc304fff447c30
+  source_dtype: bfloat16
+  vocab_size: 151936
+  max_position_embeddings: 40960
+  reference_dimensions:
+    kind: dense
+    layers: 36
+    hidden: 4096
+    heads: 32
+    kv_heads: 8
+    head_dim: 128
+    ffn: 12288
+    dtype_bytes: 2
+  scope: transformer_block_matrices
+  limitations:
+  - models Transformer block matrices; excludes embeddings, LM head, norms, biases,
+    RoPE and sampling
+  - real-size presets require fast mode on this local machine
+  - routing is deterministic synthetic routing, not learned checkpoint routing
+  - Q/K normalization is not separately timed

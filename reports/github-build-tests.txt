@@ -1,0 +1,60 @@
+Start testing: Oct 03 07:43 CST
+----------------------------------------------------------
+1/1 Testing: inference_scenarios
+1/1 Test: inference_scenarios
+Command: "/Users/litao/.codex/.chatgpt-projects/g-p-6a8e30aa96408191a4c59618c3f4bfc1/infer-sim/.venv/bin/python" "-m" "unittest" "discover" "-s" "/Users/litao/.codex/.chatgpt-projects/g-p-6a8e30aa96408191a4c59618c3f4bfc1/infer-sim/tests" "-v"
+Directory: /Users/litao/.codex/.chatgpt-projects/g-p-6a8e30aa96408191a4c59618c3f4bfc1/infer-sim/build-portable
+"inference_scenarios" start time: Oct 03 07:43 CST
+Output:
+----------------------------------------------------------
+test_duplicate_json_key_and_invalid_architecture (test_config_io.JsonConfigurationTests) ... ok
+test_missing_yaml_dependency_preserves_json (test_config_io.JsonConfigurationTests) ... ok
+test_architectures_on_dense_and_moe (test_config_io.YamlConfigurationTests) ... ok
+test_cli_yaml_architecture_grid_and_calibration (test_config_io.YamlConfigurationTests) ... ok
+test_yaml_json_full_report_equivalence (test_config_io.YamlConfigurationTests) ... ok
+test_yaml_rejects_ambiguous_or_nondata_values (test_config_io.YamlConfigurationTests) ... ok
+test_explicit_head_dim_supports_nondivisible_hidden (test_models.ModelDimensionTests) ... ok
+test_importer_preserves_qwen_moe_shape_and_rejects_unsupported (test_models.ModelDimensionTests) ... ok
+test_independent_head_dim_matches_hand_calculation (test_models.ModelDimensionTests) ... ok
+test_all_ten_presets_are_fast_runnable_with_provenance (test_models.ModelPresetTests) ... ok
+test_model_import_and_selection_cli (test_models.ModelPresetTests) ... ok
+test_model_switch_replaces_old_model_and_records_overrides (test_models.ModelPresetTests) ... ok
+test_capacity_rejection_and_input_validation (test_scenarios.ScenarioTests) ... ok
+test_fast_formula_and_detailed_conservation (test_scenarios.ScenarioTests) ... ok
+test_hbf_prefetch_eviction_and_writeback (test_scenarios.ScenarioTests) ... ok
+test_repeatability_and_bounded_backpressure (test_scenarios.ScenarioTests) ... ok
+test_tensor_pipeline_and_data_parallel (test_scenarios.ScenarioTests) ... ok
+test_dirty_versions_reload_and_large_cache (test_storage.StorageTests) ... ok
+test_flash_exhaustion_and_invalid_configuration (test_storage.StorageTests) ... ok
+test_four_storage_combinations_and_logical_bytes (test_storage.StorageTests) ... ok
+test_hot_recent_blocks_policy (test_storage.StorageTests) ... ok
+test_layer_and_expert_residency (test_storage.StorageTests) ... ok
+test_logical_capacity_admission_and_reclamation (test_storage.StorageTests) ... ok
+test_parallel_gpu_npu_and_hbm_backpressure (test_storage.StorageTests) ... ok
+test_pp_completion_while_another_request_uses_cache (test_storage.StorageTests) ... ok
+test_yaml_cli_and_fast_capacity (test_storage.StorageTests) ... ok
+test_calibration_fit_held_out_and_reference_errors (test_v1.V1Tests) ... ok
+test_cross_rack_hierarchy_and_placement (test_v1.V1Tests) ... ok
+test_ep_tp_pp_dp_and_shared_nic_contention (test_v1.V1Tests) ... ok
+test_hbf_moe_and_one_slot_streaming (test_v1.V1Tests) ... ok
+test_kv_admission_progress_and_invalid_inputs (test_v1.V1Tests) ... ok
+test_moe_conservation_and_batch_independent_routing (test_v1.V1Tests) ... ok
+test_npu_dma_capacity_and_shared_graph (test_v1.V1Tests) ... ok
+test_reference_adapter_and_memory_profiles (test_v1.V1Tests) ... ok
+test_skew_and_expert_placement (test_v1.V1Tests) ... ok
+test_sweeps_report_failures_and_microbench (test_v1.V1Tests) ... ok
+test_timeline_distribution_and_trace_export (test_v1.V1Tests) ... ok
+
+----------------------------------------------------------------------
+Ran 37 tests in 14.880s
+
+OK
+<end of output>
+Test time =  14.97 sec
+----------------------------------------------------------
+Test Passed.
+"inference_scenarios" end time: Oct 03 07:43 CST
+"inference_scenarios" time elapsed: 00:00:14
+----------------------------------------------------------
+
+End testing: Oct 03 07:43 CST

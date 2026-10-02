@@ -1,0 +1,134 @@
+[
+  {
+    "op": "gemm",
+    "flops": 1024,
+    "latency_ps": 3048,
+    "split": "train",
+    "hardware_kind": "npu",
+    "hardware_id": "synthetic-npu-v1",
+    "source": "synthetic linear fixture; not hardware measurements",
+    "evidence": "synthetic",
+    "measurement_scope": "compute_only"
+  },
+  {
+    "op": "gemm",
+    "flops": 16384,
+    "latency_ps": 33768,
+    "split": "train",
+    "hardware_kind": "npu",
+    "hardware_id": "synthetic-npu-v1",
+    "source": "synthetic linear fixture; not hardware measurements",
+    "evidence": "synthetic",
+    "measurement_scope": "compute_only"
+  },
+  {
+    "op": "gemm",
+    "flops": 262144,
+    "latency_ps": 525288,
+    "split": "train",
+    "hardware_kind": "npu",
+    "hardware_id": "synthetic-npu-v1",
+    "source": "synthetic linear fixture; not hardware measurements",
+    "evidence": "synthetic",
+    "measurement_scope": "compute_only"
+  },
+  {
+    "op": "gemm",
+    "flops": 8192,
+    "latency_ps": 17384,
+    "split": "test",
+    "hardware_kind": "npu",
+    "hardware_id": "synthetic-npu-v1",
+    "source": "synthetic linear fixture; not hardware measurements",
+    "evidence": "synthetic",
+    "measurement_scope": "compute_only"
+  },
+  {
+    "op": "attention",
+    "flops": 1024,
+    "latency_ps": 4572,
+    "split": "train",
+    "hardware_kind": "npu",
+    "hardware_id": "synthetic-npu-v1",
+    "source": "synthetic linear fixture; not hardware measurements",
+    "evidence": "synthetic",
+    "measurement_scope": "compute_only"
+  },
+  {
+    "op": "attention",
+    "flops": 16384,
+    "latency_ps": 50652,
+    "split": "train",
+    "hardware_kind": "npu",
+    "hardware_id": "synthetic-npu-v1",
+    "source": "synthetic linear fixture; not hardware measurements",
+    "evidence": "synthetic",
+    "measurement_scope": "compute_only"
+  },
+  {
+    "op": "attention",
+    "flops": 262144,
+    "latency_ps": 787932,
+    "split": "train",
+    "hardware_kind": "npu",
+    "hardware_id": "synthetic-npu-v1",
+    "source": "synthetic linear fixture; not hardware measurements",
+    "evidence": "synthetic",
+    "measurement_scope": "compute_only"
+  },
+  {
+    "op": "attention",
+    "flops": 8192,
+    "latency_ps": 26076,
+    "split": "test",
+    "hardware_kind": "npu",
+    "hardware_id": "synthetic-npu-v1",
+    "source": "synthetic linear fixture; not hardware measurements",
+    "evidence": "synthetic",
+    "measurement_scope": "compute_only"
+  },
+  {
+    "op": "grouped_gemm",
+    "flops": 1024,
+    "latency_ps": 6096,
+    "split": "train",
+    "hardware_kind": "npu",
+    "hardware_id": "synthetic-npu-v1",
+    "source": "synthetic linear fixture; not hardware measurements",
+    "evidence": "synthetic",
+    "measurement_scope": "compute_only"
+  },
+  {
+    "op": "grouped_gemm",
+    "flops": 16384,
+    "latency_ps": 67536,
+    "split": "train",
+    "hardware_kind": "npu",
+    "hardware_id": "synthetic-npu-v1",
+    "source": "synthetic linear fixture; not hardware measurements",
+    "evidence": "synthetic",
+    "measurement_scope": "compute_only"
+  },
+  {
+    "op": "grouped_gemm",
+    "flops": 262144,
+    "latency_ps": 1050576,
+    "split": "train",
+    "hardware_kind": "npu",
+    "hardware_id": "synthetic-npu-v1",
+    "source": "synthetic linear fixture; not hardware measurements",
+    "evidence": "synthetic",
+    "measurement_scope": "compute_only"
+  },
+  {
+    "op": "grouped_gemm",
+    "flops": 8192,
+    "latency_ps": 34768,
+    "split": "test",
+    "hardware_kind": "npu",
+    "hardware_id": "synthetic-npu-v1",
+    "source": "synthetic linear fixture; not hardware measurements",
+    "evidence": "synthetic",
+    "measurement_scope": "compute_only"
+  }
+]

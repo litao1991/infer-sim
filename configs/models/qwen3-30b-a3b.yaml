@@ -1,0 +1,43 @@
+# Official config dimensions; block-level simulation scope.
+model:
+  kind: moe
+  layers: 48
+  hidden: 2048
+  heads: 32
+  kv_heads: 4
+  head_dim: 128
+  ffn: 768
+  dtype_bytes: 2
+  experts: 128
+  top_k: 8
+  shared_experts: 0
+  routing_seed: 1
+model_metadata:
+  model_id: Qwen/Qwen3-30B-A3B
+  model_type: qwen3_moe
+  source_url: https://huggingface.co/Qwen/Qwen3-30B-A3B/resolve/ad44e777bcd18fa416d9da3bd8f70d33ebb85d39/config.json
+  revision: ad44e777bcd18fa416d9da3bd8f70d33ebb85d39
+  source_sha256: 2850ddb3bf7aecad20b611e2d44f3077fc8193f4827c93beddd4c02ad63c2297
+  source_dtype: bfloat16
+  vocab_size: 151936
+  max_position_embeddings: 40960
+  reference_dimensions:
+    kind: moe
+    layers: 48
+    hidden: 2048
+    heads: 32
+    kv_heads: 4
+    head_dim: 128
+    ffn: 768
+    dtype_bytes: 2
+    experts: 128
+    top_k: 8
+    shared_experts: 0
+    routing_seed: 1
+  scope: transformer_block_matrices
+  limitations:
+  - models Transformer block matrices; excludes embeddings, LM head, norms, biases,
+    RoPE and sampling
+  - real-size presets require fast mode on this local machine
+  - routing is deterministic synthetic routing, not learned checkpoint routing
+  - Q/K normalization is not separately timed

@@ -1,0 +1,14 @@
+test_dirty_versions_reload_and_large_cache (test_storage.StorageTests) ... ok
+test_flash_exhaustion_and_invalid_configuration (test_storage.StorageTests) ... ok
+test_four_storage_combinations_and_logical_bytes (test_storage.StorageTests) ... ok
+test_hot_recent_blocks_policy (test_storage.StorageTests) ... ok
+test_layer_and_expert_residency (test_storage.StorageTests) ... ok
+test_logical_capacity_admission_and_reclamation (test_storage.StorageTests) ... ok
+test_parallel_gpu_npu_and_hbm_backpressure (test_storage.StorageTests) ... ok
+test_pp_completion_while_another_request_uses_cache (test_storage.StorageTests) ... ok
+test_yaml_cli_and_fast_capacity (test_storage.StorageTests) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 29.915s
+
+OK

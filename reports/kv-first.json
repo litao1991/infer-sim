@@ -1,0 +1,2603 @@
+{
+  "mode": "detailed",
+  "requests": 2,
+  "output_tokens": 4,
+  "batches": 4,
+  "makespan_ps": 538847860,
+  "mean_ttft_ps": 371419141,
+  "mean_request_latency_ps": 510135168,
+  "mean_tpot_ps": 138716027,
+  "tokens_per_second": 7423.25,
+  "compute_flops": 96128,
+  "compute_service_ps_sum": 544512,
+  "achieved_tflops_total": 0.000178395,
+  "peak_kv_bytes_per_replica": 0,
+  "peak_hbm_bytes_per_device": 13440,
+  "direct_hbm_requested_bytes": 122624,
+  "hbm_read_bytes": 80768,
+  "hbm_write_bytes": 41856,
+  "service_hbm_read_bytes": 80768,
+  "service_hbm_write_bytes": 41856,
+  "service_hbm_effective_GBps": 0.227567,
+  "hbm_data_bus_busy_ps_sum": 4790000,
+  "hbm_queue_wait_ps_sum": 0,
+  "hbm_backpressure": 0,
+  "hbf_fill_bytes": 0,
+  "service_hbf_fill_bytes": 0,
+  "hbf_seed_bytes": 0,
+  "hbf_writeback_bytes": 0,
+  "hbf_writeback_duration_ps": 0,
+  "hbf_prefetches": 0,
+  "hbf_prefetch_hits": 0,
+  "hbf_evictions": 0,
+  "fabric_bytes": 0,
+  "fabric_busy_ps": 0,
+  "fabric_queue_wait_ps_sum": 0,
+  "service_fabric_effective_GBps": 0,
+  "fabric_topology": "nvswitch",
+  "hardware_kind": "nvidia_gpu",
+  "requests_detail": [
+    {
+      "ttft_ps": 261415806,
+      "latency_ps": 481522476,
+      "output_tokens": 2,
+      "queue_wait_ps": 0,
+      "completion_node": 145,
+      "token_gaps_ps": [
+        220106670
+      ]
+    },
+    {
+      "ttft_ps": 481422476,
+      "latency_ps": 538747860,
+      "output_tokens": 2,
+      "queue_wait_ps": 51966029,
+      "completion_node": 180,
+      "token_gaps_ps": [
+        57325384
+      ]
+    }
+  ],
+  "moe": {
+    "token_layer_visits": 0,
+    "routed_assignments": 0,
+    "dispatch_payload_bytes": 0,
+    "combine_payload_bytes": 0,
+    "straggler_ps_sum": 0,
+    "expert_tokens": [],
+    "device_assignments": [
+      0
+    ]
+  },
+  "network_tiers": {
+    "card_interconnect": {
+      "bytes": 0,
+      "busy_ps": 0,
+      "queue_wait_ps": 0
+    },
+    "cross_rack": {
+      "bytes": 0,
+      "busy_ps": 0,
+      "queue_wait_ps": 0
+    },
+    "intra_rack": {
+      "bytes": 0,
+      "busy_ps": 0,
+      "queue_wait_ps": 0
+    },
+    "nic": {
+      "bytes": 0,
+      "busy_ps": 0,
+      "queue_wait_ps": 0
+    }
+  },
+  "onchip": {
+    "dma_bytes": 0,
+    "dma_tiles": 0,
+    "dma_busy_ps": 0,
+    "peak_sram_bytes": 0
+  },
+  "device_compute_ps": [
+    544512
+  ],
+  "storage_metrics": {
+    "weights": {
+      "hbm_resident_bytes_per_device": 9216,
+      "hbm_cache_reserved_bytes_per_device": 0,
+      "hbf_backing_bytes": 0,
+      "hbm_read_logical_bytes": 36864,
+      "hbf_fill_bytes": 0,
+      "access_service_ps_sum": 4478750
+    },
+    "kv": {
+      "hbm_read_logical_bytes": 1984,
+      "hbm_append_logical_bytes": 640,
+      "offloaded_append_bytes": 640,
+      "hbf_fill_bytes": 40960,
+      "hbf_writeback_bytes": 40960,
+      "dirty_logical_bytes_written": 576,
+      "discarded_dirty_bytes_at_completion": 64,
+      "cache_hits": 0,
+      "cache_misses": 16,
+      "evictions": 14,
+      "dirty_evictions": 10,
+      "reloads": 10,
+      "migration_wait_ps_sum": 532690223,
+      "hbm_fixed_layers_peak_bytes_per_device": 0,
+      "hbm_cache_reserved_bytes_per_device": 4096,
+      "hbm_cache_peak_bytes_per_device": 4096,
+      "logical_peak_bytes_per_device": 24576,
+      "live_bytes_at_end": 0,
+      "page_bytes": 4096
+    },
+    "hbf_log": {
+      "capacity_bytes": 1048576,
+      "allocated_bytes": 40960,
+      "kv_read_bytes": 40960,
+      "kv_write_bytes": 40960,
+      "kv_queue_wait_ps_sum": 0,
+      "reclamation": "append_only_no_gc"
+    }
+  },
+  "trace": [
+    {
+      "id": 0,
+      "kind": "origin",
+      "device": -1,
+      "start_ps": 0,
+      "end_ps": 0,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": []
+    },
+    {
+      "id": 1,
+      "kind": "arrival",
+      "device": -1,
+      "start_ps": 0,
+      "end_ps": 0,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        0
+      ]
+    },
+    {
+      "id": 2,
+      "kind": "arrival",
+      "device": -1,
+      "start_ps": 0,
+      "end_ps": 100000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        0
+      ]
+    },
+    {
+      "id": 3,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 0,
+      "end_ps": 0,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        1
+      ]
+    },
+    {
+      "id": 4,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 0,
+      "end_ps": 0,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        3
+      ]
+    },
+    {
+      "id": 5,
+      "kind": "pipeline_queue",
+      "device": -1,
+      "start_ps": 0,
+      "end_ps": 0,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        4
+      ]
+    },
+    {
+      "id": 6,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 0,
+      "end_ps": 0,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        5,
+        0
+      ]
+    },
+    {
+      "id": 7,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 0,
+      "end_ps": 41875,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        6
+      ]
+    },
+    {
+      "id": 8,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 0,
+      "end_ps": 545625,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        6
+      ]
+    },
+    {
+      "id": 9,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 545625,
+      "end_ps": 545625,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": 10,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 545625,
+      "end_ps": 545625,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        9,
+        0
+      ]
+    },
+    {
+      "id": 11,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 545625,
+      "end_ps": 572009,
+      "gemm_flops": 4096,
+      "attention_flops": 0,
+      "parents": [
+        10
+      ]
+    },
+    {
+      "id": 12,
+      "kind": "hbm_kv_append",
+      "device": 0,
+      "start_ps": 572009,
+      "end_ps": 587009,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        11
+      ]
+    },
+    {
+      "id": 13,
+      "kind": "hbm_kv_read",
+      "device": 0,
+      "start_ps": 587009,
+      "end_ps": 629509,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        12
+      ]
+    },
+    {
+      "id": 14,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 629509,
+      "end_ps": 629509,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        13,
+        11
+      ]
+    },
+    {
+      "id": 15,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 629509,
+      "end_ps": 699413,
+      "gemm_flops": 14336,
+      "attention_flops": 640,
+      "parents": [
+        14
+      ]
+    },
+    {
+      "id": 16,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 699413,
+      "end_ps": 699413,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        15
+      ]
+    },
+    {
+      "id": 17,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 699413,
+      "end_ps": 699413,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        16
+      ]
+    },
+    {
+      "id": 18,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 699413,
+      "end_ps": 757538,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        17
+      ]
+    },
+    {
+      "id": 19,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 699413,
+      "end_ps": 1261288,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        17
+      ]
+    },
+    {
+      "id": 20,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1261288,
+      "end_ps": 1261288,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        18,
+        19
+      ]
+    },
+    {
+      "id": 21,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1261288,
+      "end_ps": 1261288,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        20,
+        15
+      ]
+    },
+    {
+      "id": 22,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 1261288,
+      "end_ps": 1287672,
+      "gemm_flops": 4096,
+      "attention_flops": 0,
+      "parents": [
+        21
+      ]
+    },
+    {
+      "id": 23,
+      "kind": "hbm_kv_evict",
+      "device": 0,
+      "start_ps": 1287672,
+      "end_ps": 1770797,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        22
+      ]
+    },
+    {
+      "id": 24,
+      "kind": "hbf_kv_queue",
+      "device": 0,
+      "start_ps": 1770797,
+      "end_ps": 1770797,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        23
+      ]
+    },
+    {
+      "id": 25,
+      "kind": "hbf_kv_writeback",
+      "device": 0,
+      "start_ps": 1770797,
+      "end_ps": 51913000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        24
+      ]
+    },
+    {
+      "id": 26,
+      "kind": "hbm_kv_append",
+      "device": 0,
+      "start_ps": 51913000,
+      "end_ps": 51953625,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        25
+      ]
+    },
+    {
+      "id": 27,
+      "kind": "hbm_kv_read",
+      "device": 0,
+      "start_ps": 51953625,
+      "end_ps": 51996125,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        26
+      ]
+    },
+    {
+      "id": 28,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 51996125,
+      "end_ps": 51996125,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        27,
+        22
+      ]
+    },
+    {
+      "id": 29,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 51996125,
+      "end_ps": 52066029,
+      "gemm_flops": 14336,
+      "attention_flops": 640,
+      "parents": [
+        28
+      ]
+    },
+    {
+      "id": 30,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 52066029,
+      "end_ps": 52066029,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        29
+      ]
+    },
+    {
+      "id": 31,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 52066029,
+      "end_ps": 52066029,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        30
+      ]
+    },
+    {
+      "id": 32,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 100000,
+      "end_ps": 52066029,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        2
+      ]
+    },
+    {
+      "id": 33,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 52066029,
+      "end_ps": 52066029,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        31
+      ]
+    },
+    {
+      "id": 34,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 52066029,
+      "end_ps": 52066029,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        32,
+        33
+      ]
+    },
+    {
+      "id": 35,
+      "kind": "pipeline_queue",
+      "device": -1,
+      "start_ps": 52066029,
+      "end_ps": 52066029,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        34
+      ]
+    },
+    {
+      "id": 36,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 52066029,
+      "end_ps": 52066029,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        35,
+        31
+      ]
+    },
+    {
+      "id": 37,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 52066029,
+      "end_ps": 52087279,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        36
+      ]
+    },
+    {
+      "id": 38,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 52066029,
+      "end_ps": 52627904,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        36
+      ]
+    },
+    {
+      "id": 39,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 52627904,
+      "end_ps": 52627904,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        37,
+        38
+      ]
+    },
+    {
+      "id": 40,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 52627904,
+      "end_ps": 52627904,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        39,
+        29
+      ]
+    },
+    {
+      "id": 41,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 52627904,
+      "end_ps": 52650192,
+      "gemm_flops": 3072,
+      "attention_flops": 0,
+      "parents": [
+        40
+      ]
+    },
+    {
+      "id": 42,
+      "kind": "hbm_kv_evict",
+      "device": 0,
+      "start_ps": 52650192,
+      "end_ps": 53097692,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        41
+      ]
+    },
+    {
+      "id": 43,
+      "kind": "hbf_kv_queue",
+      "device": 0,
+      "start_ps": 53097692,
+      "end_ps": 53097692,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        42
+      ]
+    },
+    {
+      "id": 44,
+      "kind": "hbf_kv_writeback",
+      "device": 0,
+      "start_ps": 53097692,
+      "end_ps": 103240000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        43
+      ]
+    },
+    {
+      "id": 45,
+      "kind": "hbm_kv_append",
+      "device": 0,
+      "start_ps": 103240000,
+      "end_ps": 103275625,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        44
+      ]
+    },
+    {
+      "id": 46,
+      "kind": "hbm_kv_read",
+      "device": 0,
+      "start_ps": 103275625,
+      "end_ps": 103303125,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        45
+      ]
+    },
+    {
+      "id": 47,
+      "kind": "hbm_kv_evict",
+      "device": 0,
+      "start_ps": 103303125,
+      "end_ps": 103750625,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        46
+      ]
+    },
+    {
+      "id": 48,
+      "kind": "hbf_kv_queue",
+      "device": 0,
+      "start_ps": 103750625,
+      "end_ps": 103750625,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        47
+      ]
+    },
+    {
+      "id": 49,
+      "kind": "hbf_kv_writeback",
+      "device": 0,
+      "start_ps": 103750625,
+      "end_ps": 153893000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        48
+      ]
+    },
+    {
+      "id": 50,
+      "kind": "hbf_kv_queue",
+      "device": 0,
+      "start_ps": 153893000,
+      "end_ps": 153893000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        49
+      ]
+    },
+    {
+      "id": 51,
+      "kind": "hbf_kv_fill",
+      "device": 0,
+      "start_ps": 153893000,
+      "end_ps": 156079000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        50
+      ]
+    },
+    {
+      "id": 52,
+      "kind": "hbm_kv_fill",
+      "device": 0,
+      "start_ps": 156079000,
+      "end_ps": 156557750,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        51
+      ]
+    },
+    {
+      "id": 53,
+      "kind": "hbm_kv_read",
+      "device": 0,
+      "start_ps": 156557750,
+      "end_ps": 156635250,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        52
+      ]
+    },
+    {
+      "id": 54,
+      "kind": "hbm_kv_append",
+      "device": 0,
+      "start_ps": 156635250,
+      "end_ps": 156645250,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        53
+      ]
+    },
+    {
+      "id": 55,
+      "kind": "hbm_kv_read",
+      "device": 0,
+      "start_ps": 156645250,
+      "end_ps": 156667750,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        54
+      ]
+    },
+    {
+      "id": 56,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 156667750,
+      "end_ps": 156667750,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        55,
+        41
+      ]
+    },
+    {
+      "id": 57,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 156667750,
+      "end_ps": 156722806,
+      "gemm_flops": 10752,
+      "attention_flops": 512,
+      "parents": [
+        56
+      ]
+    },
+    {
+      "id": 58,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 156722806,
+      "end_ps": 156722806,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        57
+      ]
+    },
+    {
+      "id": 59,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 156722806,
+      "end_ps": 156722806,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        58
+      ]
+    },
+    {
+      "id": 60,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 156722806,
+      "end_ps": 156780931,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        59
+      ]
+    },
+    {
+      "id": 61,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 156722806,
+      "end_ps": 157284681,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        59
+      ]
+    },
+    {
+      "id": 62,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 157284681,
+      "end_ps": 157284681,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        60,
+        61
+      ]
+    },
+    {
+      "id": 63,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 157284681,
+      "end_ps": 157284681,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        62,
+        57
+      ]
+    },
+    {
+      "id": 64,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 157284681,
+      "end_ps": 157306969,
+      "gemm_flops": 3072,
+      "attention_flops": 0,
+      "parents": [
+        63
+      ]
+    },
+    {
+      "id": 65,
+      "kind": "hbm_kv_evict",
+      "device": 0,
+      "start_ps": 157306969,
+      "end_ps": 157790094,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        64
+      ]
+    },
+    {
+      "id": 66,
+      "kind": "hbf_kv_queue",
+      "device": 0,
+      "start_ps": 157790094,
+      "end_ps": 157790094,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        65
+      ]
+    },
+    {
+      "id": 67,
+      "kind": "hbf_kv_writeback",
+      "device": 0,
+      "start_ps": 157790094,
+      "end_ps": 207933000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        66
+      ]
+    },
+    {
+      "id": 68,
+      "kind": "hbm_kv_append",
+      "device": 0,
+      "start_ps": 207933000,
+      "end_ps": 207968625,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        67
+      ]
+    },
+    {
+      "id": 69,
+      "kind": "hbm_kv_read",
+      "device": 0,
+      "start_ps": 207968625,
+      "end_ps": 207996125,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        68
+      ]
+    },
+    {
+      "id": 70,
+      "kind": "hbm_kv_evict",
+      "device": 0,
+      "start_ps": 207996125,
+      "end_ps": 208443625,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        69
+      ]
+    },
+    {
+      "id": 71,
+      "kind": "hbf_kv_queue",
+      "device": 0,
+      "start_ps": 208443625,
+      "end_ps": 208443625,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        70
+      ]
+    },
+    {
+      "id": 72,
+      "kind": "hbf_kv_writeback",
+      "device": 0,
+      "start_ps": 208443625,
+      "end_ps": 258586000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        71
+      ]
+    },
+    {
+      "id": 73,
+      "kind": "hbf_kv_queue",
+      "device": 0,
+      "start_ps": 258586000,
+      "end_ps": 258586000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        72
+      ]
+    },
+    {
+      "id": 74,
+      "kind": "hbf_kv_fill",
+      "device": 0,
+      "start_ps": 258586000,
+      "end_ps": 260772000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        73
+      ]
+    },
+    {
+      "id": 75,
+      "kind": "hbm_kv_fill",
+      "device": 0,
+      "start_ps": 260772000,
+      "end_ps": 261250750,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        74
+      ]
+    },
+    {
+      "id": 76,
+      "kind": "hbm_kv_read",
+      "device": 0,
+      "start_ps": 261250750,
+      "end_ps": 261328250,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        75
+      ]
+    },
+    {
+      "id": 77,
+      "kind": "hbm_kv_append",
+      "device": 0,
+      "start_ps": 261328250,
+      "end_ps": 261338250,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        76
+      ]
+    },
+    {
+      "id": 78,
+      "kind": "hbm_kv_read",
+      "device": 0,
+      "start_ps": 261338250,
+      "end_ps": 261360750,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        77
+      ]
+    },
+    {
+      "id": 79,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 261360750,
+      "end_ps": 261360750,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        78,
+        64
+      ]
+    },
+    {
+      "id": 80,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 261360750,
+      "end_ps": 261415806,
+      "gemm_flops": 10752,
+      "attention_flops": 512,
+      "parents": [
+        79
+      ]
+    },
+    {
+      "id": 81,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 261415806,
+      "end_ps": 261415806,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        80
+      ]
+    },
+    {
+      "id": 82,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 261415806,
+      "end_ps": 261415806,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        81
+      ]
+    },
+    {
+      "id": 83,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 261415806,
+      "end_ps": 261415806,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        82
+      ]
+    },
+    {
+      "id": 84,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 261415806,
+      "end_ps": 261415806,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        82
+      ]
+    },
+    {
+      "id": 85,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 261415806,
+      "end_ps": 261415806,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        83,
+        84
+      ]
+    },
+    {
+      "id": 86,
+      "kind": "pipeline_queue",
+      "device": -1,
+      "start_ps": 261415806,
+      "end_ps": 261415806,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        85
+      ]
+    },
+    {
+      "id": 87,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 261415806,
+      "end_ps": 261415806,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        86,
+        82
+      ]
+    },
+    {
+      "id": 88,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 261415806,
+      "end_ps": 261432056,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        87
+      ]
+    },
+    {
+      "id": 89,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 261415806,
+      "end_ps": 261977681,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        87
+      ]
+    },
+    {
+      "id": 90,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 261977681,
+      "end_ps": 261977681,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        88,
+        89
+      ]
+    },
+    {
+      "id": 91,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 261977681,
+      "end_ps": 261977681,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        90,
+        80
+      ]
+    },
+    {
+      "id": 92,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 261977681,
+      "end_ps": 261995873,
+      "gemm_flops": 2048,
+      "attention_flops": 0,
+      "parents": [
+        91
+      ]
+    },
+    {
+      "id": 93,
+      "kind": "hbm_kv_evict",
+      "device": 0,
+      "start_ps": 261995873,
+      "end_ps": 262443373,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        92
+      ]
+    },
+    {
+      "id": 94,
+      "kind": "hbf_kv_queue",
+      "device": 0,
+      "start_ps": 262443373,
+      "end_ps": 262443373,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        93
+      ]
+    },
+    {
+      "id": 95,
+      "kind": "hbf_kv_writeback",
+      "device": 0,
+      "start_ps": 262443373,
+      "end_ps": 312586000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        94
+      ]
+    },
+    {
+      "id": 96,
+      "kind": "hbf_kv_queue",
+      "device": 0,
+      "start_ps": 312586000,
+      "end_ps": 312586000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        95
+      ]
+    },
+    {
+      "id": 97,
+      "kind": "hbf_kv_fill",
+      "device": 0,
+      "start_ps": 312586000,
+      "end_ps": 314772000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        96
+      ]
+    },
+    {
+      "id": 98,
+      "kind": "hbm_kv_fill",
+      "device": 0,
+      "start_ps": 314772000,
+      "end_ps": 315250750,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        97
+      ]
+    },
+    {
+      "id": 99,
+      "kind": "hbm_kv_append",
+      "device": 0,
+      "start_ps": 315250750,
+      "end_ps": 315307000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        98
+      ]
+    },
+    {
+      "id": 100,
+      "kind": "hbm_kv_read",
+      "device": 0,
+      "start_ps": 315307000,
+      "end_ps": 315334500,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        99
+      ]
+    },
+    {
+      "id": 101,
+      "kind": "hbm_kv_evict",
+      "device": 0,
+      "start_ps": 315334500,
+      "end_ps": 315782000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        100
+      ]
+    },
+    {
+      "id": 102,
+      "kind": "hbf_kv_queue",
+      "device": 0,
+      "start_ps": 315782000,
+      "end_ps": 315782000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        101
+      ]
+    },
+    {
+      "id": 103,
+      "kind": "hbf_kv_writeback",
+      "device": 0,
+      "start_ps": 315782000,
+      "end_ps": 365924000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        102
+      ]
+    },
+    {
+      "id": 104,
+      "kind": "hbf_kv_queue",
+      "device": 0,
+      "start_ps": 365924000,
+      "end_ps": 365924000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        103
+      ]
+    },
+    {
+      "id": 105,
+      "kind": "hbf_kv_fill",
+      "device": 0,
+      "start_ps": 365924000,
+      "end_ps": 368110000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        104
+      ]
+    },
+    {
+      "id": 106,
+      "kind": "hbm_kv_fill",
+      "device": 0,
+      "start_ps": 368110000,
+      "end_ps": 368588750,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        105
+      ]
+    },
+    {
+      "id": 107,
+      "kind": "hbm_kv_read",
+      "device": 0,
+      "start_ps": 368588750,
+      "end_ps": 368666250,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        106
+      ]
+    },
+    {
+      "id": 108,
+      "kind": "hbf_kv_queue",
+      "device": 0,
+      "start_ps": 368666250,
+      "end_ps": 368666250,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        107
+      ]
+    },
+    {
+      "id": 109,
+      "kind": "hbf_kv_fill",
+      "device": 0,
+      "start_ps": 368666250,
+      "end_ps": 370853000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        108
+      ]
+    },
+    {
+      "id": 110,
+      "kind": "hbm_kv_fill",
+      "device": 0,
+      "start_ps": 370853000,
+      "end_ps": 371331750,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        109
+      ]
+    },
+    {
+      "id": 111,
+      "kind": "hbm_kv_append",
+      "device": 0,
+      "start_ps": 371331750,
+      "end_ps": 371388000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        110
+      ]
+    },
+    {
+      "id": 112,
+      "kind": "hbm_kv_read",
+      "device": 0,
+      "start_ps": 371388000,
+      "end_ps": 371410500,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        111
+      ]
+    },
+    {
+      "id": 113,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 371410500,
+      "end_ps": 371410500,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        112,
+        92
+      ]
+    },
+    {
+      "id": 114,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 371410500,
+      "end_ps": 371451476,
+      "gemm_flops": 7168,
+      "attention_flops": 576,
+      "parents": [
+        113
+      ]
+    },
+    {
+      "id": 115,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 371451476,
+      "end_ps": 371451476,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        114
+      ]
+    },
+    {
+      "id": 116,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 371451476,
+      "end_ps": 371451476,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        115
+      ]
+    },
+    {
+      "id": 117,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 371451476,
+      "end_ps": 371504601,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        116
+      ]
+    },
+    {
+      "id": 118,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 371451476,
+      "end_ps": 372013351,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        116
+      ]
+    },
+    {
+      "id": 119,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 372013351,
+      "end_ps": 372013351,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        117,
+        118
+      ]
+    },
+    {
+      "id": 120,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 372013351,
+      "end_ps": 372013351,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        119,
+        114
+      ]
+    },
+    {
+      "id": 121,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 372013351,
+      "end_ps": 372031543,
+      "gemm_flops": 2048,
+      "attention_flops": 0,
+      "parents": [
+        120
+      ]
+    },
+    {
+      "id": 122,
+      "kind": "hbm_kv_evict",
+      "device": 0,
+      "start_ps": 372031543,
+      "end_ps": 372514668,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        121
+      ]
+    },
+    {
+      "id": 123,
+      "kind": "hbf_kv_queue",
+      "device": 0,
+      "start_ps": 372514668,
+      "end_ps": 372514668,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        122
+      ]
+    },
+    {
+      "id": 124,
+      "kind": "hbf_kv_writeback",
+      "device": 0,
+      "start_ps": 372514668,
+      "end_ps": 422657000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        123
+      ]
+    },
+    {
+      "id": 125,
+      "kind": "hbf_kv_queue",
+      "device": 0,
+      "start_ps": 422657000,
+      "end_ps": 422657000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        124
+      ]
+    },
+    {
+      "id": 126,
+      "kind": "hbf_kv_fill",
+      "device": 0,
+      "start_ps": 422657000,
+      "end_ps": 424843000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        125
+      ]
+    },
+    {
+      "id": 127,
+      "kind": "hbm_kv_fill",
+      "device": 0,
+      "start_ps": 424843000,
+      "end_ps": 425321750,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        126
+      ]
+    },
+    {
+      "id": 128,
+      "kind": "hbm_kv_append",
+      "device": 0,
+      "start_ps": 425321750,
+      "end_ps": 425378000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        127
+      ]
+    },
+    {
+      "id": 129,
+      "kind": "hbm_kv_read",
+      "device": 0,
+      "start_ps": 425378000,
+      "end_ps": 425405500,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        128
+      ]
+    },
+    {
+      "id": 130,
+      "kind": "hbm_kv_evict",
+      "device": 0,
+      "start_ps": 425405500,
+      "end_ps": 425853000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        129
+      ]
+    },
+    {
+      "id": 131,
+      "kind": "hbf_kv_queue",
+      "device": 0,
+      "start_ps": 425853000,
+      "end_ps": 425853000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        130
+      ]
+    },
+    {
+      "id": 132,
+      "kind": "hbf_kv_writeback",
+      "device": 0,
+      "start_ps": 425853000,
+      "end_ps": 475995000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        131
+      ]
+    },
+    {
+      "id": 133,
+      "kind": "hbf_kv_queue",
+      "device": 0,
+      "start_ps": 475995000,
+      "end_ps": 475995000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        132
+      ]
+    },
+    {
+      "id": 134,
+      "kind": "hbf_kv_fill",
+      "device": 0,
+      "start_ps": 475995000,
+      "end_ps": 478181000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        133
+      ]
+    },
+    {
+      "id": 135,
+      "kind": "hbm_kv_fill",
+      "device": 0,
+      "start_ps": 478181000,
+      "end_ps": 478659750,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        134
+      ]
+    },
+    {
+      "id": 136,
+      "kind": "hbm_kv_read",
+      "device": 0,
+      "start_ps": 478659750,
+      "end_ps": 478737250,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        135
+      ]
+    },
+    {
+      "id": 137,
+      "kind": "hbf_kv_queue",
+      "device": 0,
+      "start_ps": 478737250,
+      "end_ps": 478737250,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        136
+      ]
+    },
+    {
+      "id": 138,
+      "kind": "hbf_kv_fill",
+      "device": 0,
+      "start_ps": 478737250,
+      "end_ps": 480924000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        137
+      ]
+    },
+    {
+      "id": 139,
+      "kind": "hbm_kv_fill",
+      "device": 0,
+      "start_ps": 480924000,
+      "end_ps": 481402750,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        138
+      ]
+    },
+    {
+      "id": 140,
+      "kind": "hbm_kv_append",
+      "device": 0,
+      "start_ps": 481402750,
+      "end_ps": 481459000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        139
+      ]
+    },
+    {
+      "id": 141,
+      "kind": "hbm_kv_read",
+      "device": 0,
+      "start_ps": 481459000,
+      "end_ps": 481481500,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        140
+      ]
+    },
+    {
+      "id": 142,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 481481500,
+      "end_ps": 481481500,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        141,
+        121
+      ]
+    },
+    {
+      "id": 143,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 481481500,
+      "end_ps": 481522476,
+      "gemm_flops": 7168,
+      "attention_flops": 576,
+      "parents": [
+        142
+      ]
+    },
+    {
+      "id": 144,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 481522476,
+      "end_ps": 481522476,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        143
+      ]
+    },
+    {
+      "id": 145,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 481522476,
+      "end_ps": 481522476,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        144
+      ]
+    },
+    {
+      "id": 146,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 481522476,
+      "end_ps": 481522476,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        145
+      ]
+    },
+    {
+      "id": 147,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 481522476,
+      "end_ps": 481522476,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        146
+      ]
+    },
+    {
+      "id": 148,
+      "kind": "pipeline_queue",
+      "device": -1,
+      "start_ps": 481522476,
+      "end_ps": 481522476,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        147
+      ]
+    },
+    {
+      "id": 149,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 481522476,
+      "end_ps": 481522476,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        148,
+        145
+      ]
+    },
+    {
+      "id": 150,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 481522476,
+      "end_ps": 481538726,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        149
+      ]
+    },
+    {
+      "id": 151,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 481522476,
+      "end_ps": 482084351,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        149
+      ]
+    },
+    {
+      "id": 152,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 482084351,
+      "end_ps": 482084351,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        150,
+        151
+      ]
+    },
+    {
+      "id": 153,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 482084351,
+      "end_ps": 482084351,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        152,
+        143
+      ]
+    },
+    {
+      "id": 154,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 482084351,
+      "end_ps": 482098447,
+      "gemm_flops": 1024,
+      "attention_flops": 0,
+      "parents": [
+        153
+      ]
+    },
+    {
+      "id": 155,
+      "kind": "hbf_kv_queue",
+      "device": 0,
+      "start_ps": 482098447,
+      "end_ps": 482098447,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        154
+      ]
+    },
+    {
+      "id": 156,
+      "kind": "hbf_kv_fill",
+      "device": 0,
+      "start_ps": 482098447,
+      "end_ps": 484285000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        155
+      ]
+    },
+    {
+      "id": 157,
+      "kind": "hbm_kv_fill",
+      "device": 0,
+      "start_ps": 484285000,
+      "end_ps": 484763750,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        156
+      ]
+    },
+    {
+      "id": 158,
+      "kind": "hbm_kv_append",
+      "device": 0,
+      "start_ps": 484763750,
+      "end_ps": 484820000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        157
+      ]
+    },
+    {
+      "id": 159,
+      "kind": "hbm_kv_read",
+      "device": 0,
+      "start_ps": 484820000,
+      "end_ps": 484847500,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        158
+      ]
+    },
+    {
+      "id": 160,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 484847500,
+      "end_ps": 484847500,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        159,
+        154
+      ]
+    },
+    {
+      "id": 161,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 484847500,
+      "end_ps": 484872860,
+      "gemm_flops": 3584,
+      "attention_flops": 256,
+      "parents": [
+        160
+      ]
+    },
+    {
+      "id": 162,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 484872860,
+      "end_ps": 484872860,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        161
+      ]
+    },
+    {
+      "id": 163,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 484872860,
+      "end_ps": 484872860,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        162
+      ]
+    },
+    {
+      "id": 164,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 484872860,
+      "end_ps": 484925985,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        163
+      ]
+    },
+    {
+      "id": 165,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 484872860,
+      "end_ps": 485434735,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        163
+      ]
+    },
+    {
+      "id": 166,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 485434735,
+      "end_ps": 485434735,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        164,
+        165
+      ]
+    },
+    {
+      "id": 167,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 485434735,
+      "end_ps": 485434735,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        166,
+        161
+      ]
+    },
+    {
+      "id": 168,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 485434735,
+      "end_ps": 485448831,
+      "gemm_flops": 1024,
+      "attention_flops": 0,
+      "parents": [
+        167
+      ]
+    },
+    {
+      "id": 169,
+      "kind": "hbm_kv_evict",
+      "device": 0,
+      "start_ps": 485448831,
+      "end_ps": 485931956,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        168
+      ]
+    },
+    {
+      "id": 170,
+      "kind": "hbf_kv_queue",
+      "device": 0,
+      "start_ps": 485931956,
+      "end_ps": 485931956,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        169
+      ]
+    },
+    {
+      "id": 171,
+      "kind": "hbf_kv_writeback",
+      "device": 0,
+      "start_ps": 485931956,
+      "end_ps": 536074000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        170
+      ]
+    },
+    {
+      "id": 172,
+      "kind": "hbf_kv_queue",
+      "device": 0,
+      "start_ps": 536074000,
+      "end_ps": 536074000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        171
+      ]
+    },
+    {
+      "id": 173,
+      "kind": "hbf_kv_fill",
+      "device": 0,
+      "start_ps": 536074000,
+      "end_ps": 538260000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        172
+      ]
+    },
+    {
+      "id": 174,
+      "kind": "hbm_kv_fill",
+      "device": 0,
+      "start_ps": 538260000,
+      "end_ps": 538738750,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        173
+      ]
+    },
+    {
+      "id": 175,
+      "kind": "hbm_kv_append",
+      "device": 0,
+      "start_ps": 538738750,
+      "end_ps": 538795000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        174
+      ]
+    },
+    {
+      "id": 176,
+      "kind": "hbm_kv_read",
+      "device": 0,
+      "start_ps": 538795000,
+      "end_ps": 538822500,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        175
+      ]
+    },
+    {
+      "id": 177,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 538822500,
+      "end_ps": 538822500,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        176,
+        168
+      ]
+    },
+    {
+      "id": 178,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 538822500,
+      "end_ps": 538847860,
+      "gemm_flops": 3584,
+      "attention_flops": 256,
+      "parents": [
+        177
+      ]
+    },
+    {
+      "id": 179,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 538847860,
+      "end_ps": 538847860,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        178
+      ]
+    },
+    {
+      "id": 180,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 538847860,
+      "end_ps": 538847860,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        179
+      ]
+    }
+  ],
+  "backend_revisions": {
+    "HBFSIM_SOURCE_DIR": {
+      "revision": "28b1123ae314f50d2568387091bd20db4e630356",
+      "dirty": true,
+      "tracked_diff_sha256": "9f83780b6defa82c1dca669e296a06f0136b04903603890b192ee00d0850de58"
+    },
+    "HBMSIM_SOURCE_DIR": {
+      "revision": "f147ab2bfde0671cd3d7ea4437925f5bf386b743",
+      "dirty": false,
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "binary_sha256": "e50cdc3eff82d3fc39a9cde4ec640d68ce3cbee60a0bd853d30f1f1267e595b7",
+  "simulator_version": "1.0.0",
+  "config_version": "1.0",
+  "simulator_source_sha256": "661e134dcccfac95317e8ca8059590e61939d70b746d57891aaca0884acc9078",
+  "scenario_sha256": "ecbf7c5c79b0c9038c9070a46d16860025e828dc39ac79fafb87bbef12d941e0",
+  "scenario": {
+    "model": {
+      "layers": 2,
+      "hidden": 16,
+      "heads": 4,
+      "kv_heads": 2,
+      "ffn": 32,
+      "dtype_bytes": 2,
+      "head_dim": 4,
+      "kind": "dense"
+    },
+    "hardware": {
+      "devices": 1,
+      "peak_tflops": 0.5,
+      "compute_efficiency": 0.5,
+      "hbm_capacity_bytes": 65536,
+      "kernel_launch_ps": 10000,
+      "nvlink_gbps": 100,
+      "nvlink_latency_ps": 10000,
+      "hbm_bandwidth_GBps": 1000,
+      "kind": "nvidia_gpu",
+      "hbm_profile": "hbm3_6400",
+      "fabric_topology": "nvswitch",
+      "collective": "ring",
+      "device_nodes": [
+        0
+      ],
+      "node_racks": [
+        0
+      ]
+    },
+    "parallel": {
+      "tp": 1,
+      "pp": 1,
+      "dp": 1,
+      "ep": 1,
+      "placement": [
+        0
+      ]
+    },
+    "serving": {
+      "max_batch_tokens": 4,
+      "max_seqs": 2,
+      "prefill_chunk_tokens": 4,
+      "kv_block_tokens": 4
+    },
+    "storage": {
+      "weights": "hbm",
+      "kv": "hbf",
+      "kv_cache_bytes_per_device": 4096,
+      "kv_capacity_bytes_per_device": 65536,
+      "hbf_capacity_bytes": 1048576
+    },
+    "requests": [
+      {
+        "arrival_ps": 0,
+        "prompt_tokens": 4,
+        "output_tokens": 2
+      },
+      {
+        "arrival_ps": 100000,
+        "prompt_tokens": 2,
+        "output_tokens": 2
+      }
+    ],
+    "config_version": "1.0"
+  },
+  "calibration": {
+    "status": "uncalibrated",
+    "source": "scenario assumptions"
+  },
+  "prediction_error": {
+    "status": "unmeasured",
+    "metrics": null
+  },
+  "model_accounting": {
+    "scope": "transformer_block_matrices",
+    "model_id": null,
+    "omitted": [
+      "token embeddings",
+      "LM head",
+      "normalization weights and operations",
+      "projection biases",
+      "activation functions",
+      "RoPE",
+      "sampling"
+    ],
+    "capacity_scope": "HBM feasibility covers modeled block weights, KV and scratch; not the full checkpoint",
+    "parallelism_assumption": "ideal TP sharding of weights and KV; framework-specific KV-head replication is not modeled",
+    "source": {},
+    "overrides_from_preset": {}
+  },
+  "distributions_ps": {
+    "ttft": {
+      "count": 2,
+      "mean": 371419141.0,
+      "p50": 371419141.0,
+      "p95": 470422142.5,
+      "p99": 479222409.3,
+      "max": 481422476
+    },
+    "tpot": {
+      "count": 2,
+      "mean": 138716027.0,
+      "p50": 138716027.0,
+      "p95": 211967605.7,
+      "p99": 218478857.14,
+      "max": 220106670
+    },
+    "request_latency": {
+      "count": 2,
+      "mean": 510135168.0,
+      "p50": 510135168.0,
+      "p95": 535886590.8,
+      "p99": 538175606.16,
+      "max": 538747860
+    },
+    "queue_wait": {
+      "count": 2,
+      "mean": 25983014.5,
+      "p50": 25983014.5,
+      "p95": 49367727.55,
+      "p99": 51446368.71,
+      "max": 51966029
+    }
+  },
+  "critical_path": {
+    "scope": "operation dependencies; HBM internal scheduling is an opaque timed span",
+    "duration_ps": 538847860,
+    "node_ids": [
+      8,
+      11,
+      12,
+      13,
+      15,
+      19,
+      22,
+      23,
+      25,
+      26,
+      27,
+      29,
+      38,
+      41,
+      42,
+      44,
+      45,
+      46,
+      47,
+      49,
+      51,
+      52,
+      53,
+      54,
+      55,
+      57,
+      61,
+      64,
+      65,
+      67,
+      68,
+      69,
+      70,
+      72,
+      74,
+      75,
+      76,
+      77,
+      78,
+      80,
+      89,
+      92,
+      93,
+      95,
+      97,
+      98,
+      99,
+      100,
+      101,
+      103,
+      105,
+      106,
+      107,
+      109,
+      110,
+      111,
+      112,
+      114,
+      118,
+      121,
+      122,
+      124,
+      126,
+      127,
+      128,
+      129,
+      130,
+      132,
+      134,
+      135,
+      136,
+      138,
+      139,
+      140,
+      141,
+      143,
+      151,
+      154,
+      156,
+      157,
+      158,
+      159,
+      161,
+      165,
+      168,
+      169,
+      171,
+      173,
+      174,
+      175,
+      176,
+      178
+    ],
+    "time_by_kind_ps": {
+      "hbf_kv_writeback": 501423170,
+      "hbf_kv_fill": 21862053,
+      "hbm_kv_fill": 4787500,
+      "hbm_kv_evict": 4617500,
+      "hbm_weights": 4478750,
+      "hbm_kv_read": 650000,
+      "compute": 544512,
+      "hbm_kv_append": 484375
+    }
+  },
+  "bottleneck": {
+    "critical_path_time_ps": {
+      "memory": 538303348,
+      "compute": 544512
+    },
+    "dominant_component": "memory",
+    "interpretation": "time attribution, not a counterfactual speedup prediction"
+  }
+}

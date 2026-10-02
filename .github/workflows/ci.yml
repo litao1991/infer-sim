@@ -1,0 +1,25 @@
+name: Build and test
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install YAML support
+        run: python -m pip install -r requirements-yaml.txt
+      - name: Fetch pinned backends
+        run: python tools/bootstrap_deps.py
+      - name: Configure and build
+        run: |
+          cmake -S . -B build -DCMAKE_BUILD_TYPE=Release -DPython3_EXECUTABLE=$(which python)
+          cmake --build build --target infer_sim -j 2
+      - name: Run tests
+        run: ctest --test-dir build --output-on-failure

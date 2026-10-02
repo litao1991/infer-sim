@@ -1,0 +1,42 @@
+# Official config dimensions; block-level simulation scope.
+model:
+  kind: moe
+  layers: 56
+  hidden: 6144
+  heads: 48
+  kv_heads: 8
+  head_dim: 128
+  ffn: 16384
+  dtype_bytes: 2
+  experts: 8
+  top_k: 2
+  shared_experts: 0
+  routing_seed: 1
+model_metadata:
+  model_id: mistralai/Mixtral-8x22B-Instruct-v0.1
+  model_type: mixtral
+  source_url: https://huggingface.co/mistralai/Mixtral-8x22B-Instruct-v0.1/resolve/cc88a6cc19fbd17d9f1c0ee0b0d70a748dce698d/config.json
+  revision: cc88a6cc19fbd17d9f1c0ee0b0d70a748dce698d
+  source_sha256: 9c4a6138d84029ab666943613e3d5844d2ea8fd6149f44f77188c62e2915e0f5
+  source_dtype: bfloat16
+  vocab_size: 32768
+  max_position_embeddings: 65536
+  reference_dimensions:
+    kind: moe
+    layers: 56
+    hidden: 6144
+    heads: 48
+    kv_heads: 8
+    head_dim: 128
+    ffn: 16384
+    dtype_bytes: 2
+    experts: 8
+    top_k: 2
+    shared_experts: 0
+    routing_seed: 1
+  scope: transformer_block_matrices
+  limitations:
+  - models Transformer block matrices; excludes embeddings, LM head, norms, biases,
+    RoPE and sampling
+  - real-size presets require fast mode on this local machine
+  - routing is deterministic synthetic routing, not learned checkpoint routing

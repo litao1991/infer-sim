@@ -1,0 +1,7027 @@
+{
+  "mode": "detailed",
+  "requests": 4,
+  "output_tokens": 16,
+  "batches": 7,
+  "makespan_ps": 1819220800,
+  "mean_ttft_ps": 1550118560,
+  "mean_request_latency_ps": 1791926800,
+  "mean_tpot_ps": 80602746,
+  "tokens_per_second": 8794.97,
+  "compute_flops": 1356800,
+  "compute_service_ps_sum": 2714090000,
+  "achieved_tflops_total": 0.000745814,
+  "peak_kv_bytes_per_replica": 2560,
+  "peak_hbm_bytes_per_device": 26368,
+  "direct_hbm_requested_bytes": 315392,
+  "hbm_read_bytes": 304512,
+  "hbm_write_bytes": 10880,
+  "service_hbm_read_bytes": 304512,
+  "service_hbm_write_bytes": 10880,
+  "service_hbm_effective_GBps": 0.173367,
+  "hbm_data_bus_busy_ps_sum": 12320000,
+  "hbm_queue_wait_ps_sum": 0,
+  "hbm_backpressure": 0,
+  "hbf_fill_bytes": 0,
+  "service_hbf_fill_bytes": 0,
+  "hbf_seed_bytes": 0,
+  "hbf_writeback_bytes": 0,
+  "hbf_writeback_duration_ps": 0,
+  "hbf_prefetches": 0,
+  "hbf_prefetch_hits": 0,
+  "hbf_evictions": 0,
+  "fabric_bytes": 5440,
+  "fabric_busy_ps": 795200,
+  "fabric_queue_wait_ps_sum": 0,
+  "service_fabric_effective_GBps": 0.00299029,
+  "fabric_topology": "nvswitch",
+  "hardware_kind": "nvidia_gpu",
+  "requests_detail": [
+    {
+      "ttft_ps": 1529102720,
+      "latency_ps": 1782828800,
+      "output_tokens": 4,
+      "queue_wait_ps": 553137280,
+      "completion_node": 477,
+      "token_gaps_ps": [
+        84063360,
+        78426240,
+        91236480
+      ]
+    },
+    {
+      "ttft_ps": 1529102720,
+      "latency_ps": 1782828800,
+      "output_tokens": 4,
+      "queue_wait_ps": 454823040,
+      "completion_node": 477,
+      "token_gaps_ps": [
+        84063360,
+        78426240,
+        91236480
+      ]
+    },
+    {
+      "ttft_ps": 1529102720,
+      "latency_ps": 1782828800,
+      "output_tokens": 4,
+      "queue_wait_ps": 454823040,
+      "completion_node": 477,
+      "token_gaps_ps": [
+        84063360,
+        78426240,
+        91236480
+      ]
+    },
+    {
+      "ttft_ps": 1613166080,
+      "latency_ps": 1819220800,
+      "output_tokens": 4,
+      "queue_wait_ps": 1007960320,
+      "completion_node": 519,
+      "token_gaps_ps": [
+        78426240,
+        91236480,
+        36392000
+      ]
+    }
+  ],
+  "moe": {
+    "token_layer_visits": 160,
+    "routed_assignments": 160,
+    "dispatch_payload_bytes": 2720,
+    "combine_payload_bytes": 2720,
+    "straggler_ps_sum": 245790000,
+    "expert_tokens": [
+      40,
+      39,
+      43,
+      38
+    ],
+    "device_assignments": [
+      83,
+      77
+    ]
+  },
+  "network_tiers": {
+    "card_interconnect": {
+      "bytes": 5440,
+      "busy_ps": 795200,
+      "queue_wait_ps": 0
+    },
+    "cross_rack": {
+      "bytes": 0,
+      "busy_ps": 0,
+      "queue_wait_ps": 0
+    },
+    "intra_rack": {
+      "bytes": 0,
+      "busy_ps": 0,
+      "queue_wait_ps": 0
+    },
+    "nic": {
+      "bytes": 0,
+      "busy_ps": 0,
+      "queue_wait_ps": 0
+    }
+  },
+  "onchip": {
+    "dma_bytes": 0,
+    "dma_tiles": 0,
+    "dma_busy_ps": 0,
+    "peak_sram_bytes": 0
+  },
+  "device_compute_ps": [
+    1375472000,
+    1338618000
+  ],
+  "trace": [
+    {
+      "id": 0,
+      "kind": "origin",
+      "device": -1,
+      "start_ps": 0,
+      "end_ps": 0,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": []
+    },
+    {
+      "id": 1,
+      "kind": "arrival",
+      "device": -1,
+      "start_ps": 0,
+      "end_ps": 0,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        0
+      ]
+    },
+    {
+      "id": 2,
+      "kind": "arrival",
+      "device": -1,
+      "start_ps": 0,
+      "end_ps": 0,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        0
+      ]
+    },
+    {
+      "id": 3,
+      "kind": "arrival",
+      "device": -1,
+      "start_ps": 0,
+      "end_ps": 0,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        0
+      ]
+    },
+    {
+      "id": 4,
+      "kind": "arrival",
+      "device": -1,
+      "start_ps": 0,
+      "end_ps": 0,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        0
+      ]
+    },
+    {
+      "id": 5,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 0,
+      "end_ps": 0,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        1
+      ]
+    },
+    {
+      "id": 6,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 0,
+      "end_ps": 0,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        5
+      ]
+    },
+    {
+      "id": 7,
+      "kind": "pipeline_queue",
+      "device": -1,
+      "start_ps": 0,
+      "end_ps": 0,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        6
+      ]
+    },
+    {
+      "id": 8,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 0,
+      "end_ps": 0,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        7,
+        0
+      ]
+    },
+    {
+      "id": 9,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 0,
+      "end_ps": 0,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        8,
+        0
+      ]
+    },
+    {
+      "id": 10,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 0,
+      "end_ps": 168970000,
+      "gemm_flops": 75776,
+      "attention_flops": 8704,
+      "parents": [
+        9
+      ]
+    },
+    {
+      "id": 11,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 0,
+      "end_ps": 190000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        8
+      ]
+    },
+    {
+      "id": 12,
+      "kind": "hbm_output",
+      "device": 0,
+      "start_ps": 0,
+      "end_ps": 231250,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        8
+      ]
+    },
+    {
+      "id": 13,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 0,
+      "end_ps": 637500,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        8
+      ]
+    },
+    {
+      "id": 14,
+      "kind": "hbm_kv",
+      "device": 0,
+      "start_ps": 0,
+      "end_ps": 682500,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        8
+      ]
+    },
+    {
+      "id": 15,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 168970000,
+      "end_ps": 168970000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        11,
+        12,
+        13,
+        14,
+        10
+      ]
+    },
+    {
+      "id": 16,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 168970000,
+      "end_ps": 168970000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        8,
+        15
+      ]
+    },
+    {
+      "id": 17,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 168970000,
+      "end_ps": 168970000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        16,
+        16
+      ]
+    },
+    {
+      "id": 18,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 168970000,
+      "end_ps": 168970000,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        17,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 19,
+      "kind": "card_interconnect",
+      "device": 0,
+      "start_ps": 168970000,
+      "end_ps": 168997920,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        18
+      ]
+    },
+    {
+      "id": 20,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 168997920,
+      "end_ps": 168997920,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        17,
+        19
+      ]
+    },
+    {
+      "id": 21,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 168997920,
+      "end_ps": 168997920,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        20,
+        10
+      ]
+    },
+    {
+      "id": 22,
+      "kind": "grouped_gemm",
+      "device": 0,
+      "start_ps": 168997920,
+      "end_ps": 224303920,
+      "gemm_flops": 27648,
+      "attention_flops": 0,
+      "parents": [
+        21
+      ]
+    },
+    {
+      "id": 23,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 168997920,
+      "end_ps": 168997920,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        20,
+        0
+      ]
+    },
+    {
+      "id": 24,
+      "kind": "grouped_gemm",
+      "device": 1,
+      "start_ps": 168997920,
+      "end_ps": 212015920,
+      "gemm_flops": 21504,
+      "attention_flops": 0,
+      "parents": [
+        23
+      ]
+    },
+    {
+      "id": 25,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 168997920,
+      "end_ps": 169126045,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        20
+      ]
+    },
+    {
+      "id": 26,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 168997920,
+      "end_ps": 169230420,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        20
+      ]
+    },
+    {
+      "id": 27,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 168997920,
+      "end_ps": 169707920,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        20
+      ]
+    },
+    {
+      "id": 28,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 168997920,
+      "end_ps": 169722295,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        20
+      ]
+    },
+    {
+      "id": 29,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 168997920,
+      "end_ps": 169742920,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        20
+      ]
+    },
+    {
+      "id": 30,
+      "kind": "hbm_output",
+      "device": 0,
+      "start_ps": 168997920,
+      "end_ps": 169749795,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        20
+      ]
+    },
+    {
+      "id": 31,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 212015920,
+      "end_ps": 212015920,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        20,
+        25,
+        28,
+        29,
+        24
+      ]
+    },
+    {
+      "id": 32,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 224303920,
+      "end_ps": 224303920,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        20,
+        26,
+        27,
+        30,
+        22
+      ]
+    },
+    {
+      "id": 33,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 224303920,
+      "end_ps": 224303920,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        31,
+        32
+      ]
+    },
+    {
+      "id": 34,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 224303920,
+      "end_ps": 224303920,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        33,
+        33
+      ]
+    },
+    {
+      "id": 35,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 224303920,
+      "end_ps": 224303920,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        34,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 36,
+      "kind": "card_interconnect",
+      "device": 1,
+      "start_ps": 224303920,
+      "end_ps": 224331840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        35
+      ]
+    },
+    {
+      "id": 37,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 224331840,
+      "end_ps": 224331840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        34,
+        36
+      ]
+    },
+    {
+      "id": 38,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 224331840,
+      "end_ps": 224331840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        37,
+        22
+      ]
+    },
+    {
+      "id": 39,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 224331840,
+      "end_ps": 393301840,
+      "gemm_flops": 75776,
+      "attention_flops": 8704,
+      "parents": [
+        38
+      ]
+    },
+    {
+      "id": 40,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 224331840,
+      "end_ps": 224553715,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        37
+      ]
+    },
+    {
+      "id": 41,
+      "kind": "hbm_output",
+      "device": 0,
+      "start_ps": 224331840,
+      "end_ps": 224579965,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        37
+      ]
+    },
+    {
+      "id": 42,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 224331840,
+      "end_ps": 225001215,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        37
+      ]
+    },
+    {
+      "id": 43,
+      "kind": "hbm_kv",
+      "device": 0,
+      "start_ps": 224331840,
+      "end_ps": 225031215,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        37
+      ]
+    },
+    {
+      "id": 44,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 393301840,
+      "end_ps": 393301840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        40,
+        41,
+        42,
+        43,
+        39
+      ]
+    },
+    {
+      "id": 45,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 393301840,
+      "end_ps": 393301840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        37,
+        44
+      ]
+    },
+    {
+      "id": 46,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 393301840,
+      "end_ps": 393301840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        45,
+        45
+      ]
+    },
+    {
+      "id": 47,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 393301840,
+      "end_ps": 393301840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        46,
+        19,
+        19
+      ]
+    },
+    {
+      "id": 48,
+      "kind": "card_interconnect",
+      "device": 0,
+      "start_ps": 393301840,
+      "end_ps": 393337440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        47
+      ]
+    },
+    {
+      "id": 49,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 393337440,
+      "end_ps": 393337440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        46,
+        48
+      ]
+    },
+    {
+      "id": 50,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 393337440,
+      "end_ps": 393337440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        49,
+        39
+      ]
+    },
+    {
+      "id": 51,
+      "kind": "grouped_gemm",
+      "device": 0,
+      "start_ps": 393337440,
+      "end_ps": 430211440,
+      "gemm_flops": 18432,
+      "attention_flops": 0,
+      "parents": [
+        50
+      ]
+    },
+    {
+      "id": 52,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 393337440,
+      "end_ps": 393337440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        49,
+        24
+      ]
+    },
+    {
+      "id": 53,
+      "kind": "grouped_gemm",
+      "device": 1,
+      "start_ps": 393337440,
+      "end_ps": 454787440,
+      "gemm_flops": 30720,
+      "attention_flops": 0,
+      "parents": [
+        52
+      ]
+    },
+    {
+      "id": 54,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 393337440,
+      "end_ps": 393476815,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        49
+      ]
+    },
+    {
+      "id": 55,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 393337440,
+      "end_ps": 393486815,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        49
+      ]
+    },
+    {
+      "id": 56,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 393337440,
+      "end_ps": 393716815,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        49
+      ]
+    },
+    {
+      "id": 57,
+      "kind": "hbm_output",
+      "device": 0,
+      "start_ps": 393337440,
+      "end_ps": 393748690,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        49
+      ]
+    },
+    {
+      "id": 58,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 393337440,
+      "end_ps": 394083065,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        49
+      ]
+    },
+    {
+      "id": 59,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 393337440,
+      "end_ps": 394124940,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        49
+      ]
+    },
+    {
+      "id": 60,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 430211440,
+      "end_ps": 430211440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        49,
+        54,
+        56,
+        57,
+        51
+      ]
+    },
+    {
+      "id": 61,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 454787440,
+      "end_ps": 454787440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        49,
+        55,
+        58,
+        59,
+        53
+      ]
+    },
+    {
+      "id": 62,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 454787440,
+      "end_ps": 454787440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        60,
+        61
+      ]
+    },
+    {
+      "id": 63,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 454787440,
+      "end_ps": 454787440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        62,
+        62
+      ]
+    },
+    {
+      "id": 64,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 454787440,
+      "end_ps": 454787440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        63,
+        36,
+        36
+      ]
+    },
+    {
+      "id": 65,
+      "kind": "card_interconnect",
+      "device": 1,
+      "start_ps": 454787440,
+      "end_ps": 454823040,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        64
+      ]
+    },
+    {
+      "id": 66,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 454823040,
+      "end_ps": 454823040,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        63,
+        65
+      ]
+    },
+    {
+      "id": 67,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 0,
+      "end_ps": 454823040,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        2
+      ]
+    },
+    {
+      "id": 68,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 0,
+      "end_ps": 454823040,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        3
+      ]
+    },
+    {
+      "id": 69,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 454823040,
+      "end_ps": 454823040,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        67,
+        68
+      ]
+    },
+    {
+      "id": 70,
+      "kind": "pipeline_queue",
+      "device": -1,
+      "start_ps": 454823040,
+      "end_ps": 454823040,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        69
+      ]
+    },
+    {
+      "id": 71,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 454823040,
+      "end_ps": 454823040,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        70,
+        66
+      ]
+    },
+    {
+      "id": 72,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 454823040,
+      "end_ps": 454823040,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        71,
+        51
+      ]
+    },
+    {
+      "id": 73,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 454823040,
+      "end_ps": 623793040,
+      "gemm_flops": 75776,
+      "attention_flops": 8704,
+      "parents": [
+        72
+      ]
+    },
+    {
+      "id": 74,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 454823040,
+      "end_ps": 454823040,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        71,
+        53
+      ]
+    },
+    {
+      "id": 75,
+      "kind": "compute",
+      "device": 1,
+      "start_ps": 454823040,
+      "end_ps": 623793040,
+      "gemm_flops": 75776,
+      "attention_flops": 8704,
+      "parents": [
+        74
+      ]
+    },
+    {
+      "id": 76,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 454823040,
+      "end_ps": 455044915,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        71
+      ]
+    },
+    {
+      "id": 77,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 454823040,
+      "end_ps": 455044915,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        71
+      ]
+    },
+    {
+      "id": 78,
+      "kind": "hbm_output",
+      "device": 0,
+      "start_ps": 454823040,
+      "end_ps": 455071165,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        71
+      ]
+    },
+    {
+      "id": 79,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 454823040,
+      "end_ps": 455071165,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        71
+      ]
+    },
+    {
+      "id": 80,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 454823040,
+      "end_ps": 455492415,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        71
+      ]
+    },
+    {
+      "id": 81,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 454823040,
+      "end_ps": 455492415,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        71
+      ]
+    },
+    {
+      "id": 82,
+      "kind": "hbm_kv",
+      "device": 0,
+      "start_ps": 454823040,
+      "end_ps": 455522415,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        71
+      ]
+    },
+    {
+      "id": 83,
+      "kind": "hbm_kv",
+      "device": 1,
+      "start_ps": 454823040,
+      "end_ps": 455522415,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        71
+      ]
+    },
+    {
+      "id": 84,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 623793040,
+      "end_ps": 623793040,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        76,
+        78,
+        80,
+        82,
+        73
+      ]
+    },
+    {
+      "id": 85,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 623793040,
+      "end_ps": 623793040,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        77,
+        79,
+        81,
+        83,
+        75
+      ]
+    },
+    {
+      "id": 86,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 623793040,
+      "end_ps": 623793040,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        84,
+        85
+      ]
+    },
+    {
+      "id": 87,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 623793040,
+      "end_ps": 623793040,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        86,
+        86
+      ]
+    },
+    {
+      "id": 88,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 623793040,
+      "end_ps": 623793040,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        87,
+        48,
+        48
+      ]
+    },
+    {
+      "id": 89,
+      "kind": "card_interconnect",
+      "device": 0,
+      "start_ps": 623793040,
+      "end_ps": 623831200,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        88
+      ]
+    },
+    {
+      "id": 90,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 623793040,
+      "end_ps": 623793040,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        87,
+        65,
+        65
+      ]
+    },
+    {
+      "id": 91,
+      "kind": "card_interconnect",
+      "device": 1,
+      "start_ps": 623793040,
+      "end_ps": 623828640,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        90
+      ]
+    },
+    {
+      "id": 92,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 623831200,
+      "end_ps": 623831200,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        87,
+        89,
+        91
+      ]
+    },
+    {
+      "id": 93,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 623831200,
+      "end_ps": 623831200,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        92,
+        73
+      ]
+    },
+    {
+      "id": 94,
+      "kind": "grouped_gemm",
+      "device": 0,
+      "start_ps": 623831200,
+      "end_ps": 716001200,
+      "gemm_flops": 46080,
+      "attention_flops": 0,
+      "parents": [
+        93
+      ]
+    },
+    {
+      "id": 95,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 623831200,
+      "end_ps": 623831200,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        92,
+        75
+      ]
+    },
+    {
+      "id": 96,
+      "kind": "grouped_gemm",
+      "device": 1,
+      "start_ps": 623831200,
+      "end_ps": 728289200,
+      "gemm_flops": 52224,
+      "attention_flops": 0,
+      "parents": [
+        95
+      ]
+    },
+    {
+      "id": 97,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 623831200,
+      "end_ps": 624132450,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        92
+      ]
+    },
+    {
+      "id": 98,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 623831200,
+      "end_ps": 624142450,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        92
+      ]
+    },
+    {
+      "id": 99,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 623831200,
+      "end_ps": 624609950,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        92
+      ]
+    },
+    {
+      "id": 100,
+      "kind": "hbm_output",
+      "device": 0,
+      "start_ps": 623831200,
+      "end_ps": 624611825,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        92
+      ]
+    },
+    {
+      "id": 101,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 623831200,
+      "end_ps": 624619950,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        92
+      ]
+    },
+    {
+      "id": 102,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 623831200,
+      "end_ps": 624621825,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        92
+      ]
+    },
+    {
+      "id": 103,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 716001200,
+      "end_ps": 716001200,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        92,
+        97,
+        99,
+        100,
+        94
+      ]
+    },
+    {
+      "id": 104,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 728289200,
+      "end_ps": 728289200,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        92,
+        98,
+        101,
+        102,
+        96
+      ]
+    },
+    {
+      "id": 105,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 728289200,
+      "end_ps": 728289200,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        103,
+        104
+      ]
+    },
+    {
+      "id": 106,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 728289200,
+      "end_ps": 728289200,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        105,
+        105
+      ]
+    },
+    {
+      "id": 107,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 728289200,
+      "end_ps": 728289200,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        106,
+        91,
+        91
+      ]
+    },
+    {
+      "id": 108,
+      "kind": "card_interconnect",
+      "device": 1,
+      "start_ps": 728289200,
+      "end_ps": 728327360,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        107
+      ]
+    },
+    {
+      "id": 109,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 728289200,
+      "end_ps": 728289200,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        106,
+        89,
+        89
+      ]
+    },
+    {
+      "id": 110,
+      "kind": "card_interconnect",
+      "device": 0,
+      "start_ps": 728289200,
+      "end_ps": 728324800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        109
+      ]
+    },
+    {
+      "id": 111,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 728327360,
+      "end_ps": 728327360,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        106,
+        108,
+        110
+      ]
+    },
+    {
+      "id": 112,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 728327360,
+      "end_ps": 728327360,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        111,
+        94
+      ]
+    },
+    {
+      "id": 113,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 728327360,
+      "end_ps": 897297360,
+      "gemm_flops": 75776,
+      "attention_flops": 8704,
+      "parents": [
+        112
+      ]
+    },
+    {
+      "id": 114,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 728327360,
+      "end_ps": 728327360,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        111,
+        96
+      ]
+    },
+    {
+      "id": 115,
+      "kind": "compute",
+      "device": 1,
+      "start_ps": 728327360,
+      "end_ps": 897297360,
+      "gemm_flops": 75776,
+      "attention_flops": 8704,
+      "parents": [
+        114
+      ]
+    },
+    {
+      "id": 116,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 728327360,
+      "end_ps": 728549235,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        111
+      ]
+    },
+    {
+      "id": 117,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 728327360,
+      "end_ps": 728549235,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        111
+      ]
+    },
+    {
+      "id": 118,
+      "kind": "hbm_output",
+      "device": 0,
+      "start_ps": 728327360,
+      "end_ps": 728575485,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        111
+      ]
+    },
+    {
+      "id": 119,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 728327360,
+      "end_ps": 728575485,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        111
+      ]
+    },
+    {
+      "id": 120,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 728327360,
+      "end_ps": 728996735,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        111
+      ]
+    },
+    {
+      "id": 121,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 728327360,
+      "end_ps": 728996735,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        111
+      ]
+    },
+    {
+      "id": 122,
+      "kind": "hbm_kv",
+      "device": 0,
+      "start_ps": 728327360,
+      "end_ps": 729026735,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        111
+      ]
+    },
+    {
+      "id": 123,
+      "kind": "hbm_kv",
+      "device": 1,
+      "start_ps": 728327360,
+      "end_ps": 729026735,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        111
+      ]
+    },
+    {
+      "id": 124,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 897297360,
+      "end_ps": 897297360,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        116,
+        118,
+        120,
+        122,
+        113
+      ]
+    },
+    {
+      "id": 125,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 897297360,
+      "end_ps": 897297360,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        117,
+        119,
+        121,
+        123,
+        115
+      ]
+    },
+    {
+      "id": 126,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 897297360,
+      "end_ps": 897297360,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        124,
+        125
+      ]
+    },
+    {
+      "id": 127,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 897297360,
+      "end_ps": 897297360,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        126,
+        126
+      ]
+    },
+    {
+      "id": 128,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 897297360,
+      "end_ps": 897297360,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        127,
+        110,
+        110
+      ]
+    },
+    {
+      "id": 129,
+      "kind": "card_interconnect",
+      "device": 0,
+      "start_ps": 897297360,
+      "end_ps": 897322720,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        128
+      ]
+    },
+    {
+      "id": 130,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 897297360,
+      "end_ps": 897297360,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        127,
+        108,
+        108
+      ]
+    },
+    {
+      "id": 131,
+      "kind": "card_interconnect",
+      "device": 1,
+      "start_ps": 897297360,
+      "end_ps": 897327840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        130
+      ]
+    },
+    {
+      "id": 132,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 897327840,
+      "end_ps": 897327840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        127,
+        129,
+        131
+      ]
+    },
+    {
+      "id": 133,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 897327840,
+      "end_ps": 897327840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        132,
+        113
+      ]
+    },
+    {
+      "id": 134,
+      "kind": "grouped_gemm",
+      "device": 0,
+      "start_ps": 897327840,
+      "end_ps": 1007929840,
+      "gemm_flops": 55296,
+      "attention_flops": 0,
+      "parents": [
+        133
+      ]
+    },
+    {
+      "id": 135,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 897327840,
+      "end_ps": 897327840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        132,
+        115
+      ]
+    },
+    {
+      "id": 136,
+      "kind": "grouped_gemm",
+      "device": 1,
+      "start_ps": 897327840,
+      "end_ps": 983353840,
+      "gemm_flops": 43008,
+      "attention_flops": 0,
+      "parents": [
+        135
+      ]
+    },
+    {
+      "id": 137,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 897327840,
+      "end_ps": 897570340,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        132
+      ]
+    },
+    {
+      "id": 138,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 897327840,
+      "end_ps": 897639090,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        132
+      ]
+    },
+    {
+      "id": 139,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 897327840,
+      "end_ps": 898047840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        132
+      ]
+    },
+    {
+      "id": 140,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 897327840,
+      "end_ps": 898099715,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        132
+      ]
+    },
+    {
+      "id": 141,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 897327840,
+      "end_ps": 898116590,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        132
+      ]
+    },
+    {
+      "id": 142,
+      "kind": "hbm_output",
+      "device": 0,
+      "start_ps": 897327840,
+      "end_ps": 898118465,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        132
+      ]
+    },
+    {
+      "id": 143,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 983353840,
+      "end_ps": 983353840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        132,
+        137,
+        139,
+        140,
+        136
+      ]
+    },
+    {
+      "id": 144,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1007929840,
+      "end_ps": 1007929840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        132,
+        138,
+        141,
+        142,
+        134
+      ]
+    },
+    {
+      "id": 145,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1007929840,
+      "end_ps": 1007929840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        143,
+        144
+      ]
+    },
+    {
+      "id": 146,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1007929840,
+      "end_ps": 1007929840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        145,
+        145
+      ]
+    },
+    {
+      "id": 147,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1007929840,
+      "end_ps": 1007929840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        146,
+        131,
+        131
+      ]
+    },
+    {
+      "id": 148,
+      "kind": "card_interconnect",
+      "device": 1,
+      "start_ps": 1007929840,
+      "end_ps": 1007955200,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        147
+      ]
+    },
+    {
+      "id": 149,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1007929840,
+      "end_ps": 1007929840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        146,
+        129,
+        129
+      ]
+    },
+    {
+      "id": 150,
+      "kind": "card_interconnect",
+      "device": 0,
+      "start_ps": 1007929840,
+      "end_ps": 1007960320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        149
+      ]
+    },
+    {
+      "id": 151,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1007960320,
+      "end_ps": 1007960320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        146,
+        148,
+        150
+      ]
+    },
+    {
+      "id": 152,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 0,
+      "end_ps": 1007960320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        4
+      ]
+    },
+    {
+      "id": 153,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 454823040,
+      "end_ps": 1007960320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        66
+      ]
+    },
+    {
+      "id": 154,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 1007960320,
+      "end_ps": 1007960320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        151
+      ]
+    },
+    {
+      "id": 155,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 1007960320,
+      "end_ps": 1007960320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        151
+      ]
+    },
+    {
+      "id": 156,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1007960320,
+      "end_ps": 1007960320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        152,
+        153,
+        154,
+        155
+      ]
+    },
+    {
+      "id": 157,
+      "kind": "pipeline_queue",
+      "device": -1,
+      "start_ps": 1007960320,
+      "end_ps": 1007960320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        156
+      ]
+    },
+    {
+      "id": 158,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1007960320,
+      "end_ps": 1007960320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        157,
+        151
+      ]
+    },
+    {
+      "id": 159,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1007960320,
+      "end_ps": 1007960320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        158,
+        134
+      ]
+    },
+    {
+      "id": 160,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 1007960320,
+      "end_ps": 1031266320,
+      "gemm_flops": 9472,
+      "attention_flops": 2176,
+      "parents": [
+        159
+      ]
+    },
+    {
+      "id": 161,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1007960320,
+      "end_ps": 1007960320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        158,
+        136
+      ]
+    },
+    {
+      "id": 162,
+      "kind": "compute",
+      "device": 1,
+      "start_ps": 1007960320,
+      "end_ps": 1188578320,
+      "gemm_flops": 80512,
+      "attention_flops": 9792,
+      "parents": [
+        161
+      ]
+    },
+    {
+      "id": 163,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 1007960320,
+      "end_ps": 1008089695,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        158
+      ]
+    },
+    {
+      "id": 164,
+      "kind": "hbm_output",
+      "device": 0,
+      "start_ps": 1007960320,
+      "end_ps": 1008121258,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        158
+      ]
+    },
+    {
+      "id": 165,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 1007960320,
+      "end_ps": 1008192195,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        158
+      ]
+    },
+    {
+      "id": 166,
+      "kind": "hbm_kv",
+      "device": 0,
+      "start_ps": 1007960320,
+      "end_ps": 1008193758,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        158
+      ]
+    },
+    {
+      "id": 167,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 1007960320,
+      "end_ps": 1008213445,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        158
+      ]
+    },
+    {
+      "id": 168,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 1007960320,
+      "end_ps": 1008538758,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        158
+      ]
+    },
+    {
+      "id": 169,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 1007960320,
+      "end_ps": 1008639695,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        158
+      ]
+    },
+    {
+      "id": 170,
+      "kind": "hbm_kv",
+      "device": 1,
+      "start_ps": 1007960320,
+      "end_ps": 1008709695,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        158
+      ]
+    },
+    {
+      "id": 171,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1031266320,
+      "end_ps": 1031266320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        163,
+        164,
+        166,
+        168,
+        160
+      ]
+    },
+    {
+      "id": 172,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1188578320,
+      "end_ps": 1188578320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        165,
+        167,
+        169,
+        170,
+        162
+      ]
+    },
+    {
+      "id": 173,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1188578320,
+      "end_ps": 1188578320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        171,
+        172
+      ]
+    },
+    {
+      "id": 174,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1188578320,
+      "end_ps": 1188578320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        173,
+        173
+      ]
+    },
+    {
+      "id": 175,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1188578320,
+      "end_ps": 1188578320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        174,
+        150,
+        150
+      ]
+    },
+    {
+      "id": 176,
+      "kind": "card_interconnect",
+      "device": 0,
+      "start_ps": 1188578320,
+      "end_ps": 1188590880,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        175
+      ]
+    },
+    {
+      "id": 177,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1188578320,
+      "end_ps": 1188578320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        174,
+        148,
+        148
+      ]
+    },
+    {
+      "id": 178,
+      "kind": "card_interconnect",
+      "device": 1,
+      "start_ps": 1188578320,
+      "end_ps": 1188606240,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        177
+      ]
+    },
+    {
+      "id": 179,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1188606240,
+      "end_ps": 1188606240,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        174,
+        176,
+        178
+      ]
+    },
+    {
+      "id": 180,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1188606240,
+      "end_ps": 1188606240,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        179,
+        160
+      ]
+    },
+    {
+      "id": 181,
+      "kind": "grouped_gemm",
+      "device": 0,
+      "start_ps": 1188606240,
+      "end_ps": 1237768240,
+      "gemm_flops": 24576,
+      "attention_flops": 0,
+      "parents": [
+        180
+      ]
+    },
+    {
+      "id": 182,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1188606240,
+      "end_ps": 1188606240,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        179,
+        162
+      ]
+    },
+    {
+      "id": 183,
+      "kind": "grouped_gemm",
+      "device": 1,
+      "start_ps": 1188606240,
+      "end_ps": 1256200240,
+      "gemm_flops": 33792,
+      "attention_flops": 0,
+      "parents": [
+        182
+      ]
+    },
+    {
+      "id": 184,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 1188606240,
+      "end_ps": 1188833740,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        179
+      ]
+    },
+    {
+      "id": 185,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 1188606240,
+      "end_ps": 1188843740,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        179
+      ]
+    },
+    {
+      "id": 186,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 1188606240,
+      "end_ps": 1189311240,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        179
+      ]
+    },
+    {
+      "id": 187,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 1188606240,
+      "end_ps": 1189321240,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        179
+      ]
+    },
+    {
+      "id": 188,
+      "kind": "hbm_output",
+      "device": 0,
+      "start_ps": 1188606240,
+      "end_ps": 1189348115,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        179
+      ]
+    },
+    {
+      "id": 189,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 1188606240,
+      "end_ps": 1189368115,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        179
+      ]
+    },
+    {
+      "id": 190,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1237768240,
+      "end_ps": 1237768240,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        179,
+        184,
+        186,
+        188,
+        181
+      ]
+    },
+    {
+      "id": 191,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1256200240,
+      "end_ps": 1256200240,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        179,
+        185,
+        187,
+        189,
+        183
+      ]
+    },
+    {
+      "id": 192,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1256200240,
+      "end_ps": 1256200240,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        190,
+        191
+      ]
+    },
+    {
+      "id": 193,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1256200240,
+      "end_ps": 1256200240,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        192,
+        192
+      ]
+    },
+    {
+      "id": 194,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1256200240,
+      "end_ps": 1256200240,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        193,
+        178,
+        178
+      ]
+    },
+    {
+      "id": 195,
+      "kind": "card_interconnect",
+      "device": 1,
+      "start_ps": 1256200240,
+      "end_ps": 1256212800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        194
+      ]
+    },
+    {
+      "id": 196,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1256200240,
+      "end_ps": 1256200240,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        193,
+        176,
+        176
+      ]
+    },
+    {
+      "id": 197,
+      "kind": "card_interconnect",
+      "device": 0,
+      "start_ps": 1256200240,
+      "end_ps": 1256228160,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        196
+      ]
+    },
+    {
+      "id": 198,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1256228160,
+      "end_ps": 1256228160,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        193,
+        195,
+        197
+      ]
+    },
+    {
+      "id": 199,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1256228160,
+      "end_ps": 1256228160,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        198,
+        181
+      ]
+    },
+    {
+      "id": 200,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 1256228160,
+      "end_ps": 1279534160,
+      "gemm_flops": 9472,
+      "attention_flops": 2176,
+      "parents": [
+        199
+      ]
+    },
+    {
+      "id": 201,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1256228160,
+      "end_ps": 1256228160,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        198,
+        183
+      ]
+    },
+    {
+      "id": 202,
+      "kind": "compute",
+      "device": 1,
+      "start_ps": 1256228160,
+      "end_ps": 1436846160,
+      "gemm_flops": 80512,
+      "attention_flops": 9792,
+      "parents": [
+        201
+      ]
+    },
+    {
+      "id": 203,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 1256228160,
+      "end_ps": 1256357535,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        198
+      ]
+    },
+    {
+      "id": 204,
+      "kind": "hbm_output",
+      "device": 0,
+      "start_ps": 1256228160,
+      "end_ps": 1256389098,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        198
+      ]
+    },
+    {
+      "id": 205,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 1256228160,
+      "end_ps": 1256460035,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        198
+      ]
+    },
+    {
+      "id": 206,
+      "kind": "hbm_kv",
+      "device": 0,
+      "start_ps": 1256228160,
+      "end_ps": 1256461598,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        198
+      ]
+    },
+    {
+      "id": 207,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 1256228160,
+      "end_ps": 1256481285,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        198
+      ]
+    },
+    {
+      "id": 208,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 1256228160,
+      "end_ps": 1256806598,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        198
+      ]
+    },
+    {
+      "id": 209,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 1256228160,
+      "end_ps": 1256907535,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        198
+      ]
+    },
+    {
+      "id": 210,
+      "kind": "hbm_kv",
+      "device": 1,
+      "start_ps": 1256228160,
+      "end_ps": 1256977535,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        198
+      ]
+    },
+    {
+      "id": 211,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1279534160,
+      "end_ps": 1279534160,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        203,
+        204,
+        206,
+        208,
+        200
+      ]
+    },
+    {
+      "id": 212,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1436846160,
+      "end_ps": 1436846160,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        205,
+        207,
+        209,
+        210,
+        202
+      ]
+    },
+    {
+      "id": 213,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1436846160,
+      "end_ps": 1436846160,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        211,
+        212
+      ]
+    },
+    {
+      "id": 214,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1436846160,
+      "end_ps": 1436846160,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        213,
+        213
+      ]
+    },
+    {
+      "id": 215,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1436846160,
+      "end_ps": 1436846160,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        214,
+        195,
+        195
+      ]
+    },
+    {
+      "id": 216,
+      "kind": "card_interconnect",
+      "device": 1,
+      "start_ps": 1436846160,
+      "end_ps": 1436889440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        215
+      ]
+    },
+    {
+      "id": 217,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1436889440,
+      "end_ps": 1436889440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        214,
+        216
+      ]
+    },
+    {
+      "id": 218,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1436889440,
+      "end_ps": 1436889440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        217,
+        200
+      ]
+    },
+    {
+      "id": 219,
+      "kind": "grouped_gemm",
+      "device": 0,
+      "start_ps": 1436889440,
+      "end_ps": 1529059440,
+      "gemm_flops": 46080,
+      "attention_flops": 0,
+      "parents": [
+        218
+      ]
+    },
+    {
+      "id": 220,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1436889440,
+      "end_ps": 1436889440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        217,
+        202
+      ]
+    },
+    {
+      "id": 221,
+      "kind": "grouped_gemm",
+      "device": 1,
+      "start_ps": 1436889440,
+      "end_ps": 1461475440,
+      "gemm_flops": 12288,
+      "attention_flops": 0,
+      "parents": [
+        220
+      ]
+    },
+    {
+      "id": 222,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 1436889440,
+      "end_ps": 1437106940,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        217
+      ]
+    },
+    {
+      "id": 223,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 1436889440,
+      "end_ps": 1437190690,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        217
+      ]
+    },
+    {
+      "id": 224,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 1436889440,
+      "end_ps": 1437584440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        217
+      ]
+    },
+    {
+      "id": 225,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 1436889440,
+      "end_ps": 1437611315,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        217
+      ]
+    },
+    {
+      "id": 226,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 1436889440,
+      "end_ps": 1437668190,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        217
+      ]
+    },
+    {
+      "id": 227,
+      "kind": "hbm_output",
+      "device": 0,
+      "start_ps": 1436889440,
+      "end_ps": 1437670065,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        217
+      ]
+    },
+    {
+      "id": 228,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1461475440,
+      "end_ps": 1461475440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        217,
+        222,
+        224,
+        225,
+        221
+      ]
+    },
+    {
+      "id": 229,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1529059440,
+      "end_ps": 1529059440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        217,
+        223,
+        226,
+        227,
+        219
+      ]
+    },
+    {
+      "id": 230,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1529059440,
+      "end_ps": 1529059440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        228,
+        229
+      ]
+    },
+    {
+      "id": 231,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1529059440,
+      "end_ps": 1529059440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        230,
+        230
+      ]
+    },
+    {
+      "id": 232,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1529059440,
+      "end_ps": 1529059440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        231,
+        197,
+        197
+      ]
+    },
+    {
+      "id": 233,
+      "kind": "card_interconnect",
+      "device": 0,
+      "start_ps": 1529059440,
+      "end_ps": 1529102720,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        232
+      ]
+    },
+    {
+      "id": 234,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1529102720,
+      "end_ps": 1529102720,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        231,
+        233
+      ]
+    },
+    {
+      "id": 235,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 1529102720,
+      "end_ps": 1529102720,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        234
+      ]
+    },
+    {
+      "id": 236,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 1529102720,
+      "end_ps": 1529102720,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        234
+      ]
+    },
+    {
+      "id": 237,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 1529102720,
+      "end_ps": 1529102720,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        234
+      ]
+    },
+    {
+      "id": 238,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 1529102720,
+      "end_ps": 1529102720,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        234
+      ]
+    },
+    {
+      "id": 239,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1529102720,
+      "end_ps": 1529102720,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        235,
+        236,
+        237,
+        238
+      ]
+    },
+    {
+      "id": 240,
+      "kind": "pipeline_queue",
+      "device": -1,
+      "start_ps": 1529102720,
+      "end_ps": 1529102720,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        239
+      ]
+    },
+    {
+      "id": 241,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1529102720,
+      "end_ps": 1529102720,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        240,
+        234
+      ]
+    },
+    {
+      "id": 242,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1529102720,
+      "end_ps": 1529102720,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        241,
+        219
+      ]
+    },
+    {
+      "id": 243,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 1529102720,
+      "end_ps": 1552664720,
+      "gemm_flops": 9472,
+      "attention_flops": 2304,
+      "parents": [
+        242
+      ]
+    },
+    {
+      "id": 244,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1529102720,
+      "end_ps": 1529102720,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        241,
+        221
+      ]
+    },
+    {
+      "id": 245,
+      "kind": "compute",
+      "device": 1,
+      "start_ps": 1529102720,
+      "end_ps": 1552536720,
+      "gemm_flops": 9472,
+      "attention_flops": 2240,
+      "parents": [
+        244
+      ]
+    },
+    {
+      "id": 246,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 1529102720,
+      "end_ps": 1529232095,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        241
+      ]
+    },
+    {
+      "id": 247,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 1529102720,
+      "end_ps": 1529232095,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        241
+      ]
+    },
+    {
+      "id": 248,
+      "kind": "hbm_output",
+      "device": 0,
+      "start_ps": 1529102720,
+      "end_ps": 1529263658,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        241
+      ]
+    },
+    {
+      "id": 249,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 1529102720,
+      "end_ps": 1529263658,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        241
+      ]
+    },
+    {
+      "id": 250,
+      "kind": "hbm_kv",
+      "device": 0,
+      "start_ps": 1529102720,
+      "end_ps": 1529341158,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        241
+      ]
+    },
+    {
+      "id": 251,
+      "kind": "hbm_kv",
+      "device": 1,
+      "start_ps": 1529102720,
+      "end_ps": 1529341158,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        241
+      ]
+    },
+    {
+      "id": 252,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 1529102720,
+      "end_ps": 1529681158,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        241
+      ]
+    },
+    {
+      "id": 253,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 1529102720,
+      "end_ps": 1529681158,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        241
+      ]
+    },
+    {
+      "id": 254,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1552536720,
+      "end_ps": 1552536720,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        247,
+        249,
+        251,
+        253,
+        245
+      ]
+    },
+    {
+      "id": 255,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1552664720,
+      "end_ps": 1552664720,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        246,
+        248,
+        250,
+        252,
+        243
+      ]
+    },
+    {
+      "id": 256,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1552664720,
+      "end_ps": 1552664720,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        254,
+        255
+      ]
+    },
+    {
+      "id": 257,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1552664720,
+      "end_ps": 1552664720,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        256,
+        256
+      ]
+    },
+    {
+      "id": 258,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1552664720,
+      "end_ps": 1552664720,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        257,
+        233,
+        233
+      ]
+    },
+    {
+      "id": 259,
+      "kind": "card_interconnect",
+      "device": 0,
+      "start_ps": 1552664720,
+      "end_ps": 1552679840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        258
+      ]
+    },
+    {
+      "id": 260,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1552664720,
+      "end_ps": 1552664720,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        257,
+        216,
+        216
+      ]
+    },
+    {
+      "id": 261,
+      "kind": "card_interconnect",
+      "device": 1,
+      "start_ps": 1552664720,
+      "end_ps": 1552677280,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        260
+      ]
+    },
+    {
+      "id": 262,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1552679840,
+      "end_ps": 1552679840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        257,
+        259,
+        261
+      ]
+    },
+    {
+      "id": 263,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1552679840,
+      "end_ps": 1552679840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        262,
+        243
+      ]
+    },
+    {
+      "id": 264,
+      "kind": "grouped_gemm",
+      "device": 0,
+      "start_ps": 1552679840,
+      "end_ps": 1558833840,
+      "gemm_flops": 3072,
+      "attention_flops": 0,
+      "parents": [
+        263
+      ]
+    },
+    {
+      "id": 265,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1552679840,
+      "end_ps": 1552679840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        262,
+        245
+      ]
+    },
+    {
+      "id": 266,
+      "kind": "grouped_gemm",
+      "device": 1,
+      "start_ps": 1552679840,
+      "end_ps": 1571121840,
+      "gemm_flops": 9216,
+      "attention_flops": 0,
+      "parents": [
+        265
+      ]
+    },
+    {
+      "id": 267,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 1552679840,
+      "end_ps": 1552809215,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        262
+      ]
+    },
+    {
+      "id": 268,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 1552679840,
+      "end_ps": 1552897340,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        262
+      ]
+    },
+    {
+      "id": 269,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 1552679840,
+      "end_ps": 1553049215,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        262
+      ]
+    },
+    {
+      "id": 270,
+      "kind": "hbm_output",
+      "device": 0,
+      "start_ps": 1552679840,
+      "end_ps": 1553071090,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        262
+      ]
+    },
+    {
+      "id": 271,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 1552679840,
+      "end_ps": 1553374840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        262
+      ]
+    },
+    {
+      "id": 272,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 1552679840,
+      "end_ps": 1553401715,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        262
+      ]
+    },
+    {
+      "id": 273,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1558833840,
+      "end_ps": 1558833840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        262,
+        267,
+        269,
+        270,
+        264
+      ]
+    },
+    {
+      "id": 274,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1571121840,
+      "end_ps": 1571121840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        262,
+        268,
+        271,
+        272,
+        266
+      ]
+    },
+    {
+      "id": 275,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1571121840,
+      "end_ps": 1571121840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        273,
+        274
+      ]
+    },
+    {
+      "id": 276,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1571121840,
+      "end_ps": 1571121840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        275,
+        275
+      ]
+    },
+    {
+      "id": 277,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1571121840,
+      "end_ps": 1571121840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        276,
+        261,
+        261
+      ]
+    },
+    {
+      "id": 278,
+      "kind": "card_interconnect",
+      "device": 1,
+      "start_ps": 1571121840,
+      "end_ps": 1571136960,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        277
+      ]
+    },
+    {
+      "id": 279,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1571121840,
+      "end_ps": 1571121840,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        276,
+        259,
+        259
+      ]
+    },
+    {
+      "id": 280,
+      "kind": "card_interconnect",
+      "device": 0,
+      "start_ps": 1571121840,
+      "end_ps": 1571134400,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        279
+      ]
+    },
+    {
+      "id": 281,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1571136960,
+      "end_ps": 1571136960,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        276,
+        278,
+        280
+      ]
+    },
+    {
+      "id": 282,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1571136960,
+      "end_ps": 1571136960,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        281,
+        264
+      ]
+    },
+    {
+      "id": 283,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 1571136960,
+      "end_ps": 1594698960,
+      "gemm_flops": 9472,
+      "attention_flops": 2304,
+      "parents": [
+        282
+      ]
+    },
+    {
+      "id": 284,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1571136960,
+      "end_ps": 1571136960,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        281,
+        266
+      ]
+    },
+    {
+      "id": 285,
+      "kind": "compute",
+      "device": 1,
+      "start_ps": 1571136960,
+      "end_ps": 1594570960,
+      "gemm_flops": 9472,
+      "attention_flops": 2240,
+      "parents": [
+        284
+      ]
+    },
+    {
+      "id": 286,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 1571136960,
+      "end_ps": 1571266335,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        281
+      ]
+    },
+    {
+      "id": 287,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 1571136960,
+      "end_ps": 1571266335,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        281
+      ]
+    },
+    {
+      "id": 288,
+      "kind": "hbm_output",
+      "device": 0,
+      "start_ps": 1571136960,
+      "end_ps": 1571297898,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        281
+      ]
+    },
+    {
+      "id": 289,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 1571136960,
+      "end_ps": 1571297898,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        281
+      ]
+    },
+    {
+      "id": 290,
+      "kind": "hbm_kv",
+      "device": 0,
+      "start_ps": 1571136960,
+      "end_ps": 1571375398,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        281
+      ]
+    },
+    {
+      "id": 291,
+      "kind": "hbm_kv",
+      "device": 1,
+      "start_ps": 1571136960,
+      "end_ps": 1571375398,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        281
+      ]
+    },
+    {
+      "id": 292,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 1571136960,
+      "end_ps": 1571715398,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        281
+      ]
+    },
+    {
+      "id": 293,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 1571136960,
+      "end_ps": 1571715398,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        281
+      ]
+    },
+    {
+      "id": 294,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1594570960,
+      "end_ps": 1594570960,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        287,
+        289,
+        291,
+        293,
+        285
+      ]
+    },
+    {
+      "id": 295,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1594698960,
+      "end_ps": 1594698960,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        286,
+        288,
+        290,
+        292,
+        283
+      ]
+    },
+    {
+      "id": 296,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1594698960,
+      "end_ps": 1594698960,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        294,
+        295
+      ]
+    },
+    {
+      "id": 297,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1594698960,
+      "end_ps": 1594698960,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        296,
+        296
+      ]
+    },
+    {
+      "id": 298,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1594698960,
+      "end_ps": 1594698960,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        297,
+        280,
+        280
+      ]
+    },
+    {
+      "id": 299,
+      "kind": "card_interconnect",
+      "device": 0,
+      "start_ps": 1594698960,
+      "end_ps": 1594711520,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        298
+      ]
+    },
+    {
+      "id": 300,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1594711520,
+      "end_ps": 1594711520,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        297,
+        299
+      ]
+    },
+    {
+      "id": 301,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1594711520,
+      "end_ps": 1594711520,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        300,
+        283
+      ]
+    },
+    {
+      "id": 302,
+      "kind": "grouped_gemm",
+      "device": 0,
+      "start_ps": 1594711520,
+      "end_ps": 1600865520,
+      "gemm_flops": 3072,
+      "attention_flops": 0,
+      "parents": [
+        301
+      ]
+    },
+    {
+      "id": 303,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1594711520,
+      "end_ps": 1594711520,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        300,
+        285
+      ]
+    },
+    {
+      "id": 304,
+      "kind": "grouped_gemm",
+      "device": 1,
+      "start_ps": 1594711520,
+      "end_ps": 1613153520,
+      "gemm_flops": 9216,
+      "attention_flops": 0,
+      "parents": [
+        303
+      ]
+    },
+    {
+      "id": 305,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 1594711520,
+      "end_ps": 1594840895,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        300
+      ]
+    },
+    {
+      "id": 306,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 1594711520,
+      "end_ps": 1594929020,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        300
+      ]
+    },
+    {
+      "id": 307,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 1594711520,
+      "end_ps": 1595080895,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        300
+      ]
+    },
+    {
+      "id": 308,
+      "kind": "hbm_output",
+      "device": 0,
+      "start_ps": 1594711520,
+      "end_ps": 1595102770,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        300
+      ]
+    },
+    {
+      "id": 309,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 1594711520,
+      "end_ps": 1595406520,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        300
+      ]
+    },
+    {
+      "id": 310,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 1594711520,
+      "end_ps": 1595433395,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        300
+      ]
+    },
+    {
+      "id": 311,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1600865520,
+      "end_ps": 1600865520,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        300,
+        305,
+        307,
+        308,
+        302
+      ]
+    },
+    {
+      "id": 312,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1613153520,
+      "end_ps": 1613153520,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        300,
+        306,
+        309,
+        310,
+        304
+      ]
+    },
+    {
+      "id": 313,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1613153520,
+      "end_ps": 1613153520,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        311,
+        312
+      ]
+    },
+    {
+      "id": 314,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1613153520,
+      "end_ps": 1613153520,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        313,
+        313
+      ]
+    },
+    {
+      "id": 315,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1613153520,
+      "end_ps": 1613153520,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        314,
+        278,
+        278
+      ]
+    },
+    {
+      "id": 316,
+      "kind": "card_interconnect",
+      "device": 1,
+      "start_ps": 1613153520,
+      "end_ps": 1613166080,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        315
+      ]
+    },
+    {
+      "id": 317,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1613166080,
+      "end_ps": 1613166080,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        314,
+        316
+      ]
+    },
+    {
+      "id": 318,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 1613166080,
+      "end_ps": 1613166080,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        317
+      ]
+    },
+    {
+      "id": 319,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 1613166080,
+      "end_ps": 1613166080,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        317
+      ]
+    },
+    {
+      "id": 320,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 1613166080,
+      "end_ps": 1613166080,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        317
+      ]
+    },
+    {
+      "id": 321,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 1613166080,
+      "end_ps": 1613166080,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        317
+      ]
+    },
+    {
+      "id": 322,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1613166080,
+      "end_ps": 1613166080,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        318,
+        319,
+        320,
+        321
+      ]
+    },
+    {
+      "id": 323,
+      "kind": "pipeline_queue",
+      "device": -1,
+      "start_ps": 1613166080,
+      "end_ps": 1613166080,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        322
+      ]
+    },
+    {
+      "id": 324,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1613166080,
+      "end_ps": 1613166080,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        323,
+        317
+      ]
+    },
+    {
+      "id": 325,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1613166080,
+      "end_ps": 1613166080,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        324,
+        302
+      ]
+    },
+    {
+      "id": 326,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 1613166080,
+      "end_ps": 1636984080,
+      "gemm_flops": 9472,
+      "attention_flops": 2432,
+      "parents": [
+        325
+      ]
+    },
+    {
+      "id": 327,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1613166080,
+      "end_ps": 1613166080,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        324,
+        304
+      ]
+    },
+    {
+      "id": 328,
+      "kind": "compute",
+      "device": 1,
+      "start_ps": 1613166080,
+      "end_ps": 1636856080,
+      "gemm_flops": 9472,
+      "attention_flops": 2368,
+      "parents": [
+        327
+      ]
+    },
+    {
+      "id": 329,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 1613166080,
+      "end_ps": 1613295455,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        324
+      ]
+    },
+    {
+      "id": 330,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 1613166080,
+      "end_ps": 1613295455,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        324
+      ]
+    },
+    {
+      "id": 331,
+      "kind": "hbm_output",
+      "device": 0,
+      "start_ps": 1613166080,
+      "end_ps": 1613327018,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        324
+      ]
+    },
+    {
+      "id": 332,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 1613166080,
+      "end_ps": 1613327018,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        324
+      ]
+    },
+    {
+      "id": 333,
+      "kind": "hbm_kv",
+      "device": 0,
+      "start_ps": 1613166080,
+      "end_ps": 1613409518,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        324
+      ]
+    },
+    {
+      "id": 334,
+      "kind": "hbm_kv",
+      "device": 1,
+      "start_ps": 1613166080,
+      "end_ps": 1613409518,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        324
+      ]
+    },
+    {
+      "id": 335,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 1613166080,
+      "end_ps": 1613744518,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        324
+      ]
+    },
+    {
+      "id": 336,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 1613166080,
+      "end_ps": 1613744518,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        324
+      ]
+    },
+    {
+      "id": 337,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1636856080,
+      "end_ps": 1636856080,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        330,
+        332,
+        334,
+        336,
+        328
+      ]
+    },
+    {
+      "id": 338,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1636984080,
+      "end_ps": 1636984080,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        329,
+        331,
+        333,
+        335,
+        326
+      ]
+    },
+    {
+      "id": 339,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1636984080,
+      "end_ps": 1636984080,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        337,
+        338
+      ]
+    },
+    {
+      "id": 340,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1636984080,
+      "end_ps": 1636984080,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        339,
+        339
+      ]
+    },
+    {
+      "id": 341,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1636984080,
+      "end_ps": 1636984080,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        340,
+        316,
+        316
+      ]
+    },
+    {
+      "id": 342,
+      "kind": "card_interconnect",
+      "device": 1,
+      "start_ps": 1636984080,
+      "end_ps": 1636996640,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        341
+      ]
+    },
+    {
+      "id": 343,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1636996640,
+      "end_ps": 1636996640,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        340,
+        342
+      ]
+    },
+    {
+      "id": 344,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1636996640,
+      "end_ps": 1636996640,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        343,
+        326
+      ]
+    },
+    {
+      "id": 345,
+      "kind": "grouped_gemm",
+      "device": 0,
+      "start_ps": 1636996640,
+      "end_ps": 1655438640,
+      "gemm_flops": 9216,
+      "attention_flops": 0,
+      "parents": [
+        344
+      ]
+    },
+    {
+      "id": 346,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1636996640,
+      "end_ps": 1636996640,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        343,
+        328
+      ]
+    },
+    {
+      "id": 347,
+      "kind": "grouped_gemm",
+      "device": 1,
+      "start_ps": 1636996640,
+      "end_ps": 1643150640,
+      "gemm_flops": 3072,
+      "attention_flops": 0,
+      "parents": [
+        346
+      ]
+    },
+    {
+      "id": 348,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 1636996640,
+      "end_ps": 1637126015,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        343
+      ]
+    },
+    {
+      "id": 349,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 1636996640,
+      "end_ps": 1637131015,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        343
+      ]
+    },
+    {
+      "id": 350,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 1636996640,
+      "end_ps": 1637366015,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        343
+      ]
+    },
+    {
+      "id": 351,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 1636996640,
+      "end_ps": 1637371015,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        343
+      ]
+    },
+    {
+      "id": 352,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 1636996640,
+      "end_ps": 1637387890,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        343
+      ]
+    },
+    {
+      "id": 353,
+      "kind": "hbm_output",
+      "device": 0,
+      "start_ps": 1636996640,
+      "end_ps": 1637397890,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        343
+      ]
+    },
+    {
+      "id": 354,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1643150640,
+      "end_ps": 1643150640,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        343,
+        348,
+        350,
+        352,
+        347
+      ]
+    },
+    {
+      "id": 355,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1655438640,
+      "end_ps": 1655438640,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        343,
+        349,
+        351,
+        353,
+        345
+      ]
+    },
+    {
+      "id": 356,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1655438640,
+      "end_ps": 1655438640,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        354,
+        355
+      ]
+    },
+    {
+      "id": 357,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1655438640,
+      "end_ps": 1655438640,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        356,
+        356
+      ]
+    },
+    {
+      "id": 358,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1655438640,
+      "end_ps": 1655438640,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        357,
+        299,
+        299
+      ]
+    },
+    {
+      "id": 359,
+      "kind": "card_interconnect",
+      "device": 0,
+      "start_ps": 1655438640,
+      "end_ps": 1655451200,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        358
+      ]
+    },
+    {
+      "id": 360,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1655451200,
+      "end_ps": 1655451200,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        357,
+        359
+      ]
+    },
+    {
+      "id": 361,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1655451200,
+      "end_ps": 1655451200,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        360,
+        345
+      ]
+    },
+    {
+      "id": 362,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 1655451200,
+      "end_ps": 1679269200,
+      "gemm_flops": 9472,
+      "attention_flops": 2432,
+      "parents": [
+        361
+      ]
+    },
+    {
+      "id": 363,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1655451200,
+      "end_ps": 1655451200,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        360,
+        347
+      ]
+    },
+    {
+      "id": 364,
+      "kind": "compute",
+      "device": 1,
+      "start_ps": 1655451200,
+      "end_ps": 1679141200,
+      "gemm_flops": 9472,
+      "attention_flops": 2368,
+      "parents": [
+        363
+      ]
+    },
+    {
+      "id": 365,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 1655451200,
+      "end_ps": 1655580575,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        360
+      ]
+    },
+    {
+      "id": 366,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 1655451200,
+      "end_ps": 1655580575,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        360
+      ]
+    },
+    {
+      "id": 367,
+      "kind": "hbm_output",
+      "device": 0,
+      "start_ps": 1655451200,
+      "end_ps": 1655612138,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        360
+      ]
+    },
+    {
+      "id": 368,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 1655451200,
+      "end_ps": 1655612138,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        360
+      ]
+    },
+    {
+      "id": 369,
+      "kind": "hbm_kv",
+      "device": 0,
+      "start_ps": 1655451200,
+      "end_ps": 1655694638,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        360
+      ]
+    },
+    {
+      "id": 370,
+      "kind": "hbm_kv",
+      "device": 1,
+      "start_ps": 1655451200,
+      "end_ps": 1655694638,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        360
+      ]
+    },
+    {
+      "id": 371,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 1655451200,
+      "end_ps": 1656029638,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        360
+      ]
+    },
+    {
+      "id": 372,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 1655451200,
+      "end_ps": 1656029638,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        360
+      ]
+    },
+    {
+      "id": 373,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1679141200,
+      "end_ps": 1679141200,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        366,
+        368,
+        370,
+        372,
+        364
+      ]
+    },
+    {
+      "id": 374,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1679269200,
+      "end_ps": 1679269200,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        365,
+        367,
+        369,
+        371,
+        362
+      ]
+    },
+    {
+      "id": 375,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1679269200,
+      "end_ps": 1679269200,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        373,
+        374
+      ]
+    },
+    {
+      "id": 376,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1679269200,
+      "end_ps": 1679269200,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        375,
+        375
+      ]
+    },
+    {
+      "id": 377,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1679269200,
+      "end_ps": 1679269200,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        376,
+        359,
+        359
+      ]
+    },
+    {
+      "id": 378,
+      "kind": "card_interconnect",
+      "device": 0,
+      "start_ps": 1679269200,
+      "end_ps": 1679281760,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        377
+      ]
+    },
+    {
+      "id": 379,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1679269200,
+      "end_ps": 1679269200,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        376,
+        342,
+        342
+      ]
+    },
+    {
+      "id": 380,
+      "kind": "card_interconnect",
+      "device": 1,
+      "start_ps": 1679269200,
+      "end_ps": 1679281760,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        379
+      ]
+    },
+    {
+      "id": 381,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1679281760,
+      "end_ps": 1679281760,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        376,
+        378,
+        380
+      ]
+    },
+    {
+      "id": 382,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1679281760,
+      "end_ps": 1679281760,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        381,
+        362
+      ]
+    },
+    {
+      "id": 383,
+      "kind": "grouped_gemm",
+      "device": 0,
+      "start_ps": 1679281760,
+      "end_ps": 1691579760,
+      "gemm_flops": 6144,
+      "attention_flops": 0,
+      "parents": [
+        382
+      ]
+    },
+    {
+      "id": 384,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1679281760,
+      "end_ps": 1679281760,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        381,
+        364
+      ]
+    },
+    {
+      "id": 385,
+      "kind": "grouped_gemm",
+      "device": 1,
+      "start_ps": 1679281760,
+      "end_ps": 1691579760,
+      "gemm_flops": 6144,
+      "attention_flops": 0,
+      "parents": [
+        384
+      ]
+    },
+    {
+      "id": 386,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 1679281760,
+      "end_ps": 1679411135,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        381
+      ]
+    },
+    {
+      "id": 387,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 1679281760,
+      "end_ps": 1679494260,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        381
+      ]
+    },
+    {
+      "id": 388,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 1679281760,
+      "end_ps": 1679651135,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        381
+      ]
+    },
+    {
+      "id": 389,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 1679281760,
+      "end_ps": 1679673010,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        381
+      ]
+    },
+    {
+      "id": 390,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 1679281760,
+      "end_ps": 1679971760,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        381
+      ]
+    },
+    {
+      "id": 391,
+      "kind": "hbm_output",
+      "device": 0,
+      "start_ps": 1679281760,
+      "end_ps": 1679993635,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        381
+      ]
+    },
+    {
+      "id": 392,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1691579760,
+      "end_ps": 1691579760,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        381,
+        387,
+        390,
+        391,
+        383
+      ]
+    },
+    {
+      "id": 393,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1691579760,
+      "end_ps": 1691579760,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        381,
+        386,
+        388,
+        389,
+        385
+      ]
+    },
+    {
+      "id": 394,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1691579760,
+      "end_ps": 1691579760,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        392,
+        393
+      ]
+    },
+    {
+      "id": 395,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1691579760,
+      "end_ps": 1691579760,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        394,
+        394
+      ]
+    },
+    {
+      "id": 396,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1691579760,
+      "end_ps": 1691579760,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        395,
+        380,
+        380
+      ]
+    },
+    {
+      "id": 397,
+      "kind": "card_interconnect",
+      "device": 1,
+      "start_ps": 1691579760,
+      "end_ps": 1691592320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        396
+      ]
+    },
+    {
+      "id": 398,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1691579760,
+      "end_ps": 1691579760,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        395,
+        378,
+        378
+      ]
+    },
+    {
+      "id": 399,
+      "kind": "card_interconnect",
+      "device": 0,
+      "start_ps": 1691579760,
+      "end_ps": 1691592320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        398
+      ]
+    },
+    {
+      "id": 400,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1691592320,
+      "end_ps": 1691592320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        395,
+        397,
+        399
+      ]
+    },
+    {
+      "id": 401,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 1691592320,
+      "end_ps": 1691592320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        400
+      ]
+    },
+    {
+      "id": 402,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 1691592320,
+      "end_ps": 1691592320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        400
+      ]
+    },
+    {
+      "id": 403,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 1691592320,
+      "end_ps": 1691592320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        400
+      ]
+    },
+    {
+      "id": 404,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 1691592320,
+      "end_ps": 1691592320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        400
+      ]
+    },
+    {
+      "id": 405,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1691592320,
+      "end_ps": 1691592320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        401,
+        402,
+        403,
+        404
+      ]
+    },
+    {
+      "id": 406,
+      "kind": "pipeline_queue",
+      "device": -1,
+      "start_ps": 1691592320,
+      "end_ps": 1691592320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        405
+      ]
+    },
+    {
+      "id": 407,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1691592320,
+      "end_ps": 1691592320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        406,
+        400
+      ]
+    },
+    {
+      "id": 408,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1691592320,
+      "end_ps": 1691592320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        407,
+        383
+      ]
+    },
+    {
+      "id": 409,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 1691592320,
+      "end_ps": 1715666320,
+      "gemm_flops": 9472,
+      "attention_flops": 2560,
+      "parents": [
+        408
+      ]
+    },
+    {
+      "id": 410,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1691592320,
+      "end_ps": 1691592320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        407,
+        385
+      ]
+    },
+    {
+      "id": 411,
+      "kind": "compute",
+      "device": 1,
+      "start_ps": 1691592320,
+      "end_ps": 1715538320,
+      "gemm_flops": 9472,
+      "attention_flops": 2496,
+      "parents": [
+        410
+      ]
+    },
+    {
+      "id": 412,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 1691592320,
+      "end_ps": 1691721695,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        407
+      ]
+    },
+    {
+      "id": 413,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 1691592320,
+      "end_ps": 1691721695,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        407
+      ]
+    },
+    {
+      "id": 414,
+      "kind": "hbm_output",
+      "device": 0,
+      "start_ps": 1691592320,
+      "end_ps": 1691753258,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        407
+      ]
+    },
+    {
+      "id": 415,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 1691592320,
+      "end_ps": 1691753258,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        407
+      ]
+    },
+    {
+      "id": 416,
+      "kind": "hbm_kv",
+      "device": 0,
+      "start_ps": 1691592320,
+      "end_ps": 1691840758,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        407
+      ]
+    },
+    {
+      "id": 417,
+      "kind": "hbm_kv",
+      "device": 1,
+      "start_ps": 1691592320,
+      "end_ps": 1691840758,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        407
+      ]
+    },
+    {
+      "id": 418,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 1691592320,
+      "end_ps": 1692170758,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        407
+      ]
+    },
+    {
+      "id": 419,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 1691592320,
+      "end_ps": 1692170758,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        407
+      ]
+    },
+    {
+      "id": 420,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1715538320,
+      "end_ps": 1715538320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        413,
+        415,
+        417,
+        419,
+        411
+      ]
+    },
+    {
+      "id": 421,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1715666320,
+      "end_ps": 1715666320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        412,
+        414,
+        416,
+        418,
+        409
+      ]
+    },
+    {
+      "id": 422,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1715666320,
+      "end_ps": 1715666320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        420,
+        421
+      ]
+    },
+    {
+      "id": 423,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1715666320,
+      "end_ps": 1715666320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        422,
+        422
+      ]
+    },
+    {
+      "id": 424,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1715666320,
+      "end_ps": 1715666320,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        423,
+        397,
+        397
+      ]
+    },
+    {
+      "id": 425,
+      "kind": "card_interconnect",
+      "device": 1,
+      "start_ps": 1715666320,
+      "end_ps": 1715681440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        424
+      ]
+    },
+    {
+      "id": 426,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1715681440,
+      "end_ps": 1715681440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        423,
+        425
+      ]
+    },
+    {
+      "id": 427,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1715681440,
+      "end_ps": 1715681440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        426,
+        409
+      ]
+    },
+    {
+      "id": 428,
+      "kind": "grouped_gemm",
+      "device": 0,
+      "start_ps": 1715681440,
+      "end_ps": 1740267440,
+      "gemm_flops": 12288,
+      "attention_flops": 0,
+      "parents": [
+        427
+      ]
+    },
+    {
+      "id": 429,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 1715681440,
+      "end_ps": 1715898940,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        426
+      ]
+    },
+    {
+      "id": 430,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 1715681440,
+      "end_ps": 1716376440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        426
+      ]
+    },
+    {
+      "id": 431,
+      "kind": "hbm_output",
+      "device": 0,
+      "start_ps": 1715681440,
+      "end_ps": 1716403315,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        426
+      ]
+    },
+    {
+      "id": 432,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1740267440,
+      "end_ps": 1740267440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        426,
+        429,
+        430,
+        431,
+        428
+      ]
+    },
+    {
+      "id": 433,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1740267440,
+      "end_ps": 1740267440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        426,
+        432
+      ]
+    },
+    {
+      "id": 434,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1740267440,
+      "end_ps": 1740267440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        433,
+        433
+      ]
+    },
+    {
+      "id": 435,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1740267440,
+      "end_ps": 1740267440,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        434,
+        399,
+        399
+      ]
+    },
+    {
+      "id": 436,
+      "kind": "card_interconnect",
+      "device": 0,
+      "start_ps": 1740267440,
+      "end_ps": 1740282560,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        435
+      ]
+    },
+    {
+      "id": 437,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1740282560,
+      "end_ps": 1740282560,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        434,
+        436
+      ]
+    },
+    {
+      "id": 438,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1740282560,
+      "end_ps": 1740282560,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        437,
+        428
+      ]
+    },
+    {
+      "id": 439,
+      "kind": "compute",
+      "device": 0,
+      "start_ps": 1740282560,
+      "end_ps": 1764356560,
+      "gemm_flops": 9472,
+      "attention_flops": 2560,
+      "parents": [
+        438
+      ]
+    },
+    {
+      "id": 440,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1740282560,
+      "end_ps": 1740282560,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        437,
+        411
+      ]
+    },
+    {
+      "id": 441,
+      "kind": "compute",
+      "device": 1,
+      "start_ps": 1740282560,
+      "end_ps": 1764228560,
+      "gemm_flops": 9472,
+      "attention_flops": 2496,
+      "parents": [
+        440
+      ]
+    },
+    {
+      "id": 442,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 1740282560,
+      "end_ps": 1740411935,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        437
+      ]
+    },
+    {
+      "id": 443,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 1740282560,
+      "end_ps": 1740411935,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        437
+      ]
+    },
+    {
+      "id": 444,
+      "kind": "hbm_output",
+      "device": 0,
+      "start_ps": 1740282560,
+      "end_ps": 1740443498,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        437
+      ]
+    },
+    {
+      "id": 445,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 1740282560,
+      "end_ps": 1740443498,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        437
+      ]
+    },
+    {
+      "id": 446,
+      "kind": "hbm_kv",
+      "device": 0,
+      "start_ps": 1740282560,
+      "end_ps": 1740530998,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        437
+      ]
+    },
+    {
+      "id": 447,
+      "kind": "hbm_kv",
+      "device": 1,
+      "start_ps": 1740282560,
+      "end_ps": 1740530998,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        437
+      ]
+    },
+    {
+      "id": 448,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 1740282560,
+      "end_ps": 1740860998,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        437
+      ]
+    },
+    {
+      "id": 449,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 1740282560,
+      "end_ps": 1740860998,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        437
+      ]
+    },
+    {
+      "id": 450,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1764228560,
+      "end_ps": 1764228560,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        443,
+        445,
+        447,
+        449,
+        441
+      ]
+    },
+    {
+      "id": 451,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1764356560,
+      "end_ps": 1764356560,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        442,
+        444,
+        446,
+        448,
+        439
+      ]
+    },
+    {
+      "id": 452,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1764356560,
+      "end_ps": 1764356560,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        450,
+        451
+      ]
+    },
+    {
+      "id": 453,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1764356560,
+      "end_ps": 1764356560,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        452,
+        452
+      ]
+    },
+    {
+      "id": 454,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1764356560,
+      "end_ps": 1764356560,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        453,
+        436,
+        436
+      ]
+    },
+    {
+      "id": 455,
+      "kind": "card_interconnect",
+      "device": 0,
+      "start_ps": 1764356560,
+      "end_ps": 1764371680,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        454
+      ]
+    },
+    {
+      "id": 456,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1764356560,
+      "end_ps": 1764356560,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        453,
+        425,
+        425
+      ]
+    },
+    {
+      "id": 457,
+      "kind": "card_interconnect",
+      "device": 1,
+      "start_ps": 1764356560,
+      "end_ps": 1764369120,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        456
+      ]
+    },
+    {
+      "id": 458,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1764371680,
+      "end_ps": 1764371680,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        453,
+        455,
+        457
+      ]
+    },
+    {
+      "id": 459,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1764371680,
+      "end_ps": 1764371680,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        458,
+        439
+      ]
+    },
+    {
+      "id": 460,
+      "kind": "grouped_gemm",
+      "device": 0,
+      "start_ps": 1764371680,
+      "end_ps": 1770525680,
+      "gemm_flops": 3072,
+      "attention_flops": 0,
+      "parents": [
+        459
+      ]
+    },
+    {
+      "id": 461,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1764371680,
+      "end_ps": 1764371680,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        458,
+        441
+      ]
+    },
+    {
+      "id": 462,
+      "kind": "grouped_gemm",
+      "device": 1,
+      "start_ps": 1764371680,
+      "end_ps": 1782813680,
+      "gemm_flops": 9216,
+      "attention_flops": 0,
+      "parents": [
+        461
+      ]
+    },
+    {
+      "id": 463,
+      "kind": "hbm_activation",
+      "device": 0,
+      "start_ps": 1764371680,
+      "end_ps": 1764501055,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        458
+      ]
+    },
+    {
+      "id": 464,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 1764371680,
+      "end_ps": 1764589180,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        458
+      ]
+    },
+    {
+      "id": 465,
+      "kind": "hbm_weights",
+      "device": 0,
+      "start_ps": 1764371680,
+      "end_ps": 1764741055,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        458
+      ]
+    },
+    {
+      "id": 466,
+      "kind": "hbm_output",
+      "device": 0,
+      "start_ps": 1764371680,
+      "end_ps": 1764762930,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        458
+      ]
+    },
+    {
+      "id": 467,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 1764371680,
+      "end_ps": 1765066680,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        458
+      ]
+    },
+    {
+      "id": 468,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 1764371680,
+      "end_ps": 1765093555,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        458
+      ]
+    },
+    {
+      "id": 469,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1770525680,
+      "end_ps": 1770525680,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        458,
+        463,
+        465,
+        466,
+        460
+      ]
+    },
+    {
+      "id": 470,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1782813680,
+      "end_ps": 1782813680,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        458,
+        464,
+        467,
+        468,
+        462
+      ]
+    },
+    {
+      "id": 471,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1782813680,
+      "end_ps": 1782813680,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        469,
+        470
+      ]
+    },
+    {
+      "id": 472,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1782813680,
+      "end_ps": 1782813680,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        471,
+        471
+      ]
+    },
+    {
+      "id": 473,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1782813680,
+      "end_ps": 1782813680,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        472,
+        457,
+        457
+      ]
+    },
+    {
+      "id": 474,
+      "kind": "card_interconnect",
+      "device": 1,
+      "start_ps": 1782813680,
+      "end_ps": 1782828800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        473
+      ]
+    },
+    {
+      "id": 475,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1782813680,
+      "end_ps": 1782813680,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        472,
+        455,
+        455
+      ]
+    },
+    {
+      "id": 476,
+      "kind": "card_interconnect",
+      "device": 0,
+      "start_ps": 1782813680,
+      "end_ps": 1782826240,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        475
+      ]
+    },
+    {
+      "id": 477,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1782828800,
+      "end_ps": 1782828800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        472,
+        474,
+        476
+      ]
+    },
+    {
+      "id": 478,
+      "kind": "serving_queue",
+      "device": -1,
+      "start_ps": 1782828800,
+      "end_ps": 1782828800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        477
+      ]
+    },
+    {
+      "id": 479,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1782828800,
+      "end_ps": 1782828800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        478
+      ]
+    },
+    {
+      "id": 480,
+      "kind": "pipeline_queue",
+      "device": -1,
+      "start_ps": 1782828800,
+      "end_ps": 1782828800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        479
+      ]
+    },
+    {
+      "id": 481,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1782828800,
+      "end_ps": 1782828800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        480,
+        477
+      ]
+    },
+    {
+      "id": 482,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1782828800,
+      "end_ps": 1782828800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        481,
+        462
+      ]
+    },
+    {
+      "id": 483,
+      "kind": "compute",
+      "device": 1,
+      "start_ps": 1782828800,
+      "end_ps": 1794870800,
+      "gemm_flops": 4736,
+      "attention_flops": 1280,
+      "parents": [
+        482
+      ]
+    },
+    {
+      "id": 484,
+      "kind": "hbm_kv",
+      "device": 1,
+      "start_ps": 1782828800,
+      "end_ps": 1782926925,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        481
+      ]
+    },
+    {
+      "id": 485,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 1782828800,
+      "end_ps": 1782958175,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        481
+      ]
+    },
+    {
+      "id": 486,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 1782828800,
+      "end_ps": 1783402550,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        481
+      ]
+    },
+    {
+      "id": 487,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 1782828800,
+      "end_ps": 1783405675,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        481
+      ]
+    },
+    {
+      "id": 488,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1794870800,
+      "end_ps": 1794870800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        484,
+        485,
+        486,
+        487,
+        483
+      ]
+    },
+    {
+      "id": 489,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1794870800,
+      "end_ps": 1794870800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        481,
+        488
+      ]
+    },
+    {
+      "id": 490,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1794870800,
+      "end_ps": 1794870800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        489,
+        489
+      ]
+    },
+    {
+      "id": 491,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1794870800,
+      "end_ps": 1794870800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        490
+      ]
+    },
+    {
+      "id": 492,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1794870800,
+      "end_ps": 1794870800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        491,
+        483
+      ]
+    },
+    {
+      "id": 493,
+      "kind": "grouped_gemm",
+      "device": 1,
+      "start_ps": 1794870800,
+      "end_ps": 1801024800,
+      "gemm_flops": 3072,
+      "attention_flops": 0,
+      "parents": [
+        492
+      ]
+    },
+    {
+      "id": 494,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 1794870800,
+      "end_ps": 1795000175,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        491
+      ]
+    },
+    {
+      "id": 495,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 1794870800,
+      "end_ps": 1795237050,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        491
+      ]
+    },
+    {
+      "id": 496,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 1794870800,
+      "end_ps": 1795240175,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        491
+      ]
+    },
+    {
+      "id": 497,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1801024800,
+      "end_ps": 1801024800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        491,
+        494,
+        495,
+        496,
+        493
+      ]
+    },
+    {
+      "id": 498,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1801024800,
+      "end_ps": 1801024800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        491,
+        497
+      ]
+    },
+    {
+      "id": 499,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1801024800,
+      "end_ps": 1801024800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        498,
+        498
+      ]
+    },
+    {
+      "id": 500,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1801024800,
+      "end_ps": 1801024800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        499
+      ]
+    },
+    {
+      "id": 501,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1801024800,
+      "end_ps": 1801024800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        500,
+        493
+      ]
+    },
+    {
+      "id": 502,
+      "kind": "compute",
+      "device": 1,
+      "start_ps": 1801024800,
+      "end_ps": 1813066800,
+      "gemm_flops": 4736,
+      "attention_flops": 1280,
+      "parents": [
+        501
+      ]
+    },
+    {
+      "id": 503,
+      "kind": "hbm_kv",
+      "device": 1,
+      "start_ps": 1801024800,
+      "end_ps": 1801122925,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        500
+      ]
+    },
+    {
+      "id": 504,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 1801024800,
+      "end_ps": 1801154175,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        500
+      ]
+    },
+    {
+      "id": 505,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 1801024800,
+      "end_ps": 1801598550,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        500
+      ]
+    },
+    {
+      "id": 506,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 1801024800,
+      "end_ps": 1801601675,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        500
+      ]
+    },
+    {
+      "id": 507,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1813066800,
+      "end_ps": 1813066800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        503,
+        504,
+        505,
+        506,
+        502
+      ]
+    },
+    {
+      "id": 508,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1813066800,
+      "end_ps": 1813066800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        500,
+        507
+      ]
+    },
+    {
+      "id": 509,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1813066800,
+      "end_ps": 1813066800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        508,
+        508
+      ]
+    },
+    {
+      "id": 510,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1813066800,
+      "end_ps": 1813066800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        509
+      ]
+    },
+    {
+      "id": 511,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1813066800,
+      "end_ps": 1813066800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        510,
+        502
+      ]
+    },
+    {
+      "id": 512,
+      "kind": "grouped_gemm",
+      "device": 1,
+      "start_ps": 1813066800,
+      "end_ps": 1819220800,
+      "gemm_flops": 3072,
+      "attention_flops": 0,
+      "parents": [
+        511
+      ]
+    },
+    {
+      "id": 513,
+      "kind": "hbm_activation",
+      "device": 1,
+      "start_ps": 1813066800,
+      "end_ps": 1813196175,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        510
+      ]
+    },
+    {
+      "id": 514,
+      "kind": "hbm_output",
+      "device": 1,
+      "start_ps": 1813066800,
+      "end_ps": 1813433050,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        510
+      ]
+    },
+    {
+      "id": 515,
+      "kind": "hbm_weights",
+      "device": 1,
+      "start_ps": 1813066800,
+      "end_ps": 1813436175,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        510
+      ]
+    },
+    {
+      "id": 516,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1819220800,
+      "end_ps": 1819220800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        510,
+        513,
+        514,
+        515,
+        512
+      ]
+    },
+    {
+      "id": 517,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1819220800,
+      "end_ps": 1819220800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        510,
+        516
+      ]
+    },
+    {
+      "id": 518,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1819220800,
+      "end_ps": 1819220800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        517,
+        517
+      ]
+    },
+    {
+      "id": 519,
+      "kind": "join",
+      "device": -1,
+      "start_ps": 1819220800,
+      "end_ps": 1819220800,
+      "gemm_flops": 0,
+      "attention_flops": 0,
+      "parents": [
+        518
+      ]
+    }
+  ],
+  "backend_revisions": {
+    "HBFSIM_SOURCE_DIR": {
+      "revision": "28b1123ae314f50d2568387091bd20db4e630356",
+      "dirty": true,
+      "tracked_diff_sha256": "9f83780b6defa82c1dca669e296a06f0136b04903603890b192ee00d0850de58"
+    },
+    "HBMSIM_SOURCE_DIR": {
+      "revision": "f147ab2bfde0671cd3d7ea4437925f5bf386b743",
+      "dirty": false,
+      "tracked_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "binary_sha256": "097f266917f9f99ed5a6f7a33e2d63c955ac15d88a32325da31e0e82ef4752f7",
+  "simulator_version": "1.0.0",
+  "config_version": "1.0",
+  "simulator_source_sha256": "8ca76776e4c852292afb21b4d940243946d989b88ac20513d42ec4aac6965b7f",
+  "scenario_sha256": "a5b5a9cfabc71a3d408f6732fe745bb27139b301630bfda52d1a196056d9376e",
+  "scenario": {
+    "model": {
+      "layers": 2,
+      "hidden": 16,
+      "heads": 4,
+      "kv_heads": 2,
+      "ffn": 32,
+      "dtype_bytes": 2,
+      "kind": "moe",
+      "experts": 4,
+      "top_k": 1,
+      "shared_experts": 1,
+      "routing_seed": 7,
+      "expert_weights": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "hardware": {
+      "devices": 2,
+      "peak_tflops": 0.001,
+      "compute_efficiency": 0.5,
+      "hbm_capacity_bytes": 1048576,
+      "kernel_launch_ps": 10000,
+      "nvlink_gbps": 100,
+      "nvlink_latency_ps": 10000,
+      "hbm_bandwidth_GBps": 1000,
+      "kind": "nvidia_gpu",
+      "hbm_profile": "hbm3_6400",
+      "fabric_topology": "nvswitch",
+      "collective": "ring",
+      "device_nodes": [
+        0,
+        0
+      ],
+      "node_racks": [
+        0
+      ]
+    },
+    "parallel": {
+      "tp": 1,
+      "pp": 1,
+      "dp": 1,
+      "ep": 2,
+      "expert_placement": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "placement": [
+        0,
+        1
+      ]
+    },
+    "serving": {
+      "max_batch_tokens": 32,
+      "max_seqs": 4,
+      "prefill_chunk_tokens": 16,
+      "kv_block_tokens": 4
+    },
+    "storage": {
+      "hbf": false
+    },
+    "requests": [
+      {
+        "arrival_ps": 0,
+        "prompt_tokens": 16,
+        "output_tokens": 4
+      },
+      {
+        "arrival_ps": 0,
+        "prompt_tokens": 16,
+        "output_tokens": 4
+      },
+      {
+        "arrival_ps": 0,
+        "prompt_tokens": 16,
+        "output_tokens": 4
+      },
+      {
+        "arrival_ps": 0,
+        "prompt_tokens": 16,
+        "output_tokens": 4
+      }
+    ],
+    "config_version": "1.0"
+  },
+  "calibration": {
+    "status": "uncalibrated",
+    "source": "scenario assumptions"
+  },
+  "prediction_error": {
+    "status": "unmeasured",
+    "metrics": null
+  },
+  "distributions_ps": {
+    "ttft": {
+      "count": 4,
+      "mean": 1550118560.0,
+      "p50": 1529102720.0,
+      "p95": 1600556576.0,
+      "p99": 1610644179.2,
+      "max": 1613166080
+    },
+    "tpot": {
+      "count": 12,
+      "mean": 80602746.66666667,
+      "p50": 84063360.0,
+      "p95": 91236480.0,
+      "p99": 91236480.0,
+      "max": 91236480
+    },
+    "request_latency": {
+      "count": 4,
+      "mean": 1791926800.0,
+      "p50": 1782828800.0,
+      "p95": 1813762000.0,
+      "p99": 1818129040.0,
+      "max": 1819220800
+    },
+    "queue_wait": {
+      "count": 4,
+      "mean": 617685920.0,
+      "p50": 503980160.0,
+      "p95": 939736863.9999998,
+      "p99": 994315628.8,
+      "max": 1007960320
+    }
+  },
+  "critical_path": {
+    "scope": "operation dependencies; HBM internal scheduling is an opaque timed span",
+    "duration_ps": 1819220800,
+    "node_ids": [
+      10,
+      19,
+      22,
+      36,
+      39,
+      48,
+      53,
+      65,
+      73,
+      89,
+      96,
+      108,
+      113,
+      131,
+      134,
+      150,
+      162,
+      178,
+      183,
+      197,
+      202,
+      216,
+      219,
+      233,
+      243,
+      259,
+      266,
+      278,
+      283,
+      299,
+      304,
+      316,
+      326,
+      342,
+      345,
+      359,
+      362,
+      378,
+      383,
+      397,
+      409,
+      425,
+      428,
+      436,
+      439,
+      455,
+      462,
+      474,
+      483,
+      493,
+      502,
+      512
+    ],
+    "time_by_kind_ps": {
+      "compute": 1204108000,
+      "grouped_gemm": 614540000,
+      "card_interconnect": 572800
+    }
+  },
+  "bottleneck": {
+    "critical_path_time_ps": {
+      "compute": 1818648000,
+      "communication": 572800
+    },
+    "dominant_component": "compute",
+    "interpretation": "time attribution, not a counterfactual speedup prediction"
+  }
+}

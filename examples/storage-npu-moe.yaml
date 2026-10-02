@@ -1,0 +1,57 @@
+# Small local validation model; capacity fields are bytes.
+model:
+  layers: 2
+  hidden: 16
+  heads: 4
+  kv_heads: 2
+  ffn: 32
+  dtype_bytes: 2
+  kind: moe
+  experts: 4
+  top_k: 2
+  shared_experts: 1
+  routing_seed: 7
+hardware:
+  devices: 2
+  peak_tflops: 0.5
+  compute_efficiency: 0.5
+  hbm_capacity_bytes: 1048576
+  kernel_launch_ps: 10000
+  nvlink_gbps: 100
+  nvlink_latency_ps: 10000
+  hbm_bandwidth_GBps: 1000
+  kind: npu
+  sram_bytes: 2048
+  dma_tile_bytes: 2048
+  dma_GBps: 200
+  dma_latency_ps: 5000
+  gemm_efficiency: 0.6
+  attention_efficiency: 0.3
+  grouped_gemm_efficiency: 0.4
+parallel:
+  tp: 1
+  pp: 1
+  dp: 1
+  ep: 2
+serving:
+  max_batch_tokens: 8
+  max_seqs: 2
+  prefill_chunk_tokens: 4
+  kv_block_tokens: 4
+storage:
+  weights: hbf
+  kv: hbf
+  cache_bytes_per_device: 8192
+  slot_bytes: 8192
+  prefetch: false
+  kv_cache_bytes_per_device: 4096
+  kv_capacity_bytes_per_device: 65536
+  hbf_capacity_bytes: 1048576
+  kv_cache_policy: lru
+requests:
+- arrival_ps: 0
+  prompt_tokens: 5
+  output_tokens: 3
+- arrival_ps: 100000
+  prompt_tokens: 3
+  output_tokens: 2

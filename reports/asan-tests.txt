@@ -1,0 +1,39 @@
+Start testing: Oct 02 23:05 CST
+----------------------------------------------------------
+1/1 Testing: inference_scenarios
+1/1 Test: inference_scenarios
+Command: "/Applications/Xcode.app/Contents/Developer/Library/Frameworks/Python3.framework/Versions/3.9/bin/python3.9" "-m" "unittest" "discover" "-s" "/Users/litao/.codex/.chatgpt-projects/g-p-6a8e30aa96408191a4c59618c3f4bfc1/infer-sim/tests" "-v"
+Directory: /Users/litao/.codex/.chatgpt-projects/g-p-6a8e30aa96408191a4c59618c3f4bfc1/infer-sim/build-asan
+"inference_scenarios" start time: Oct 02 23:05 CST
+Output:
+----------------------------------------------------------
+test_capacity_rejection_and_input_validation (test_scenarios.ScenarioTests) ... ok
+test_fast_formula_and_detailed_conservation (test_scenarios.ScenarioTests) ... ok
+test_hbf_prefetch_eviction_and_writeback (test_scenarios.ScenarioTests) ... ok
+test_repeatability_and_bounded_backpressure (test_scenarios.ScenarioTests) ... ok
+test_tensor_pipeline_and_data_parallel (test_scenarios.ScenarioTests) ... ok
+test_calibration_fit_held_out_and_reference_errors (test_v1.V1Tests) ... ok
+test_cross_rack_hierarchy_and_placement (test_v1.V1Tests) ... ok
+test_ep_tp_pp_dp_and_shared_nic_contention (test_v1.V1Tests) ... ok
+test_hbf_moe_and_one_slot_streaming (test_v1.V1Tests) ... ok
+test_kv_admission_progress_and_invalid_inputs (test_v1.V1Tests) ... ok
+test_moe_conservation_and_batch_independent_routing (test_v1.V1Tests) ... ok
+test_npu_dma_capacity_and_shared_graph (test_v1.V1Tests) ... ok
+test_reference_adapter_and_memory_profiles (test_v1.V1Tests) ... ok
+test_skew_and_expert_placement (test_v1.V1Tests) ... ok
+test_sweeps_report_failures_and_microbench (test_v1.V1Tests) ... ok
+test_timeline_distribution_and_trace_export (test_v1.V1Tests) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 225.207s
+
+OK
+<end of output>
+Test time = 225.27 sec
+----------------------------------------------------------
+Test Passed.
+"inference_scenarios" end time: Oct 02 23:09 CST
+"inference_scenarios" time elapsed: 00:03:45
+----------------------------------------------------------
+
+End testing: Oct 02 23:09 CST

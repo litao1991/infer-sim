@@ -1,0 +1,3729 @@
+{
+  "traceEvents": [
+    {
+      "name": "arrival",
+      "ph": "X",
+      "pid": 0,
+      "tid": "scheduler/network",
+      "ts": 0.0,
+      "dur": 0.1,
+      "args": {
+        "node": 2,
+        "parents": [
+          0
+        ]
+      }
+    },
+    {
+      "name": "hbm_kv",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 0.0,
+      "dur": 0.056875,
+      "args": {
+        "node": 7,
+        "parents": [
+          6
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 0.0,
+      "dur": 0.118125,
+      "args": {
+        "node": 8,
+        "parents": [
+          6
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 0.0,
+      "dur": 0.565625,
+      "args": {
+        "node": 9,
+        "parents": [
+          6
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 0.565625,
+      "dur": 0.04092,
+      "args": {
+        "node": 12,
+        "parents": [
+          11
+        ]
+      }
+    },
+    {
+      "name": "compute",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 0.606545,
+      "dur": 0.077414,
+      "args": {
+        "node": 14,
+        "parents": [
+          13
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 0.683959,
+      "dur": 0.00564,
+      "args": {
+        "node": 16,
+        "parents": [
+          15
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 0.689599,
+      "dur": 0.015,
+      "args": {
+        "node": 17,
+        "parents": [
+          16
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 0.704599,
+      "dur": 0.01768,
+      "args": {
+        "node": 22,
+        "parents": [
+          21
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 0.722279,
+      "dur": 0.118125,
+      "args": {
+        "node": 24,
+        "parents": [
+          23
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 0.722279,
+      "dur": 0.2225,
+      "args": {
+        "node": 25,
+        "parents": [
+          23
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 0.722279,
+      "dur": 0.7,
+      "args": {
+        "node": 26,
+        "parents": [
+          23
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 1.422279,
+      "dur": 0.05152,
+      "args": {
+        "node": 29,
+        "parents": [
+          28
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 0.722279,
+      "dur": 0.714375,
+      "args": {
+        "node": 30,
+        "parents": [
+          23
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 1.436654,
+      "dur": 0.0512,
+      "args": {
+        "node": 33,
+        "parents": [
+          32
+        ]
+      }
+    },
+    {
+      "name": "grouped_gemm",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 1.473799,
+      "dur": 0.0868,
+      "args": {
+        "node": 35,
+        "parents": [
+          34
+        ]
+      }
+    },
+    {
+      "name": "grouped_gemm",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 1.487854,
+      "dur": 0.05608,
+      "args": {
+        "node": 37,
+        "parents": [
+          36
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 1.543934,
+      "dur": 0.00548,
+      "args": {
+        "node": 39,
+        "parents": [
+          38
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 1.560599,
+      "dur": 0.0058,
+      "args": {
+        "node": 41,
+        "parents": [
+          40
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 1.549414,
+      "dur": 0.024375,
+      "args": {
+        "node": 42,
+        "parents": [
+          39
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 1.566399,
+      "dur": 0.02,
+      "args": {
+        "node": 44,
+        "parents": [
+          41
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 1.586399,
+      "dur": 0.01768,
+      "args": {
+        "node": 49,
+        "parents": [
+          48
+        ]
+      }
+    },
+    {
+      "name": "hbm_kv",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 1.604079,
+      "dur": 0.075625,
+      "args": {
+        "node": 51,
+        "parents": [
+          50
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 1.604079,
+      "dur": 0.134375,
+      "args": {
+        "node": 52,
+        "parents": [
+          50
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 1.604079,
+      "dur": 0.581875,
+      "args": {
+        "node": 53,
+        "parents": [
+          50
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 2.185954,
+      "dur": 0.04092,
+      "args": {
+        "node": 56,
+        "parents": [
+          55
+        ]
+      }
+    },
+    {
+      "name": "compute",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 2.226874,
+      "dur": 0.077414,
+      "args": {
+        "node": 58,
+        "parents": [
+          57
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 2.304288,
+      "dur": 0.00564,
+      "args": {
+        "node": 60,
+        "parents": [
+          59
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 2.309928,
+      "dur": 0.015,
+      "args": {
+        "node": 61,
+        "parents": [
+          60
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 2.324928,
+      "dur": 0.01768,
+      "args": {
+        "node": 66,
+        "parents": [
+          65
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 2.342608,
+      "dur": 0.134375,
+      "args": {
+        "node": 68,
+        "parents": [
+          67
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 2.342608,
+      "dur": 0.2225,
+      "args": {
+        "node": 69,
+        "parents": [
+          67
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 2.342608,
+      "dur": 0.7,
+      "args": {
+        "node": 70,
+        "parents": [
+          67
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 3.042608,
+      "dur": 0.05152,
+      "args": {
+        "node": 73,
+        "parents": [
+          72
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 2.342608,
+      "dur": 0.730625,
+      "args": {
+        "node": 74,
+        "parents": [
+          67
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 3.073233,
+      "dur": 0.0512,
+      "args": {
+        "node": 77,
+        "parents": [
+          76
+        ]
+      }
+    },
+    {
+      "name": "grouped_gemm",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 3.094128,
+      "dur": 0.0868,
+      "args": {
+        "node": 79,
+        "parents": [
+          78
+        ]
+      }
+    },
+    {
+      "name": "grouped_gemm",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 3.124433,
+      "dur": 0.05608,
+      "args": {
+        "node": 81,
+        "parents": [
+          80
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 3.180513,
+      "dur": 0.00548,
+      "args": {
+        "node": 83,
+        "parents": [
+          82
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 3.180928,
+      "dur": 0.0058,
+      "args": {
+        "node": 85,
+        "parents": [
+          84
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 3.186728,
+      "dur": 0.02,
+      "args": {
+        "node": 86,
+        "parents": [
+          85
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 3.185993,
+      "dur": 0.040625,
+      "args": {
+        "node": 88,
+        "parents": [
+          83
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 3.226618,
+      "dur": 0.01768,
+      "args": {
+        "node": 93,
+        "parents": [
+          92
+        ]
+      }
+    },
+    {
+      "name": "serving_queue",
+      "ph": "X",
+      "pid": 0,
+      "tid": "scheduler/network",
+      "ts": 0.1,
+      "dur": 3.144298,
+      "args": {
+        "node": 95,
+        "parents": [
+          2
+        ]
+      }
+    },
+    {
+      "name": "hbm_kv",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 3.244298,
+      "dur": 0.063125,
+      "args": {
+        "node": 100,
+        "parents": [
+          99
+        ]
+      }
+    },
+    {
+      "name": "hbm_kv",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 3.244298,
+      "dur": 0.065625,
+      "args": {
+        "node": 101,
+        "parents": [
+          99
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 3.244298,
+      "dur": 0.129375,
+      "args": {
+        "node": 102,
+        "parents": [
+          99
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 3.244298,
+      "dur": 0.134375,
+      "args": {
+        "node": 103,
+        "parents": [
+          99
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 3.244298,
+      "dur": 0.576875,
+      "args": {
+        "node": 104,
+        "parents": [
+          99
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 3.821173,
+      "dur": 0.03964,
+      "args": {
+        "node": 107,
+        "parents": [
+          106
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 3.244298,
+      "dur": 0.581875,
+      "args": {
+        "node": 108,
+        "parents": [
+          99
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 3.826173,
+      "dur": 0.04012,
+      "args": {
+        "node": 111,
+        "parents": [
+          110
+        ]
+      }
+    },
+    {
+      "name": "compute",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 3.860813,
+      "dur": 0.02792,
+      "args": {
+        "node": 113,
+        "parents": [
+          112
+        ]
+      }
+    },
+    {
+      "name": "compute",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 3.866293,
+      "dur": 0.05992,
+      "args": {
+        "node": 115,
+        "parents": [
+          114
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 3.888733,
+      "dur": 0.00516,
+      "args": {
+        "node": 117,
+        "parents": [
+          116
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 3.893893,
+      "dur": 0.01,
+      "args": {
+        "node": 118,
+        "parents": [
+          117
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 3.926213,
+      "dur": 0.00548,
+      "args": {
+        "node": 121,
+        "parents": [
+          120
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 3.931693,
+      "dur": 0.015,
+      "args": {
+        "node": 122,
+        "parents": [
+          121
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 3.946693,
+      "dur": 0.01256,
+      "args": {
+        "node": 127,
+        "parents": [
+          126
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 3.946693,
+      "dur": 0.01512,
+      "args": {
+        "node": 129,
+        "parents": [
+          128
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 3.961813,
+      "dur": 0.2175,
+      "args": {
+        "node": 131,
+        "parents": [
+          130
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 3.961813,
+      "dur": 0.2225,
+      "args": {
+        "node": 132,
+        "parents": [
+          130
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 3.961813,
+      "dur": 0.695,
+      "args": {
+        "node": 133,
+        "parents": [
+          130
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 4.656813,
+      "dur": 0.0512,
+      "args": {
+        "node": 136,
+        "parents": [
+          135
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 3.961813,
+      "dur": 0.7,
+      "args": {
+        "node": 137,
+        "parents": [
+          130
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 4.661813,
+      "dur": 0.05152,
+      "args": {
+        "node": 140,
+        "parents": [
+          139
+        ]
+      }
+    },
+    {
+      "name": "grouped_gemm",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 4.708013,
+      "dur": 0.05608,
+      "args": {
+        "node": 142,
+        "parents": [
+          141
+        ]
+      }
+    },
+    {
+      "name": "grouped_gemm",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 4.713333,
+      "dur": 0.0868,
+      "args": {
+        "node": 144,
+        "parents": [
+          143
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 4.764093,
+      "dur": 0.00548,
+      "args": {
+        "node": 146,
+        "parents": [
+          145
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 4.769573,
+      "dur": 0.015,
+      "args": {
+        "node": 147,
+        "parents": [
+          146
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 4.800133,
+      "dur": 0.0058,
+      "args": {
+        "node": 150,
+        "parents": [
+          149
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 4.805933,
+      "dur": 0.02,
+      "args": {
+        "node": 151,
+        "parents": [
+          150
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 4.825933,
+      "dur": 0.01256,
+      "args": {
+        "node": 156,
+        "parents": [
+          155
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 4.825933,
+      "dur": 0.01512,
+      "args": {
+        "node": 158,
+        "parents": [
+          157
+        ]
+      }
+    },
+    {
+      "name": "hbm_kv",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 4.841053,
+      "dur": 0.063125,
+      "args": {
+        "node": 160,
+        "parents": [
+          159
+        ]
+      }
+    },
+    {
+      "name": "hbm_kv",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 4.841053,
+      "dur": 0.068125,
+      "args": {
+        "node": 161,
+        "parents": [
+          159
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 4.841053,
+      "dur": 0.129375,
+      "args": {
+        "node": 162,
+        "parents": [
+          159
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 4.841053,
+      "dur": 0.134375,
+      "args": {
+        "node": 163,
+        "parents": [
+          159
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 4.841053,
+      "dur": 0.576875,
+      "args": {
+        "node": 164,
+        "parents": [
+          159
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 5.417928,
+      "dur": 0.03964,
+      "args": {
+        "node": 167,
+        "parents": [
+          166
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 4.841053,
+      "dur": 0.581875,
+      "args": {
+        "node": 168,
+        "parents": [
+          159
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 5.422928,
+      "dur": 0.04012,
+      "args": {
+        "node": 171,
+        "parents": [
+          170
+        ]
+      }
+    },
+    {
+      "name": "compute",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 5.457568,
+      "dur": 0.02792,
+      "args": {
+        "node": 173,
+        "parents": [
+          172
+        ]
+      }
+    },
+    {
+      "name": "compute",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 5.463048,
+      "dur": 0.05992,
+      "args": {
+        "node": 175,
+        "parents": [
+          174
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 5.485488,
+      "dur": 0.00516,
+      "args": {
+        "node": 177,
+        "parents": [
+          176
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 5.490648,
+      "dur": 0.01,
+      "args": {
+        "node": 178,
+        "parents": [
+          177
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 5.522968,
+      "dur": 0.00548,
+      "args": {
+        "node": 181,
+        "parents": [
+          180
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 5.528448,
+      "dur": 0.015,
+      "args": {
+        "node": 182,
+        "parents": [
+          181
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 5.543448,
+      "dur": 0.01256,
+      "args": {
+        "node": 187,
+        "parents": [
+          186
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 5.543448,
+      "dur": 0.01512,
+      "args": {
+        "node": 189,
+        "parents": [
+          188
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 5.558568,
+      "dur": 0.2175,
+      "args": {
+        "node": 191,
+        "parents": [
+          190
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 5.558568,
+      "dur": 0.2225,
+      "args": {
+        "node": 192,
+        "parents": [
+          190
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 5.558568,
+      "dur": 0.695,
+      "args": {
+        "node": 193,
+        "parents": [
+          190
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 6.253568,
+      "dur": 0.0512,
+      "args": {
+        "node": 196,
+        "parents": [
+          195
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 5.558568,
+      "dur": 0.7,
+      "args": {
+        "node": 197,
+        "parents": [
+          190
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 6.258568,
+      "dur": 0.05152,
+      "args": {
+        "node": 200,
+        "parents": [
+          199
+        ]
+      }
+    },
+    {
+      "name": "grouped_gemm",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 6.304768,
+      "dur": 0.05608,
+      "args": {
+        "node": 202,
+        "parents": [
+          201
+        ]
+      }
+    },
+    {
+      "name": "grouped_gemm",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 6.310088,
+      "dur": 0.0868,
+      "args": {
+        "node": 204,
+        "parents": [
+          203
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 6.360848,
+      "dur": 0.00548,
+      "args": {
+        "node": 206,
+        "parents": [
+          205
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 6.366328,
+      "dur": 0.015,
+      "args": {
+        "node": 207,
+        "parents": [
+          206
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 6.396888,
+      "dur": 0.0058,
+      "args": {
+        "node": 210,
+        "parents": [
+          209
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 6.402688,
+      "dur": 0.02,
+      "args": {
+        "node": 211,
+        "parents": [
+          210
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 6.422688,
+      "dur": 0.01256,
+      "args": {
+        "node": 216,
+        "parents": [
+          215
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 6.422688,
+      "dur": 0.01512,
+      "args": {
+        "node": 218,
+        "parents": [
+          217
+        ]
+      }
+    },
+    {
+      "name": "hbm_kv",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 6.437808,
+      "dur": 0.063125,
+      "args": {
+        "node": 225,
+        "parents": [
+          224
+        ]
+      }
+    },
+    {
+      "name": "hbm_kv",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 6.437808,
+      "dur": 0.063125,
+      "args": {
+        "node": 226,
+        "parents": [
+          224
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 6.437808,
+      "dur": 0.129375,
+      "args": {
+        "node": 227,
+        "parents": [
+          224
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 6.437808,
+      "dur": 0.129375,
+      "args": {
+        "node": 228,
+        "parents": [
+          224
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 6.437808,
+      "dur": 0.576875,
+      "args": {
+        "node": 229,
+        "parents": [
+          224
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 7.014683,
+      "dur": 0.03948,
+      "args": {
+        "node": 232,
+        "parents": [
+          231
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 6.437808,
+      "dur": 0.576875,
+      "args": {
+        "node": 233,
+        "parents": [
+          224
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 7.014683,
+      "dur": 0.0398,
+      "args": {
+        "node": 236,
+        "parents": [
+          235
+        ]
+      }
+    },
+    {
+      "name": "compute",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 7.054163,
+      "dur": 0.027494,
+      "args": {
+        "node": 238,
+        "parents": [
+          237
+        ]
+      }
+    },
+    {
+      "name": "compute",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 7.054483,
+      "dur": 0.028347,
+      "args": {
+        "node": 240,
+        "parents": [
+          239
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 7.081657,
+      "dur": 0.00516,
+      "args": {
+        "node": 242,
+        "parents": [
+          241
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 7.08283,
+      "dur": 0.00516,
+      "args": {
+        "node": 244,
+        "parents": [
+          243
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 7.086817,
+      "dur": 0.01,
+      "args": {
+        "node": 245,
+        "parents": [
+          242
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 7.08799,
+      "dur": 0.01,
+      "args": {
+        "node": 247,
+        "parents": [
+          244
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 7.09799,
+      "dur": 0.01256,
+      "args": {
+        "node": 252,
+        "parents": [
+          251
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 7.09799,
+      "dur": 0.01256,
+      "args": {
+        "node": 254,
+        "parents": [
+          253
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 7.11055,
+      "dur": 0.129375,
+      "args": {
+        "node": 256,
+        "parents": [
+          255
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 7.11055,
+      "dur": 0.2125,
+      "args": {
+        "node": 257,
+        "parents": [
+          255
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 7.11055,
+      "dur": 0.369375,
+      "args": {
+        "node": 258,
+        "parents": [
+          255
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 7.479925,
+      "dur": 0.02568,
+      "args": {
+        "node": 261,
+        "parents": [
+          260
+        ]
+      }
+    },
+    {
+      "name": "grouped_gemm",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 7.505605,
+      "dur": 0.04072,
+      "args": {
+        "node": 263,
+        "parents": [
+          262
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 7.546325,
+      "dur": 0.00532,
+      "args": {
+        "node": 265,
+        "parents": [
+          264
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 7.551645,
+      "dur": 0.01,
+      "args": {
+        "node": 266,
+        "parents": [
+          265
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 7.11055,
+      "dur": 0.69,
+      "args": {
+        "node": 268,
+        "parents": [
+          255
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 7.80055,
+      "dur": 0.05104,
+      "args": {
+        "node": 271,
+        "parents": [
+          270
+        ]
+      }
+    },
+    {
+      "name": "grouped_gemm",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 7.85159,
+      "dur": 0.04072,
+      "args": {
+        "node": 273,
+        "parents": [
+          272
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 7.89231,
+      "dur": 0.00532,
+      "args": {
+        "node": 275,
+        "parents": [
+          274
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 7.89763,
+      "dur": 0.01,
+      "args": {
+        "node": 276,
+        "parents": [
+          275
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 7.90763,
+      "dur": 0.01256,
+      "args": {
+        "node": 281,
+        "parents": [
+          280
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 7.90763,
+      "dur": 0.01256,
+      "args": {
+        "node": 283,
+        "parents": [
+          282
+        ]
+      }
+    },
+    {
+      "name": "hbm_kv",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 7.92019,
+      "dur": 0.058125,
+      "args": {
+        "node": 285,
+        "parents": [
+          284
+        ]
+      }
+    },
+    {
+      "name": "hbm_kv",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 7.92019,
+      "dur": 0.070625,
+      "args": {
+        "node": 286,
+        "parents": [
+          284
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 7.92019,
+      "dur": 0.129375,
+      "args": {
+        "node": 287,
+        "parents": [
+          284
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 7.92019,
+      "dur": 0.129375,
+      "args": {
+        "node": 288,
+        "parents": [
+          284
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 7.92019,
+      "dur": 0.576875,
+      "args": {
+        "node": 289,
+        "parents": [
+          284
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 8.497065,
+      "dur": 0.03948,
+      "args": {
+        "node": 292,
+        "parents": [
+          291
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 7.92019,
+      "dur": 0.576875,
+      "args": {
+        "node": 293,
+        "parents": [
+          284
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 8.497065,
+      "dur": 0.0398,
+      "args": {
+        "node": 296,
+        "parents": [
+          295
+        ]
+      }
+    },
+    {
+      "name": "compute",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 8.536545,
+      "dur": 0.027494,
+      "args": {
+        "node": 298,
+        "parents": [
+          297
+        ]
+      }
+    },
+    {
+      "name": "compute",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 8.536865,
+      "dur": 0.028347,
+      "args": {
+        "node": 300,
+        "parents": [
+          299
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 8.564039,
+      "dur": 0.00516,
+      "args": {
+        "node": 302,
+        "parents": [
+          301
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 8.565212,
+      "dur": 0.00516,
+      "args": {
+        "node": 304,
+        "parents": [
+          303
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 8.569199,
+      "dur": 0.01,
+      "args": {
+        "node": 305,
+        "parents": [
+          302
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 8.570372,
+      "dur": 0.01,
+      "args": {
+        "node": 307,
+        "parents": [
+          304
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 8.580372,
+      "dur": 0.01256,
+      "args": {
+        "node": 312,
+        "parents": [
+          311
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 8.580372,
+      "dur": 0.01256,
+      "args": {
+        "node": 314,
+        "parents": [
+          313
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 8.592932,
+      "dur": 0.2125,
+      "args": {
+        "node": 316,
+        "parents": [
+          315
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 8.592932,
+      "dur": 0.2125,
+      "args": {
+        "node": 317,
+        "parents": [
+          315
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 8.592932,
+      "dur": 0.69,
+      "args": {
+        "node": 318,
+        "parents": [
+          315
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 9.282932,
+      "dur": 0.05104,
+      "args": {
+        "node": 321,
+        "parents": [
+          320
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 8.592932,
+      "dur": 0.69,
+      "args": {
+        "node": 322,
+        "parents": [
+          315
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 9.282932,
+      "dur": 0.05104,
+      "args": {
+        "node": 325,
+        "parents": [
+          324
+        ]
+      }
+    },
+    {
+      "name": "grouped_gemm",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 9.333972,
+      "dur": 0.04072,
+      "args": {
+        "node": 327,
+        "parents": [
+          326
+        ]
+      }
+    },
+    {
+      "name": "grouped_gemm",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 9.333972,
+      "dur": 0.04072,
+      "args": {
+        "node": 329,
+        "parents": [
+          328
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 9.374692,
+      "dur": 0.00532,
+      "args": {
+        "node": 331,
+        "parents": [
+          330
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 9.374692,
+      "dur": 0.00532,
+      "args": {
+        "node": 333,
+        "parents": [
+          332
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 9.380012,
+      "dur": 0.01,
+      "args": {
+        "node": 334,
+        "parents": [
+          331
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 9.380012,
+      "dur": 0.01,
+      "args": {
+        "node": 336,
+        "parents": [
+          333
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 9.390012,
+      "dur": 0.01256,
+      "args": {
+        "node": 341,
+        "parents": [
+          340
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 9.390012,
+      "dur": 0.01256,
+      "args": {
+        "node": 343,
+        "parents": [
+          342
+        ]
+      }
+    },
+    {
+      "name": "hbm_kv",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 9.402572,
+      "dur": 0.070625,
+      "args": {
+        "node": 350,
+        "parents": [
+          349
+        ]
+      }
+    },
+    {
+      "name": "hbm_kv",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 9.402572,
+      "dur": 0.075625,
+      "args": {
+        "node": 351,
+        "parents": [
+          349
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 9.402572,
+      "dur": 0.129375,
+      "args": {
+        "node": 352,
+        "parents": [
+          349
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 9.402572,
+      "dur": 0.129375,
+      "args": {
+        "node": 353,
+        "parents": [
+          349
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 9.402572,
+      "dur": 0.576875,
+      "args": {
+        "node": 354,
+        "parents": [
+          349
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 9.979447,
+      "dur": 0.03964,
+      "args": {
+        "node": 357,
+        "parents": [
+          356
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 9.402572,
+      "dur": 0.576875,
+      "args": {
+        "node": 358,
+        "parents": [
+          349
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 9.979447,
+      "dur": 0.03996,
+      "args": {
+        "node": 361,
+        "parents": [
+          360
+        ]
+      }
+    },
+    {
+      "name": "compute",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 10.019087,
+      "dur": 0.02792,
+      "args": {
+        "node": 363,
+        "parents": [
+          362
+        ]
+      }
+    },
+    {
+      "name": "compute",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 10.019407,
+      "dur": 0.028774,
+      "args": {
+        "node": 365,
+        "parents": [
+          364
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 10.047007,
+      "dur": 0.00516,
+      "args": {
+        "node": 367,
+        "parents": [
+          366
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 10.048181,
+      "dur": 0.00516,
+      "args": {
+        "node": 369,
+        "parents": [
+          368
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 10.052167,
+      "dur": 0.01,
+      "args": {
+        "node": 370,
+        "parents": [
+          367
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 10.053341,
+      "dur": 0.01,
+      "args": {
+        "node": 372,
+        "parents": [
+          369
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 10.063341,
+      "dur": 0.01256,
+      "args": {
+        "node": 377,
+        "parents": [
+          376
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 10.063341,
+      "dur": 0.01256,
+      "args": {
+        "node": 379,
+        "parents": [
+          378
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 10.075901,
+      "dur": 0.129375,
+      "args": {
+        "node": 381,
+        "parents": [
+          380
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 10.075901,
+      "dur": 0.2125,
+      "args": {
+        "node": 382,
+        "parents": [
+          380
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 10.075901,
+      "dur": 0.369375,
+      "args": {
+        "node": 383,
+        "parents": [
+          380
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 10.445276,
+      "dur": 0.02568,
+      "args": {
+        "node": 386,
+        "parents": [
+          385
+        ]
+      }
+    },
+    {
+      "name": "grouped_gemm",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 10.470956,
+      "dur": 0.04072,
+      "args": {
+        "node": 388,
+        "parents": [
+          387
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 10.511676,
+      "dur": 0.00532,
+      "args": {
+        "node": 390,
+        "parents": [
+          389
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 10.516996,
+      "dur": 0.01,
+      "args": {
+        "node": 391,
+        "parents": [
+          390
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 10.075901,
+      "dur": 0.69,
+      "args": {
+        "node": 393,
+        "parents": [
+          380
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 10.765901,
+      "dur": 0.05104,
+      "args": {
+        "node": 396,
+        "parents": [
+          395
+        ]
+      }
+    },
+    {
+      "name": "grouped_gemm",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 10.816941,
+      "dur": 0.04072,
+      "args": {
+        "node": 398,
+        "parents": [
+          397
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 10.857661,
+      "dur": 0.00532,
+      "args": {
+        "node": 400,
+        "parents": [
+          399
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 10.862981,
+      "dur": 0.01,
+      "args": {
+        "node": 401,
+        "parents": [
+          400
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 10.872981,
+      "dur": 0.01256,
+      "args": {
+        "node": 406,
+        "parents": [
+          405
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 10.872981,
+      "dur": 0.01256,
+      "args": {
+        "node": 408,
+        "parents": [
+          407
+        ]
+      }
+    },
+    {
+      "name": "hbm_kv",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 10.885541,
+      "dur": 0.068125,
+      "args": {
+        "node": 410,
+        "parents": [
+          409
+        ]
+      }
+    },
+    {
+      "name": "hbm_kv",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 10.885541,
+      "dur": 0.070625,
+      "args": {
+        "node": 411,
+        "parents": [
+          409
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 10.885541,
+      "dur": 0.129375,
+      "args": {
+        "node": 412,
+        "parents": [
+          409
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 10.885541,
+      "dur": 0.129375,
+      "args": {
+        "node": 413,
+        "parents": [
+          409
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 10.885541,
+      "dur": 0.576875,
+      "args": {
+        "node": 414,
+        "parents": [
+          409
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 11.462416,
+      "dur": 0.03996,
+      "args": {
+        "node": 417,
+        "parents": [
+          416
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 10.885541,
+      "dur": 0.576875,
+      "args": {
+        "node": 418,
+        "parents": [
+          409
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 11.462416,
+      "dur": 0.03964,
+      "args": {
+        "node": 421,
+        "parents": [
+          420
+        ]
+      }
+    },
+    {
+      "name": "compute",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 11.502056,
+      "dur": 0.02792,
+      "args": {
+        "node": 423,
+        "parents": [
+          422
+        ]
+      }
+    },
+    {
+      "name": "compute",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 11.502376,
+      "dur": 0.028774,
+      "args": {
+        "node": 425,
+        "parents": [
+          424
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 11.529976,
+      "dur": 0.00516,
+      "args": {
+        "node": 427,
+        "parents": [
+          426
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 11.53115,
+      "dur": 0.00516,
+      "args": {
+        "node": 429,
+        "parents": [
+          428
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 11.535136,
+      "dur": 0.01,
+      "args": {
+        "node": 430,
+        "parents": [
+          427
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 11.53631,
+      "dur": 0.01,
+      "args": {
+        "node": 432,
+        "parents": [
+          429
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 11.54631,
+      "dur": 0.01256,
+      "args": {
+        "node": 437,
+        "parents": [
+          436
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 11.54631,
+      "dur": 0.01256,
+      "args": {
+        "node": 439,
+        "parents": [
+          438
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 11.55887,
+      "dur": 0.2125,
+      "args": {
+        "node": 441,
+        "parents": [
+          440
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 11.55887,
+      "dur": 0.2125,
+      "args": {
+        "node": 442,
+        "parents": [
+          440
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 11.55887,
+      "dur": 0.69,
+      "args": {
+        "node": 443,
+        "parents": [
+          440
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 12.24887,
+      "dur": 0.05104,
+      "args": {
+        "node": 446,
+        "parents": [
+          445
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 11.55887,
+      "dur": 0.69,
+      "args": {
+        "node": 447,
+        "parents": [
+          440
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 12.24887,
+      "dur": 0.05104,
+      "args": {
+        "node": 450,
+        "parents": [
+          449
+        ]
+      }
+    },
+    {
+      "name": "grouped_gemm",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 12.29991,
+      "dur": 0.04072,
+      "args": {
+        "node": 452,
+        "parents": [
+          451
+        ]
+      }
+    },
+    {
+      "name": "grouped_gemm",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 12.29991,
+      "dur": 0.04072,
+      "args": {
+        "node": 454,
+        "parents": [
+          453
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 12.34063,
+      "dur": 0.00532,
+      "args": {
+        "node": 456,
+        "parents": [
+          455
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 12.34063,
+      "dur": 0.00532,
+      "args": {
+        "node": 458,
+        "parents": [
+          457
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 12.34595,
+      "dur": 0.01,
+      "args": {
+        "node": 459,
+        "parents": [
+          456
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 12.34595,
+      "dur": 0.01,
+      "args": {
+        "node": 461,
+        "parents": [
+          458
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 12.35595,
+      "dur": 0.01256,
+      "args": {
+        "node": 466,
+        "parents": [
+          465
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 12.35595,
+      "dur": 0.01256,
+      "args": {
+        "node": 468,
+        "parents": [
+          467
+        ]
+      }
+    },
+    {
+      "name": "hbm_kv",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 12.36851,
+      "dur": 0.075625,
+      "args": {
+        "node": 474,
+        "parents": [
+          473
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 12.36851,
+      "dur": 0.129375,
+      "args": {
+        "node": 475,
+        "parents": [
+          473
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 12.36851,
+      "dur": 0.576875,
+      "args": {
+        "node": 476,
+        "parents": [
+          473
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 12.945385,
+      "dur": 0.04012,
+      "args": {
+        "node": 479,
+        "parents": [
+          478
+        ]
+      }
+    },
+    {
+      "name": "compute",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 12.985505,
+      "dur": 0.0292,
+      "args": {
+        "node": 481,
+        "parents": [
+          480
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 13.014705,
+      "dur": 0.00516,
+      "args": {
+        "node": 483,
+        "parents": [
+          482
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 13.019865,
+      "dur": 0.01,
+      "args": {
+        "node": 484,
+        "parents": [
+          483
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 13.029865,
+      "dur": 0.01256,
+      "args": {
+        "node": 489,
+        "parents": [
+          488
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 13.042425,
+      "dur": 0.129375,
+      "args": {
+        "node": 491,
+        "parents": [
+          490
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 13.042425,
+      "dur": 0.129375,
+      "args": {
+        "node": 492,
+        "parents": [
+          490
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 13.042425,
+      "dur": 0.369375,
+      "args": {
+        "node": 493,
+        "parents": [
+          490
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 13.4118,
+      "dur": 0.02552,
+      "args": {
+        "node": 496,
+        "parents": [
+          495
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 13.042425,
+      "dur": 0.369375,
+      "args": {
+        "node": 497,
+        "parents": [
+          490
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 13.4118,
+      "dur": 0.02552,
+      "args": {
+        "node": 500,
+        "parents": [
+          499
+        ]
+      }
+    },
+    {
+      "name": "grouped_gemm",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 13.43732,
+      "dur": 0.02536,
+      "args": {
+        "node": 502,
+        "parents": [
+          501
+        ]
+      }
+    },
+    {
+      "name": "grouped_gemm",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 13.43732,
+      "dur": 0.02536,
+      "args": {
+        "node": 504,
+        "parents": [
+          503
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 13.46268,
+      "dur": 0.00516,
+      "args": {
+        "node": 506,
+        "parents": [
+          505
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 13.46268,
+      "dur": 0.00516,
+      "args": {
+        "node": 508,
+        "parents": [
+          507
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 13.46784,
+      "dur": 0.01,
+      "args": {
+        "node": 509,
+        "parents": [
+          506
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 13.46784,
+      "dur": 0.035625,
+      "args": {
+        "node": 511,
+        "parents": [
+          508
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 13.503465,
+      "dur": 0.01256,
+      "args": {
+        "node": 516,
+        "parents": [
+          515
+        ]
+      }
+    },
+    {
+      "name": "hbm_kv",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 13.516025,
+      "dur": 0.068125,
+      "args": {
+        "node": 518,
+        "parents": [
+          517
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 13.516025,
+      "dur": 0.129375,
+      "args": {
+        "node": 519,
+        "parents": [
+          517
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 13.516025,
+      "dur": 0.576875,
+      "args": {
+        "node": 520,
+        "parents": [
+          517
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 14.0929,
+      "dur": 0.04012,
+      "args": {
+        "node": 523,
+        "parents": [
+          522
+        ]
+      }
+    },
+    {
+      "name": "compute",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 14.13302,
+      "dur": 0.0292,
+      "args": {
+        "node": 525,
+        "parents": [
+          524
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 14.16222,
+      "dur": 0.00516,
+      "args": {
+        "node": 527,
+        "parents": [
+          526
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 14.16738,
+      "dur": 0.01,
+      "args": {
+        "node": 528,
+        "parents": [
+          527
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 14.17738,
+      "dur": 0.01256,
+      "args": {
+        "node": 533,
+        "parents": [
+          532
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 14.18994,
+      "dur": 0.129375,
+      "args": {
+        "node": 535,
+        "parents": [
+          534
+        ]
+      }
+    },
+    {
+      "name": "hbm_activation",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 14.18994,
+      "dur": 0.129375,
+      "args": {
+        "node": 536,
+        "parents": [
+          534
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 14.18994,
+      "dur": 0.369375,
+      "args": {
+        "node": 537,
+        "parents": [
+          534
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 14.559315,
+      "dur": 0.02552,
+      "args": {
+        "node": 540,
+        "parents": [
+          539
+        ]
+      }
+    },
+    {
+      "name": "hbm_weights",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 14.18994,
+      "dur": 0.369375,
+      "args": {
+        "node": 541,
+        "parents": [
+          534
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 14.559315,
+      "dur": 0.02552,
+      "args": {
+        "node": 544,
+        "parents": [
+          543
+        ]
+      }
+    },
+    {
+      "name": "grouped_gemm",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 14.584835,
+      "dur": 0.02536,
+      "args": {
+        "node": 546,
+        "parents": [
+          545
+        ]
+      }
+    },
+    {
+      "name": "grouped_gemm",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 14.584835,
+      "dur": 0.02536,
+      "args": {
+        "node": 548,
+        "parents": [
+          547
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 14.610195,
+      "dur": 0.00516,
+      "args": {
+        "node": 550,
+        "parents": [
+          549
+        ]
+      }
+    },
+    {
+      "name": "dma",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 14.610195,
+      "dur": 0.00516,
+      "args": {
+        "node": 552,
+        "parents": [
+          551
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 0,
+      "ts": 14.615355,
+      "dur": 0.01,
+      "args": {
+        "node": 553,
+        "parents": [
+          550
+        ]
+      }
+    },
+    {
+      "name": "hbm_output",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 14.615355,
+      "dur": 0.035625,
+      "args": {
+        "node": 555,
+        "parents": [
+          552
+        ]
+      }
+    },
+    {
+      "name": "card_interconnect",
+      "ph": "X",
+      "pid": 0,
+      "tid": 1,
+      "ts": 14.65098,
+      "dur": 0.01256,
+      "args": {
+        "node": 560,
+        "parents": [
+          559
+        ]
+      }
+    }
+  ],
+  "displayTimeUnit": "ns"
+}

@@ -1,0 +1,66 @@
+diff --git a/include/hbfsim/integration/residency.h b/include/hbfsim/integration/residency.h
+index e8b91e7..0bbe932 100644
+--- a/include/hbfsim/integration/residency.h
++++ b/include/hbfsim/integration/residency.h
+@@ -74,6 +74,11 @@ class ResidencyManager {
+   // An accepted access owns an internal lease until its real HBM completion.
+   hbmsim::SubmitResult try_access(ObjectId, hbmsim::HbmOp,
+       hbmsim::CompletionCallback, std::uint8_t priority = 8);
++  // Timed traffic outside managed resident objects uses the same HBM
++  // controller and data buses. The managed slot address range is reserved.
++  hbmsim::SubmitResult try_submit_hbm(hbmsim::HbmOp op,
++      std::uint64_t address, std::uint64_t bytes, hbmsim::RequestMetadata metadata,
++      hbmsim::CompletionCallback callback);
+   bool dirty(ObjectId id) const { return objects_.at(id).dirty; }
+   // Writes mark dirty only on HBM completion. Writeback never implicitly erases
+   // HBF blocks: caller supplies a legal fresh full-DLU destination.
+diff --git a/src/integration/residency.cpp b/src/integration/residency.cpp
+index 622ada4..86a1def 100644
+--- a/src/integration/residency.cpp
++++ b/src/integration/residency.cpp
+@@ -250,6 +250,19 @@ hbmsim::SubmitResult ResidencyManager::try_access(ObjectId id, hbmsim::HbmOp op,
+   return result;
+ }
+ 
++
++hbmsim::SubmitResult ResidencyManager::try_submit_hbm(hbmsim::HbmOp op,
++    std::uint64_t address, std::uint64_t bytes, hbmsim::RequestMetadata metadata,
++    hbmsim::CompletionCallback callback) {
++  if (!bytes || bytes - 1 > std::numeric_limits<std::uint64_t>::max() - address)
++    throw std::invalid_argument("invalid direct HBM range");
++  const auto managed_last = config_.hbm_base + config_.capacity_bytes - 1;
++  const auto request_last = address + bytes - 1;
++  if (address <= managed_last && request_last >= config_.hbm_base)
++    throw std::invalid_argument("direct HBM access overlaps managed residency slots");
++  return bridge_.try_submit_hbm(op, address, bytes, metadata, std::move(callback));
++}
++
+ bool ResidencyManager::writeback(ObjectId id, std::uint64_t destination,
+                                   WritebackCallback callback) {
+   auto& object = objects_.at(id);
+diff --git a/tests/test_residency.cpp b/tests/test_residency.cpp
+index 774a3b4..ac84fd0 100644
+--- a/tests/test_residency.cpp
++++ b/tests/test_residency.cpp
+@@ -25,6 +25,21 @@ int main() {
+     CHECK(completions == 2 && bridge.bridge_stats().completed == 2);
+     CHECK(bridge.bridge_stats().peak_staging_bytes == 4096);
+   }
++  // Direct KV-like traffic shares this manager's HBM but cannot alias slots.
++  {
++    Simulator sim(integration_config());
++    ResidencyManager memory(sim, integration_hbm(), {4096, 4096});
++    bool rejected = false, completed = false;
++    try {
++      memory.try_submit_hbm(hbmsim::HbmOp::Read, 0, 64, {},
++                            [](const auto&) {});
++    } catch (const std::invalid_argument&) { rejected = true; }
++    CHECK(rejected);
++    CHECK(memory.try_submit_hbm(hbmsim::HbmOp::Read, 0x10000000, 64, {},
++          [&](const auto&) { completed = true; }).accepted());
++    sim.run();
++    CHECK(completed && memory.hbm_stats().read_bytes == 64);
++  }
+   // Coalesced misses, leases, hits, and deterministic LRU replacement.
+   {
+     Simulator sim(integration_config());

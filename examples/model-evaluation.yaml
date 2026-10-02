@@ -1,0 +1,45 @@
+# Hypothetical hardware assumptions; select model with --model and run --mode fast.
+model:
+  layers: 2
+  hidden: 32
+  heads: 4
+  kv_heads: 2
+  ffn: 64
+  dtype_bytes: 2
+hardware:
+  devices: 8
+  peak_tflops: 100
+  compute_efficiency: 0.5
+  hbm_capacity_bytes: 85899345920
+  kernel_launch_ps: 10000
+  nvlink_gbps: 400
+  nvlink_latency_ps: 10000
+  hbm_bandwidth_GBps: 2000
+  hardware_id: hypothetical-8x80GiB
+  device_nodes:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  node_racks:
+  - 0
+parallel:
+  tp: 8
+  pp: 1
+  dp: 1
+  ep: 1
+serving:
+  max_batch_tokens: 128
+  max_seqs: 4
+  prefill_chunk_tokens: 128
+  kv_block_tokens: 16
+storage:
+  hbf: false
+requests:
+- arrival_ps: 0
+  prompt_tokens: 512
+  output_tokens: 128

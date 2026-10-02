@@ -1,0 +1,21 @@
+# Synthetic small validation configuration, not a calibrated product specification.
+hardware:
+  kind: nvidia_gpu
+  hardware_id: demo-gpu-single
+  devices: 1
+  peak_tflops: 0.5
+  compute_efficiency: 0.5
+  hbm_capacity_bytes: 1048576
+  hbm_profile: hbm3_6400
+  hbm_bandwidth_GBps: 1000 # Used by fast mode; detailed mode uses hbm_profile.
+  kernel_launch_ps: 10000
+  fabric_topology: nvswitch
+  nvlink_gbps: 100 # Gbit/s, not GB/s.
+  nvlink_latency_ps: 10000
+  device_nodes: [0]
+  node_racks: [0]
+parallel:
+  tp: 1
+  pp: 1
+  dp: 1
+  ep: 1

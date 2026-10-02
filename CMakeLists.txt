@@ -1,0 +1,23 @@
+cmake_minimum_required(VERSION 3.20)
+project(infer_sim VERSION 1.1.0 LANGUAGES CXX)
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(HBFSIM_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/.deps/hbfsim" CACHE PATH "HBFSim checkout")
+set(HBMSIM_SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/.deps/hbmsim" CACHE PATH "HBMSim checkout")
+if(NOT EXISTS "${HBFSIM_SOURCE_DIR}/CMakeLists.txt" OR
+   NOT EXISTS "${HBMSIM_SOURCE_DIR}/CMakeLists.txt")
+  message(FATAL_ERROR "Run python3 tools/bootstrap_deps.py, or set HBFSIM_SOURCE_DIR and HBMSIM_SOURCE_DIR")
+endif()
+set(BUILD_TESTING OFF CACHE BOOL "" FORCE)
+set(HBFSIM_ENABLE_HBMSIM_INTEGRATION ON CACHE BOOL "" FORCE)
+add_subdirectory(${HBFSIM_SOURCE_DIR} ${CMAKE_BINARY_DIR}/hbfsim EXCLUDE_FROM_ALL)
+add_executable(infer_sim src/main.cpp)
+target_link_libraries(infer_sim PRIVATE hbfsim_core hbmsim_core)
+target_compile_options(infer_sim PRIVATE -Wall -Wextra -Wpedantic)
+enable_testing()
+find_package(Python3 COMPONENTS Interpreter REQUIRED)
+add_test(NAME inference_scenarios COMMAND ${Python3_EXECUTABLE} -m unittest
+  discover -s ${CMAKE_CURRENT_SOURCE_DIR}/tests -v)
+set_tests_properties(inference_scenarios PROPERTIES
+  ENVIRONMENT "INFER_SIM_BINARY=$<TARGET_FILE:infer_sim>")

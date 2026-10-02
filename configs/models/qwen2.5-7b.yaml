@@ -1,0 +1,34 @@
+# Official config dimensions; block-level simulation scope.
+model:
+  kind: dense
+  layers: 28
+  hidden: 3584
+  heads: 28
+  kv_heads: 4
+  head_dim: 128
+  ffn: 18944
+  dtype_bytes: 2
+model_metadata:
+  model_id: Qwen/Qwen2.5-7B-Instruct
+  model_type: qwen2
+  source_url: https://huggingface.co/Qwen/Qwen2.5-7B-Instruct/resolve/a09a35458c702b33eeacc393d103063234e8bc28/config.json
+  revision: a09a35458c702b33eeacc393d103063234e8bc28
+  source_sha256: 7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c
+  source_dtype: bfloat16
+  vocab_size: 152064
+  max_position_embeddings: 32768
+  reference_dimensions:
+    kind: dense
+    layers: 28
+    hidden: 3584
+    heads: 28
+    kv_heads: 4
+    head_dim: 128
+    ffn: 18944
+    dtype_bytes: 2
+  scope: transformer_block_matrices
+  limitations:
+  - models Transformer block matrices; excludes embeddings, LM head, norms, biases,
+    RoPE and sampling
+  - real-size presets require fast mode on this local machine
+  - routing is deterministic synthetic routing, not learned checkpoint routing

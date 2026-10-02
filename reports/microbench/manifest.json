@@ -1,0 +1,53 @@
+{
+  "evidence": "simulated",
+  "cases": [
+    {
+      "prompt_tokens": 1,
+      "batch": 1,
+      "report": "prompt-1-batch-1.json",
+      "scenario_sha256": "060cba9c30bd16d342b5f39f1a0e2711980f09587f353a24898d1809502ba428",
+      "mean_ttft_ps": 8586250,
+      "mean_tpot_ps": 4301250
+    },
+    {
+      "prompt_tokens": 1,
+      "batch": 2,
+      "report": "prompt-1-batch-2.json",
+      "scenario_sha256": "145cdd84e3e0b13aa817aed0a3ccd17bcc300621b62487e8e388ab138d146dd4",
+      "mean_ttft_ps": 10757500,
+      "mean_tpot_ps": 4311562
+    },
+    {
+      "prompt_tokens": 4,
+      "batch": 1,
+      "report": "prompt-4-batch-1.json",
+      "scenario_sha256": "942ca8fa654b17f770f1aa0c77d7bbbb82f958c432bf8f78dfc114f8edaaf0c2",
+      "mean_ttft_ps": 8640000,
+      "mean_tpot_ps": 4301250
+    },
+    {
+      "prompt_tokens": 4,
+      "batch": 2,
+      "report": "prompt-4-batch-2.json",
+      "scenario_sha256": "3ba7ec1f4ee02c09578e36c1feec55f5141c686783be93a15ce01ba734eeaeb6",
+      "mean_ttft_ps": 10871250,
+      "mean_tpot_ps": 4311562
+    },
+    {
+      "prompt_tokens": 16,
+      "batch": 1,
+      "report": "prompt-16-batch-1.json",
+      "scenario_sha256": "efcf260ba200384db8666519ce3faa3a76e1b6d7386394c5f112c95672ac8cca",
+      "mean_ttft_ps": 8918751,
+      "mean_tpot_ps": 4304376
+    },
+    {
+      "prompt_tokens": 16,
+      "batch": 2,
+      "report": "prompt-16-batch-2.json",
+      "scenario_sha256": "7b47cf4fad4645afc4eb39fdc92f943ab797fe83714c1bcfb166493401756467",
+      "mean_ttft_ps": 11451875,
+      "mean_tpot_ps": 4316094
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "hbmsim": {
+    "url": "https://github.com/litao1991/hbmsim.git",
+    "revision": "f147ab2bfde0671cd3d7ea4437925f5bf386b743"
+  },
+  "hbfsim": {
+    "url": "https://github.com/litao1991/hbfsim.git",
+    "revision": "28b1123ae314f50d2568387091bd20db4e630356",
+    "patch": "patches/hbfsim-shared-hbm.patch",
+    "patch_sha256": "9f83780b6defa82c1dca669e296a06f0136b04903603890b192ee00d0850de58"
+  }
+}

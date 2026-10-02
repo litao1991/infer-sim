@@ -1,0 +1,11 @@
+test_explicit_head_dim_supports_nondivisible_hidden (test_models.ModelDimensionTests) ... ok
+test_importer_preserves_qwen_moe_shape_and_rejects_unsupported (test_models.ModelDimensionTests) ... ok
+test_independent_head_dim_matches_hand_calculation (test_models.ModelDimensionTests) ... ok
+test_all_ten_presets_are_fast_runnable_with_provenance (test_models.ModelPresetTests) ... ok
+test_model_import_and_selection_cli (test_models.ModelPresetTests) ... ok
+test_model_switch_replaces_old_model_and_records_overrides (test_models.ModelPresetTests) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 57.753s
+
+OK

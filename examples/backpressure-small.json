@@ -1,0 +1,47 @@
+{
+  "model": {
+    "layers": 2,
+    "hidden": 32,
+    "heads": 4,
+    "kv_heads": 2,
+    "ffn": 64,
+    "dtype_bytes": 2
+  },
+  "hardware": {
+    "devices": 1,
+    "peak_tflops": 0.5,
+    "compute_efficiency": 0.5,
+    "hbm_capacity_bytes": 1048576,
+    "kernel_launch_ps": 10000,
+    "nvlink_gbps": 100,
+    "nvlink_latency_ps": 10000,
+    "hbm_queue_capacity": 1,
+    "hbm_bandwidth_GBps": 1000
+  },
+  "parallel": {
+    "tp": 1,
+    "pp": 1,
+    "dp": 1
+  },
+  "serving": {
+    "max_batch_tokens": 8,
+    "max_seqs": 2,
+    "prefill_chunk_tokens": 4,
+    "kv_block_tokens": 4
+  },
+  "storage": {
+    "hbf": false
+  },
+  "requests": [
+    {
+      "arrival_ps": 0,
+      "prompt_tokens": 5,
+      "output_tokens": 3
+    },
+    {
+      "arrival_ps": 100000,
+      "prompt_tokens": 3,
+      "output_tokens": 2
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+# Generic NPU assumptions, not calibrated for a specific vendor/product.
+# nvlink_* are the current generic local-interconnect parameter names.
+hardware:
+  kind: npu
+  hardware_id: demo-npu-2card
+  devices: 2
+  peak_tflops: 0.5
+  compute_efficiency: 0.5
+  gemm_efficiency: 0.6
+  attention_efficiency: 0.3
+  grouped_gemm_efficiency: 0.4
+  hbm_capacity_bytes: 1048576
+  hbm_profile: hbm3_6400
+  hbm_bandwidth_GBps: 1000
+  kernel_launch_ps: 10000
+  sram_bytes: 2048
+  dma_tile_bytes: 2048
+  dma_GBps: 200
+  dma_latency_ps: 5000
+  fabric_topology: nvlink_mesh
+  collective: ring
+  nvlink_gbps: 100
+  nvlink_latency_ps: 10000
+  device_nodes: [0, 0]
+  node_racks: [0]
+parallel:
+  tp: 2
+  pp: 1
+  dp: 1
+  ep: 1

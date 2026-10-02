@@ -1,0 +1,32 @@
+{
+  "hardware": {
+    "chip_type": "Apple M5",
+    "physical_memory": "32 GB",
+    "number_processors": "proc 10:4:6:0"
+  },
+  "architecture": "arm64",
+  "largest_case_wall_seconds": 0.07492637499999999,
+  "largest_case_devices": 16,
+  "largest_case_model": {
+    "layers": 2,
+    "hidden": 16,
+    "heads": 4,
+    "kv_heads": 2,
+    "ffn": 32,
+    "dtype_bytes": 2,
+    "kind": "moe",
+    "experts": 4,
+    "top_k": 2,
+    "shared_experts": 1,
+    "routing_seed": 7,
+    "expert_weights": [
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "max_child_rss_bytes": 16023552,
+  "driver_max_rss_bytes": 35930112,
+  "note": "Per-process high-water RSS for sequential demo execution; not total system usage."
+}

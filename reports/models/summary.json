@@ -1,0 +1,138 @@
+{
+  "date": "2026-10-03",
+  "mode": "fast_lower_bound",
+  "scope": "Transformer block matrices only; excludes embeddings, LM head and other omitted work",
+  "hardware_assumptions": "hypothetical 8 x 80 GiB GPU, TP=8; no measured calibration",
+  "tp_assumption": "ideal KV sharding; no framework-specific KV-head replication",
+  "workload": {
+    "prompt_tokens": 512,
+    "output_tokens": 128
+  },
+  "resources": {
+    "elapsed_seconds": 0.045608792,
+    "python_max_rss_bytes": 17219584,
+    "weight_tensors_loaded": false
+  },
+  "models": [
+    {
+      "preset": "configs/models/llama-3.1-70b.yaml",
+      "model_id": "meta-llama/Llama-3.1-70B-Instruct",
+      "block_parameters": 68451041280,
+      "active_block_parameters_per_token": 68451041280,
+      "kv_bytes_per_token_total": 327680,
+      "weight_bytes_per_device": 17112760320,
+      "modeled_hbm_capacity_feasible": true,
+      "estimated_flops": 88155042611200,
+      "scenario_sha256": "649ed251d053a368589e1865e51fb7e2ca02bd43be5dfd21292b07c92e5cb673",
+      "report": "llama-3.1-70b.json"
+    },
+    {
+      "preset": "configs/models/llama-3.1-8b.yaml",
+      "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+      "block_parameters": 6979321856,
+      "active_block_parameters_per_token": 6979321856,
+      "kv_bytes_per_token_total": 131072,
+      "weight_bytes_per_device": 1744830464,
+      "modeled_hbm_capacity_feasible": true,
+      "estimated_flops": 9041073930240,
+      "scenario_sha256": "5f0454d1272cc59d97b66887704e4ffd5f157303bcf993e2bdfbf4b5ba553c06",
+      "report": "llama-3.1-8b.json"
+    },
+    {
+      "preset": "configs/models/mixtral-8x22b.yaml",
+      "model_id": "mistralai/Mixtral-8x22B-Instruct-v0.1",
+      "block_parameters": 140226723840,
+      "active_block_parameters_per_token": 38758121472,
+      "kv_bytes_per_token_total": 229376,
+      "weight_bytes_per_device": 35056680960,
+      "modeled_hbm_capacity_feasible": true,
+      "estimated_flops": 49892693114880,
+      "scenario_sha256": "7f086dd0e3c51c4f0f7c3a12ead72b8a73ac4e87b4d3e128a0a8f029961ef93b",
+      "report": "mixtral-8x22b.json"
+    },
+    {
+      "preset": "configs/models/mixtral-8x7b.yaml",
+      "model_id": "mistralai/Mixtral-8x7B-Instruct-v0.1",
+      "block_parameters": 46440382464,
+      "active_block_parameters_per_token": 12617515008,
+      "kv_bytes_per_token_total": 131072,
+      "weight_bytes_per_device": 11610095616,
+      "modeled_hbm_capacity_feasible": true,
+      "estimated_flops": 16257961164800,
+      "scenario_sha256": "34ddec1a8522b1e5facd9cb3a29ff8a38a42b578919da1a67e2665dec6e2a683",
+      "report": "mixtral-8x7b.json"
+    },
+    {
+      "preset": "configs/models/qwen2.5-32b.yaml",
+      "model_id": "Qwen/Qwen2.5-32B-Instruct",
+      "block_parameters": 31205621760,
+      "active_block_parameters_per_token": 31205621760,
+      "kv_bytes_per_token_total": 262144,
+      "weight_bytes_per_device": 7801405440,
+      "modeled_hbm_capacity_feasible": true,
+      "estimated_flops": 40212050739200,
+      "scenario_sha256": "ee47c2665bb2f76a4bb35f0432f148004975556aa81079b88f22523fc44eab69",
+      "report": "qwen2.5-32b.json"
+    },
+    {
+      "preset": "configs/models/qwen2.5-7b.yaml",
+      "model_id": "Qwen/Qwen2.5-7B-Instruct",
+      "block_parameters": 6525288448,
+      "active_block_parameters_per_token": 6525288448,
+      "kv_bytes_per_token_total": 57344,
+      "weight_bytes_per_device": 1631322112,
+      "modeled_hbm_capacity_feasible": true,
+      "estimated_flops": 8434706022400,
+      "scenario_sha256": "52c20094feb40317c3436749637a90ba29fa4295105dfbd97f0d3352057e57bc",
+      "report": "qwen2.5-7b.json"
+    },
+    {
+      "preset": "configs/models/qwen3-235b-a22b.yaml",
+      "model_id": "Qwen/Qwen3-235B-A22B",
+      "block_parameters": 233848176640,
+      "active_block_parameters_per_token": 20945305600,
+      "kv_bytes_per_token_total": 192512,
+      "weight_bytes_per_device": 58462044160,
+      "modeled_hbm_capacity_feasible": true,
+      "estimated_flops": 27441800151040,
+      "scenario_sha256": "a46c6acd690c232879a7e659a05761dfdfe9a35661c85f4b1910827bcb415a76",
+      "report": "qwen3-235b-a22b.json"
+    },
+    {
+      "preset": "configs/models/qwen3-30b-a3b.yaml",
+      "model_id": "Qwen/Qwen3-30B-A3B",
+      "block_parameters": 29909581824,
+      "active_block_parameters_per_token": 2730491904,
+      "kv_bytes_per_token_total": 98304,
+      "weight_bytes_per_device": 7477395456,
+      "modeled_hbm_capacity_feasible": true,
+      "estimated_flops": 3656342568960,
+      "scenario_sha256": "fabb6d1a99f33af0a33c361b1ce434d931a43efc7b0a2fb34331c5e13d6123f0",
+      "report": "qwen3-30b-a3b.json"
+    },
+    {
+      "preset": "configs/models/qwen3-32b.yaml",
+      "model_id": "Qwen/Qwen3-32B",
+      "block_parameters": 31205621760,
+      "active_block_parameters_per_token": 31205621760,
+      "kv_bytes_per_token_total": 262144,
+      "weight_bytes_per_device": 7801405440,
+      "modeled_hbm_capacity_feasible": true,
+      "estimated_flops": 40373363671040,
+      "scenario_sha256": "fad08bf3c0cbe82a50c8e91f7ecd5d0718cfd53796f825eb5bfd082fb4b58fc3",
+      "report": "qwen3-32b.json"
+    },
+    {
+      "preset": "configs/models/qwen3-8b.yaml",
+      "model_id": "Qwen/Qwen3-8B",
+      "block_parameters": 6945767424,
+      "active_block_parameters_per_token": 6945767424,
+      "kv_bytes_per_token_total": 147456,
+      "weight_bytes_per_device": 1736441856,
+      "modeled_hbm_capacity_feasible": true,
+      "estimated_flops": 9011567001600,
+      "scenario_sha256": "02d366d881db75a37a5f6280d5f23eef3a77a9f81f0136c095d43e8e7b6c91c8",
+      "report": "qwen3-8b.json"
+    }
+  ]
+}

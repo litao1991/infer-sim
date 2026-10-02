@@ -1,0 +1,176 @@
+{
+  "active_parameters_per_token": 31205621760,
+  "memory_traffic_assumption": "all experts read per layer invocation, no batch reuse; conservative MoE estimate",
+  "mode": "fast_lower_bound",
+  "model_parameters": 31205621760,
+  "weight_bytes_total": 62411243520,
+  "weight_bytes_per_device": 7801405440,
+  "kv_bytes_per_token_total": 262144,
+  "max_kv_bytes_per_request_device": 20971520,
+  "max_kv_bytes_per_replica": 20971520,
+  "scratch_bytes_per_device": 163840,
+  "hbf_layer_slot_feasible": true,
+  "estimated_flops": 40212050739200,
+  "estimated_hbm_bytes_no_batch_reuse": 8292642324480,
+  "hbm_time_no_batch_reuse_ps": 518290145280,
+  "compute_lower_bound_ps": 100530126848,
+  "hbm_capacity_feasible": true,
+  "simulator_version": "1.0.0",
+  "config_version": "1.0",
+  "simulator_source_sha256": "962ba7f6f5d04580f11a71a827b9926bd8062e5ed6653b404f63bb55e6cf48e7",
+  "scenario_sha256": "ee47c2665bb2f76a4bb35f0432f148004975556aa81079b88f22523fc44eab69",
+  "scenario": {
+    "model": {
+      "kind": "dense",
+      "layers": 64,
+      "hidden": 5120,
+      "heads": 40,
+      "kv_heads": 8,
+      "head_dim": 128,
+      "ffn": 27648,
+      "dtype_bytes": 2
+    },
+    "hardware": {
+      "devices": 8,
+      "peak_tflops": 100,
+      "compute_efficiency": 0.5,
+      "hbm_capacity_bytes": 85899345920,
+      "kernel_launch_ps": 10000,
+      "nvlink_gbps": 400,
+      "nvlink_latency_ps": 10000,
+      "hbm_bandwidth_GBps": 2000,
+      "hardware_id": "hypothetical-8x80GiB",
+      "device_nodes": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "node_racks": [
+        0
+      ],
+      "kind": "nvidia_gpu",
+      "hbm_profile": "hbm3_6400",
+      "fabric_topology": "nvswitch",
+      "collective": "ring"
+    },
+    "parallel": {
+      "tp": 8,
+      "pp": 1,
+      "dp": 1,
+      "ep": 1,
+      "placement": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "serving": {
+      "max_batch_tokens": 128,
+      "max_seqs": 4,
+      "prefill_chunk_tokens": 128,
+      "kv_block_tokens": 16
+    },
+    "storage": {
+      "hbf": false
+    },
+    "requests": [
+      {
+        "arrival_ps": 0,
+        "prompt_tokens": 512,
+        "output_tokens": 128
+      }
+    ],
+    "model_metadata": {
+      "model_id": "Qwen/Qwen2.5-32B-Instruct",
+      "model_type": "qwen2",
+      "source_url": "https://huggingface.co/Qwen/Qwen2.5-32B-Instruct/resolve/5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd/config.json",
+      "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+      "source_sha256": "9c6772f138ef9e5b3d1c18f2c87e451bbc01f5f1a4eabb36f9bf4f53829b903e",
+      "source_dtype": "bfloat16",
+      "vocab_size": 152064,
+      "max_position_embeddings": 32768,
+      "reference_dimensions": {
+        "kind": "dense",
+        "layers": 64,
+        "hidden": 5120,
+        "heads": 40,
+        "kv_heads": 8,
+        "head_dim": 128,
+        "ffn": 27648,
+        "dtype_bytes": 2
+      },
+      "scope": "transformer_block_matrices",
+      "limitations": [
+        "models Transformer block matrices; excludes embeddings, LM head, norms, biases, RoPE and sampling",
+        "real-size presets require fast mode on this local machine",
+        "routing is deterministic synthetic routing, not learned checkpoint routing"
+      ]
+    },
+    "config_version": "1.0"
+  },
+  "calibration": {
+    "status": "uncalibrated",
+    "source": "scenario assumptions"
+  },
+  "prediction_error": {
+    "status": "unmeasured",
+    "metrics": null
+  },
+  "model_accounting": {
+    "scope": "transformer_block_matrices",
+    "model_id": "Qwen/Qwen2.5-32B-Instruct",
+    "omitted": [
+      "token embeddings",
+      "LM head",
+      "normalization weights and operations",
+      "projection biases",
+      "activation functions",
+      "RoPE",
+      "sampling"
+    ],
+    "capacity_scope": "HBM feasibility covers modeled block weights, KV and scratch; not the full checkpoint",
+    "parallelism_assumption": "ideal TP sharding of weights and KV; framework-specific KV-head replication is not modeled",
+    "source": {
+      "model_id": "Qwen/Qwen2.5-32B-Instruct",
+      "model_type": "qwen2",
+      "source_url": "https://huggingface.co/Qwen/Qwen2.5-32B-Instruct/resolve/5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd/config.json",
+      "revision": "5ede1c97bbab6ce5cda5812749b4c0bdf79b18dd",
+      "source_sha256": "9c6772f138ef9e5b3d1c18f2c87e451bbc01f5f1a4eabb36f9bf4f53829b903e",
+      "source_dtype": "bfloat16",
+      "vocab_size": 152064,
+      "max_position_embeddings": 32768,
+      "reference_dimensions": {
+        "kind": "dense",
+        "layers": 64,
+        "hidden": 5120,
+        "heads": 40,
+        "kv_heads": 8,
+        "head_dim": 128,
+        "ffn": 27648,
+        "dtype_bytes": 2
+      },
+      "scope": "transformer_block_matrices",
+      "limitations": [
+        "models Transformer block matrices; excludes embeddings, LM head, norms, biases, RoPE and sampling",
+        "real-size presets require fast mode on this local machine",
+        "routing is deterministic synthetic routing, not learned checkpoint routing"
+      ]
+    },
+    "overrides_from_preset": {}
+  },
+  "distributions_ps": null,
+  "critical_path": null,
+  "bottleneck": {
+    "interpretation": "analytic bounds have no execution timeline"
+  }
+}
