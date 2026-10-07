@@ -122,6 +122,10 @@ HBF 数据经有界 HBM 缓存访问；物理后备使用有限的追加日志�
 
 ## 示例与实验
 
+百炼公开 trace 的流式统计、确定性窗口抽样和权重/KV 放置评估见
+[百炼 trace 评估](docs/BAILIAN_EVAL.md)。原始 JSONL 与详细报告保存在忽略提交的
+`data/bailian/` 和 `reports/bailian/`，避免将大文件推送到仓库。
+
 ```sh
 # 顺序执行 8 种 top-k × 精度 × 集合通信算法组合
 python3 tools/experiments.py sweep examples/moe-small.json \

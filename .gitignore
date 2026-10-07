@@ -4,4 +4,6 @@ __pycache__/
 .venv/
 *.pyc
 .deps/
+data/
+reports/bailian/
 .DS_Store
