@@ -1,0 +1,33 @@
+# Synthetic one-request example: retaining an open KV tail avoids rewrites.
+model:
+  kind: dense
+  layers: 1
+  hidden: 16
+  heads: 4
+  kv_heads: 2
+  ffn: 32
+  dtype_bytes: 2
+hardware:
+  devices: 1
+  peak_tflops: 0.5
+  compute_efficiency: 0.5
+  hbm_capacity_bytes: 65536
+  hbm_bandwidth_GBps: 1000
+  kernel_launch_ps: 10000
+  nvlink_gbps: 100
+  nvlink_latency_ps: 10000
+parallel: {tp: 1, pp: 1, dp: 1}
+serving:
+  max_batch_tokens: 32
+  max_seqs: 4
+  prefill_chunk_tokens: 8
+  kv_block_tokens: 4
+storage:
+  weights: hbm
+  kv: hbf
+  kv_cache_bytes_per_device: 8192
+  kv_capacity_bytes_per_device: 65536
+  hbf_capacity_bytes: 1048576
+  kv_cache_policy: write_aware
+requests:
+- {arrival_ps: 0, prompt_tokens: 8, output_tokens: 12}

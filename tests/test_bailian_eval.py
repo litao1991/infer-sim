@@ -1,5 +1,7 @@
 import hashlib
 import importlib.util
+import contextlib
+import io
 import json
 import os
 from pathlib import Path
@@ -11,6 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "tools"))
 from bailian_eval import inspect, midpoint_window, run, scaled_tokens
 from download_bailian import verify
+from bailian_kv_sweep import sweep
 
 
 class BailianEvalTests(unittest.TestCase):
@@ -82,6 +85,36 @@ class BailianEvalTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, "local detailed-mode budget"):
                 run(directory, Path(directory) / "out", self.binary, sample_size=17,
                     sources=(path.name,))
+
+    def test_selected_placement_write_policy_and_block_override(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = self.trace(directory)
+            output = Path(directory) / "policy"
+            rows = run(directory, output, self.binary, sample_size=2, speeds=(1000,),
+                       sources=(path.name,), cache_policy="write_aware", block_tokens=8,
+                       placements=("hbm-hbf",))
+            self.assertEqual(len(rows), 2)
+            self.assertTrue(all(r['status'] == 'ok' for r in rows))
+            self.assertIsNone(rows[0]['ttft_ratio_to_hbm'])
+            report = json.loads((output / rows[0]['report']).read_text())
+            self.assertEqual(report['scenario']['storage']['kv_cache_policy'], 'write_aware')
+            self.assertEqual(report['scenario']['serving']['kv_block_tokens'], 8)
+
+    def test_write_policy_sweep_on_identical_windows(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = self.trace(directory)
+            output = Path(directory) / 'sweep'
+            with contextlib.redirect_stdout(io.StringIO()):
+                summary = sweep(directory, output, self.binary, blocks=(4,), sources=(path.name,),
+                                sample_size=2, divisor=64, prompt_cap=24, output_cap=8)
+            self.assertEqual((summary['succeeded'], summary['failed']), (6, 0))
+            self.assertEqual(len(summary['aggregates']), 3)
+            for row in summary['aggregates']:
+                self.assertEqual(row['write_dlu_ops'] * 4096, row['hbf_write_bytes'])
+            # Eviction choice cannot change the workload being compared.
+            counts = {(r['input_tokens'], r['output_tokens']) for r in summary['runs']
+                      if r['window'] == 'burst'}
+            self.assertEqual(len(counts), 1)
 
     @unittest.skipUnless(importlib.util.find_spec("yaml"), "PyYAML is not installed")
     def test_yaml_npu_architecture(self):

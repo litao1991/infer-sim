@@ -72,6 +72,9 @@ def enrich(report, data, fingerprint, profile=None):
         "kv_offload_timing": "QKV projection, block append/read stream, then aggregate attention and remaining GEMM; no stream/compute overlap",
         "execution_mode": "block_stream" if any(k in data.get("storage", {}) for k in ("weights", "kv")) else "legacy_aggregate",
         "kv_hotness": "recent token blocks per request and layer; soft eviction preference",
+        "kv_eviction_policy": data.get("storage", {}).get("kv_cache_policy", "lru"),
+        "kv_writeback": "dirty eviction writes a complete aligned KV page; write_aware prefers clean then sealed dirty victims; no packing buffer",
+        "write_amplification_scope": "KV physical log write bytes / newly persisted dirty logical bytes; excludes NAND internal GC and wear",
         "hbf_log": "shared append-only physical backing; old versions are not garbage collected in this run",
         "capacity_scope": "HBM maxima use conservative per-stage/lane bounds; KV cache and weight cache are separate reservations",
         "legacy_metrics": "top-level hbf_fill/writeback fields refer to weights; storage_metrics.kv and hbf_log report KV transfers"}

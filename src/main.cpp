@@ -52,7 +52,8 @@ struct Config {
   bool prefetch = true;
   int writeback_layer = -1;
   Time cache_bytes = 0, slot_bytes = 0;
-  bool kv_offload = false, kv_hot = false, explicit_storage = false;
+  bool kv_offload = false, explicit_storage = false;
+  std::string kv_policy = "lru";
   Time kv_cache_bytes = 0, kv_logical_capacity = 0, hbf_capacity = 0, kv_hot_blocks = 1;
   std::vector<std::uint32_t> weight_hbm_layers, weight_hbm_experts, kv_hbm_layers;
   std::uint32_t ep = 1, experts = 0, top_k = 1, shared_experts = 0;
@@ -145,7 +146,7 @@ Config parse(const std::string& path) {
     }
   };
   if (auto it = f.find("storage.kv"); it != f.end()) c.kv_offload = it->second == "hbf";
-  if (auto it = f.find("storage.kv_cache_policy"); it != f.end()) c.kv_hot = it->second == "hot";
+  if (auto it = f.find("storage.kv_cache_policy"); it != f.end()) c.kv_policy = it->second;
   optional_u("storage.kv_cache_bytes_per_device", c.kv_cache_bytes);
   optional_u("storage.kv_capacity_bytes_per_device", c.kv_logical_capacity);
   optional_u("storage.hbf_capacity_bytes", c.hbf_capacity);
@@ -389,7 +390,7 @@ class Engine {
     if (c_.kv_offload)
       for (std::size_t device = 0; device < c_.devices; ++device)
         devices_[device].kv = std::make_unique<TieredKV>(*kv_flash_, kv_page_bytes_, c_.kv_cache_bytes,
-          kv_bytes_token_layer_, c_.tp, c_.kv_block, c_.kv_hot, c_.kv_hot_blocks, device,
+          kv_bytes_token_layer_, c_.tp, c_.kv_block, c_.kv_policy, c_.kv_hot_blocks, device,
           [this, device](bool write, Time bytes, Time address, const std::string& kind, std::size_t origin, Done done) {
             const auto begin = now();
             submit_memory(device, write ? hbmsim::HbmOp::Write : hbmsim::HbmOp::Read, bytes, address,
@@ -1182,6 +1183,9 @@ class Engine {
       const auto& s = device.kv->stats;
       total.hits += s.hits; total.misses += s.misses; total.evictions += s.evictions;
       total.hot_protections += s.hot_protections;
+      total.write_aware_protections += s.write_aware_protections;
+      total.sealed_writebacks += s.sealed_writebacks; total.partial_writebacks += s.partial_writebacks;
+      total.rewrite_writebacks += s.rewrite_writebacks;
       total.dirty_evictions += s.dirty_evictions; total.reloads += s.reloads;
       total.append_bytes += s.append_bytes; total.read_bytes += s.read_bytes;
       total.fill_bytes += s.fill_bytes; total.writeback_bytes += s.writeback_bytes;
@@ -1204,6 +1208,15 @@ class Engine {
       << ",\"dirty_logical_bytes_written\":" << total.dirty_bytes_written
       << ",\"discarded_dirty_bytes_at_completion\":" << total.discarded_dirty_bytes
       << ",\"hot_protections\":" << total.hot_protections
+      << ",\"write_aware_protections\":" << total.write_aware_protections
+      << ",\"sealed_block_writebacks\":" << total.sealed_writebacks
+      << ",\"partial_block_writebacks\":" << total.partial_writebacks
+      << ",\"rewrite_writebacks\":" << total.rewrite_writebacks
+      << ",\"write_amplification\":";
+    if (total.dirty_bytes_written)
+      std::cout << static_cast<long double>(total.writeback_bytes) / total.dirty_bytes_written;
+    else std::cout << "null";
+    std::cout
       << ",\"cache_hits\":" << total.hits << ",\"cache_misses\":" << total.misses
       << ",\"evictions\":" << total.evictions << ",\"dirty_evictions\":" << total.dirty_evictions
       << ",\"reloads\":" << total.reloads << ",\"migration_wait_ps_sum\":" << total.wait_ps
@@ -1216,6 +1229,7 @@ class Engine {
       << ",\"allocated_bytes\":" << (kv_flash_ ? kv_flash_->allocated() : hbf_seed_bytes_ + writeback_bytes_)
       << ",\"kv_read_bytes\":" << (kv_flash_ ? kv_flash_->read_bytes : 0)
       << ",\"kv_write_bytes\":" << (kv_flash_ ? kv_flash_->write_bytes : 0)
+      << ",\"kv_write_dlu_ops\":" << (kv_flash_ ? kv_flash_->write_dlu_ops : 0)
       << ",\"kv_queue_wait_ps_sum\":" << (kv_flash_ ? kv_flash_->queue_wait_ps : 0)
       << ",\"reclamation\":\"append_only_no_gc\"}}";
   }

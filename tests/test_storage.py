@@ -72,6 +72,33 @@ class StorageTests(unittest.TestCase):
         self.assertEqual(report['critical_path']['duration_ps'], report['makespan_ps'])
         self.assertTrue(any(n['kind'] == 'hbf_kv_fill' for n in report['trace']))
 
+    def test_write_aware_retains_open_tail_and_falls_back_under_pressure(self):
+        data = load_scenario(ROOT / 'examples/bailian-small.json')
+        data['model']['layers'] = 1
+        data['requests'] = [dict(arrival_ps=0, prompt_tokens=8, output_tokens=12)]
+        data['storage'] = dict(weights='hbm', kv='hbf', kv_cache_bytes_per_device=8192,
+                              kv_capacity_bytes_per_device=1048576, hbf_capacity_bytes=8388608)
+        baseline = self.run_case(data)
+        data['storage']['kv_cache_policy'] = 'write_aware'
+        report = self.run_case(data)
+        old, new = baseline['storage_metrics']['kv'], report['storage_metrics']['kv']
+        self.assertLess(new['hbf_writeback_bytes'], old['hbf_writeback_bytes'])
+        self.assertLess(new['partial_block_writebacks'], old['partial_block_writebacks'])
+        self.assertEqual(new['rewrite_writebacks'], 0)
+        self.assertGreater(new['write_aware_protections'], 0)
+        self.assertEqual(new['hbm_read_logical_bytes'], old['hbm_read_logical_bytes'])
+        self.assertAlmostEqual(new['write_amplification'], new['hbf_writeback_bytes'] /
+                               new['dirty_logical_bytes_written'], places=3)
+        self.assertEqual(report['storage_metrics']['hbf_log']['kv_write_dlu_ops'],
+                         new['hbf_writeback_bytes'] // 4096)
+        self.assertEqual(new['sealed_block_writebacks'] + new['partial_block_writebacks'],
+                         new['dirty_evictions'])
+        # Soft preference must keep working when the only victim is partial.
+        data['storage']['kv_cache_bytes_per_device'] = 4096
+        pressured = self.run_case(data)
+        self.assertGreater(pressured['storage_metrics']['kv']['partial_block_writebacks'], 0)
+        self.assertEqual(pressured, self.run_case(data))
+
     def test_layer_and_expert_residency(self):
         data = self.config('hbf', 'hbf', 'moe-small.json')
         data['storage'].update(weight_hbm_layers=[0], weight_hbm_experts=[0], kv_hbm_layers=[0])
@@ -128,6 +155,7 @@ class StorageTests(unittest.TestCase):
         data = self.config()
         data['hardware'].update(devices=2, device_nodes=[0, 0])
         data['parallel'] = dict(tp=1, pp=2, dp=1)
+        data['storage']['kv_cache_policy'] = 'write_aware'
         data['serving'].update(max_seqs=1)
         data['requests'] = [dict(arrival_ps=0, prompt_tokens=1, output_tokens=1),
                             dict(arrival_ps=0, prompt_tokens=8, output_tokens=4),

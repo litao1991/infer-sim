@@ -17,7 +17,7 @@ class KvFlashLog {
     const auto address = next_; next_ += bytes; return address;
   }
   Time allocated() const { return next_; }
-  Time queue_wait_ps = 0, read_bytes = 0, write_bytes = 0;
+  Time queue_wait_ps = 0, read_bytes = 0, write_bytes = 0, write_dlu_ops = 0;
   void transfer(bool write, Time address, Time bytes, int device, std::size_t origin, Done done) {
     jobs_.push_back({write, address, bytes, 0, device, origin, sim_.now_ps(), std::move(done)});
     if (jobs_.size() == 1) start();
@@ -41,6 +41,7 @@ class KvFlashLog {
           throw std::runtime_error("KV HBF transfer failed");
         auto& current = jobs_.front();
         (current.write ? write_bytes : read_bytes) += bytes;
+        if (current.write) ++write_dlu_ops;
         current.origin = trace_.add(current.write ? "hbf_kv_writeback" : "hbf_kv_fill", current.device,
                                    begin, sim_.now_ps(), {current.origin});
         current.offset += bytes;
@@ -68,13 +69,14 @@ class TieredKV {
     Time hits = 0, misses = 0, evictions = 0, dirty_evictions = 0, reloads = 0;
     Time append_bytes = 0, read_bytes = 0, fill_bytes = 0, writeback_bytes = 0, dirty_bytes_written = 0;
     Time discarded_dirty_bytes = 0, logical_peak = 0, resident_peak = 0, wait_ps = 0;
-    Time hot_protections = 0;
+    Time hot_protections = 0, write_aware_protections = 0;
+    Time sealed_writebacks = 0, partial_writebacks = 0, rewrite_writebacks = 0;
   } stats;
   TieredKV(KvFlashLog& flash, Time page, Time capacity, Time token_bytes, Time tp,
-           Time block_tokens, bool hot, Time hot_blocks, int device, Memory memory,
+           Time block_tokens, std::string policy, Time hot_blocks, int device, Memory memory,
            std::function<Time()> now)
       : flash_(flash), page_(page), token_bytes_(token_bytes), tp_(tp), block_tokens_(block_tokens),
-        hot_(hot), hot_blocks_(hot_blocks), device_(device), memory_(std::move(memory)), now_(std::move(now)),
+        policy_(std::move(policy)), hot_blocks_(hot_blocks), device_(device), memory_(std::move(memory)), now_(std::move(now)),
         slots_(capacity / page) {
     if (slots_.empty()) throw std::invalid_argument("KV cache needs at least one block slot");
   }
@@ -139,7 +141,17 @@ class TieredKV {
   Time address(std::size_t slot) const { return 0x40000000ULL + slot * page_; }
   bool is_hot(const Key& key) const {
     const auto latest = latest_.at({std::get<0>(key), std::get<1>(key)});
-    return hot_ && hot_blocks_ && std::get<2>(key) + hot_blocks_ > latest;
+    return policy_ == "hot" && hot_blocks_ && std::get<2>(key) + hot_blocks_ > latest;
+  }
+  auto victim_rank(const Key& key) const {
+    const auto& page = pages_.at(key);
+    int priority = 0;
+    if (policy_ == "hot") priority = is_hot(key);
+    // Prefer clean copies, then sealed dirty blocks. An actively appended
+    // partial block is the last choice, but remains evictable under pressure.
+    if (policy_ == "write_aware" && page.valid != page.backed_valid)
+      priority = page.valid == block_tokens_ ? 1 : 2;
+    return std::make_pair(priority, page.last_use);
   }
   void acquire(Key key, std::size_t origin, Done done) {
     auto& page = pages_.at(key);
@@ -147,14 +159,17 @@ class TieredKV {
     ++stats.misses;
     for (std::size_t slot = 0; slot < slots_.size(); ++slot)
       if (!slots_[slot]) { load(key, slot, origin, std::move(done)); return; }
-    std::size_t victim = 0;
+    std::size_t victim = 0, lru = 0;
     for (std::size_t slot = 1; slot < slots_.size(); ++slot) {
       const auto a = *slots_[slot], b = *slots_[victim];
-      if (std::make_pair(is_hot(a), pages_.at(a).last_use) <
-          std::make_pair(is_hot(b), pages_.at(b).last_use)) victim = slot;
+      if (victim_rank(a) < victim_rank(b)) victim = slot;
+      if (pages_.at(a).last_use < pages_.at(*slots_[lru]).last_use) lru = slot;
     }
     const auto old = *slots_[victim];
-    if (hot_ && !is_hot(old))
+    if (policy_ == "write_aware" && victim != lru &&
+        victim_rank(old).first < victim_rank(*slots_[lru]).first)
+      ++stats.write_aware_protections;
+    if (policy_ == "hot" && !is_hot(old))
       for (const auto& candidate : slots_)
         if (is_hot(*candidate) && pages_.at(*candidate).last_use < pages_.at(old).last_use) {
           ++stats.hot_protections; break;
@@ -173,6 +188,9 @@ class TieredKV {
         flash_.transfer(true, destination, page_, device_, read,
           [this, old, destination, evicted](std::size_t written) {
             auto& previous = pages_.at(old);
+            if (previous.valid == block_tokens_) ++stats.sealed_writebacks;
+            else ++stats.partial_writebacks;
+            if (previous.backing) ++stats.rewrite_writebacks;
             stats.dirty_bytes_written += shard_bytes(previous.valid - previous.backed_valid);
             previous.backing = destination; previous.backed_valid = previous.valid;
             stats.writeback_bytes += page_;
@@ -197,7 +215,7 @@ class TieredKV {
       });
   }
   KvFlashLog& flash_;
-  Time page_, token_bytes_, tp_, block_tokens_; bool hot_; Time hot_blocks_; int device_;
+  Time page_, token_bytes_, tp_, block_tokens_; std::string policy_; Time hot_blocks_; int device_;
   Memory memory_; std::function<Time()> now_;
   std::vector<std::optional<Key>> slots_;
   std::map<Key, Page> pages_;

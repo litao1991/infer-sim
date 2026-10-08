@@ -94,7 +94,8 @@ Qwen3 30B-A3B/235B-A22B、Mixtral 8x7B/8x22B。
 
 支持权重、KV 分别选择 HBM 或 HBF 后备，包含全部四种组合，以及按层/专家的
 HBM 常驻覆盖。KV 支持按块增量写、脏块写回、回迁、LRU 或近期块优先保留，
-并单独报告权重和 KV 的流量、等待与容量。
+增加 `write_aware` 策略，优先保留仍在追加的脏块；分别报告流量、等待、容量、
+未满块写回与写入放大。
 
 ```sh
 .venv/bin/python run.py examples/storage-hbf-hbf.yaml \
@@ -125,6 +126,11 @@ HBF 数据经有界 HBM 缓存访问；物理后备使用有限的追加日志�
 百炼公开 trace 的流式统计、确定性窗口抽样和权重/KV 放置评估见
 [百炼 trace 评估](docs/BAILIAN_EVAL.md)。原始 JSONL 与详细报告保存在忽略提交的
 `data/bailian/` 和 `reports/bailian/`，避免将大文件推送到仓库。
+
+```sh
+# 相同 trace 窗口、相同缓存容量：对比 LRU/hot/write_aware 与 KV 块大小。
+python3 tools/bailian_kv_sweep.py --output reports/bailian/kv-policies
+```
 
 ```sh
 # 顺序执行 8 种 top-k × 精度 × 集合通信算法组合

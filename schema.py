@@ -193,8 +193,8 @@ def validate(data):
             raise ValueError("KV cache must not exceed logical KV capacity")
         if st["hbf_capacity_bytes"] % 4096:
             raise ValueError("hbf_capacity_bytes must be 4 KiB aligned")
-        if st.get("kv_cache_policy", "lru") not in ("lru", "hot"):
-            raise ValueError("kv_cache_policy must be lru or hot")
+        if st.get("kv_cache_policy", "lru") not in ("lru", "hot", "write_aware"):
+            raise ValueError("kv_cache_policy must be lru, hot or write_aware")
         number("kv_hot_blocks", st.get("kv_hot_blocks", 1), integer=True, strict=False)
     elif any(k in st for k in ("kv_cache_bytes_per_device", "kv_capacity_bytes_per_device", "kv_cache_policy", "kv_hot_blocks")):
         raise ValueError("KV cache policy/capacity fields require kv: hbf")

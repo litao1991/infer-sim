@@ -164,7 +164,7 @@ def formatted_ms(value):
 
 
 def scenario(base, requests, policy, speed, divisor, prompt_cap, output_cap,
-             kv_cache_bytes):
+             kv_cache_bytes, cache_policy="lru"):
     data = copy.deepcopy(base)
     data["requests"] = [{
         "arrival_ps": int(round((r["timestamp_s"] - requests[0]["timestamp_s"]) * 1e12 / speed)),
@@ -178,7 +178,7 @@ def scenario(base, requests, policy, speed, divisor, prompt_cap, output_cap,
     if kv == "hbf":
         storage.update(kv_cache_bytes_per_device=kv_cache_bytes,
                        kv_capacity_bytes_per_device=1048576,
-                       hbf_capacity_bytes=8388608, kv_cache_policy="lru")
+                       hbf_capacity_bytes=8388608, kv_cache_policy=cache_policy)
     data["storage"] = storage
     return data
 
@@ -203,6 +203,12 @@ def compact(report, label, source, window, speed, policy):
         "kv_hbf_fill_bytes": kv["hbf_fill_bytes"],
         "kv_hbf_writeback_bytes": kv["hbf_writeback_bytes"],
         "kv_cache_misses": kv["cache_misses"],
+        "kv_dirty_logical_bytes_written": kv["dirty_logical_bytes_written"],
+        "kv_write_amplification": kv.get("write_amplification"),
+        "kv_partial_writebacks": kv.get("partial_block_writebacks"),
+        "kv_sealed_writebacks": kv.get("sealed_block_writebacks"),
+        "kv_rewrite_writebacks": kv.get("rewrite_writebacks"),
+        "kv_write_dlu_ops": report["storage_metrics"]["hbf_log"].get("kv_write_dlu_ops"),
         "peak_hbm_bytes_per_device": report["peak_hbm_bytes_per_device"],
         "bottleneck": report["bottleneck"]["dominant_component"],
         "report": f"cases/{label}/report.json",
@@ -211,7 +217,8 @@ def compact(report, label, source, window, speed, policy):
 
 def run(data_dir, output, binary, sample_size=12, divisor=64, prompt_cap=24,
         output_cap=8, speeds=(1, 1000), sources=FILES, template=None,
-        kv_cache_bytes=8192, architecture=None, model=None):
+        kv_cache_bytes=8192, architecture=None, model=None, cache_policy="lru",
+        block_tokens=None, placements=tuple(POLICIES)):
     if (sample_size < 2 or sample_size > 16 or divisor < 1 or prompt_cap < 1
             or output_cap < 1 or sample_size * (prompt_cap + output_cap) > 1024):
         raise ValueError("sample/token settings exceed the local detailed-mode budget")
@@ -219,9 +226,17 @@ def run(data_dir, output, binary, sample_size=12, divisor=64, prompt_cap=24,
         raise ValueError("arrival speeds must be in [1, 1000000]")
     if kv_cache_bytes < 4096 or kv_cache_bytes > 1048576 or kv_cache_bytes % 4096:
         raise ValueError("KV cache size must be a 4096-byte multiple in [4096, 1048576]")
+    if cache_policy not in ("lru", "hot", "write_aware"):
+        raise ValueError("unknown KV cache policy")
+    if block_tokens is not None and block_tokens < 1:
+        raise ValueError("KV block tokens must be positive")
+    if not placements or any(placement not in POLICIES for placement in placements):
+        raise ValueError("unknown or empty placement selection")
     data_dir, output = Path(data_dir), Path(output)
     template = Path(template) if template else ROOT / "examples/bailian-small.json"
     base = load_scenario(template, architecture, model)
+    if block_tokens is not None:
+        base["serving"]["kv_block_tokens"] = block_tokens
     manifest = {"repository": SOURCE_REPOSITORY, "revision": SOURCE_REVISION,
                 "method": {"sample_size": sample_size, "token_divisor": divisor,
                            "prompt_cap": prompt_cap, "output_cap": output_cap,
@@ -229,6 +244,9 @@ def run(data_dir, output, binary, sample_size=12, divisor=64, prompt_cap=24,
                            "architecture": str(architecture) if architecture else None,
                            "model": str(model) if model else None,
                            "kv_cache_bytes_per_device": kv_cache_bytes,
+                           "kv_cache_policy": cache_policy,
+                           "kv_block_tokens": base["serving"]["kv_block_tokens"],
+                           "placements": list(placements),
                            "arrival_speeds": list(speeds),
                            "windows": ["burst_minimum_span", "midpoint_next_requests"],
                            "raw_prefix_hashes_used_by_simulator": False,
@@ -246,11 +264,11 @@ def run(data_dir, output, binary, sample_size=12, divisor=64, prompt_cap=24,
             save(output / "samples" / f"{Path(name).stem}-{window_name}.json",
                  {"source": name, "window": window_name, "requests": requests})
             for speed in speeds:
-                for policy in POLICIES:
+                for policy in placements:
                     label = f"{Path(name).stem}-{window_name}-x{speed}-{policy}"
                     case_dir = output / "cases" / label
                     data = scenario(base, requests, policy, speed, divisor, prompt_cap,
-                                    output_cap, kv_cache_bytes)
+                                    output_cap, kv_cache_bytes, cache_policy)
                     save(case_dir / "scenario.json", data)
                     try:
                         report = simulate(data, binary=str(binary))
@@ -325,6 +343,9 @@ def main():
     parser.add_argument("--architecture", help="JSON/YAML hardware and parallel preset")
     parser.add_argument("--model", help="JSON/YAML model preset within detailed-mode limits")
     parser.add_argument("--kv-cache-bytes", type=int, default=8192)
+    parser.add_argument("--kv-cache-policy", choices=("lru", "hot", "write_aware"), default="lru")
+    parser.add_argument("--kv-block-tokens", type=int)
+    parser.add_argument("--placements", nargs="+", choices=POLICIES, default=list(POLICIES))
     parser.add_argument("--sources", nargs="+", default=list(FILES), choices=FILES)
     parser.add_argument("--sample-size", type=int, default=12)
     parser.add_argument("--token-divisor", type=int, default=64)
@@ -336,7 +357,8 @@ def main():
         rows = run(args.data_dir, args.output, args.binary, args.sample_size,
                    args.token_divisor, args.prompt_cap, args.output_cap,
                    tuple(args.arrival_speeds), tuple(args.sources), args.template,
-                   args.kv_cache_bytes, args.architecture, args.model)
+                   args.kv_cache_bytes, args.architecture, args.model, args.kv_cache_policy,
+                   args.kv_block_tokens, tuple(args.placements))
     except (OSError, ValueError, KeyError) as error:
         parser.exit(2, str(error) + "\n")
     print(json.dumps({"runs": len(rows), "failed": sum(r["status"] != "ok" for r in rows),

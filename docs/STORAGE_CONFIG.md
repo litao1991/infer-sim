@@ -14,6 +14,7 @@
 | HBF → HBM 缓存 | HBF → HBM 缓存 | `examples/storage-hbf-hbf.yaml` |
 | 按层、专家混合 | 按层混合 | `examples/storage-mixed-moe.yaml` |
 | HBM | 最近 KV 块优先保留 | `examples/storage-hot-kv.yaml` |
+| HBM | 干净块优先淘汰、未封口脏块优先保留 | `examples/storage-write-aware.yaml` |
 | HBF → HBM 缓存 | HBF → HBM 缓存，NPU/EP | `examples/storage-npu-moe.yaml` |
 
 ## 直接运行
@@ -68,7 +69,7 @@ storage:
 | `kv_cache_bytes_per_device` | KV HBF 启用时必填，至少容纳一个 KV 页，为页大小的整数倍。 |
 | `kv_capacity_bytes_per_device` | KV HBF 启用时必填，为页大小的整数倍，且不小于 KV 缓存。 |
 | `hbf_capacity_bytes` | KV HBF 启用时必填，4 KiB 对齐；权重 HBF 单独使用时可省略，由小场景自动预留。 |
-| `kv_cache_policy` | `lru` 或 `hot`，默认 `lru`。 |
+| `kv_cache_policy` | `lru`、`hot` 或 `write_aware`，默认 `lru`。 |
 | `kv_hot_blocks` | `hot` 策略下每个请求、每层最近多少个块优先保留，默认 1。0 表示不保护。 |
 | `prefetch` | 仅控制权重预取；KV 当前按需回迁。 |
 | `writeback_layer` | 兼容原有服务结束后的权重写回验证，不是 KV offload 开关。 |
@@ -120,6 +121,35 @@ align_up(kv_block_tokens × 2 × kv_heads × head_dim × dtype_bytes / TP, 4096)
 - `lru` 淘汰最久未使用的块。`hot` 优先淘汰不在近期窗口中的块，同组内使用 LRU；
   如果缓存全是热块，仍允许淘汰热块，保证单槽场景能继续执行。这里的热度是最近
   token 的窗口代理，不是学习得到的 Attention 权重或访问频率预测。
+- `write_aware` 依次选择干净块、已填满的脏块、仍在追加的未满脏块作为淘汰对象，
+  同类内使用 LRU。这样尽量让未满块在 HBM 合并多个 token 的更新，并避免尾块
+  反复写新版本。偏好是软约束；缓存全部为未满脏块时仍会回写，保证进度。
+
+例如下面配置用块大小调节有效数据量，用淘汰策略控制重复写入：
+
+```yaml
+serving:
+  kv_block_tokens: 64
+storage:
+  weights: hbm
+  kv: hbf
+  kv_cache_bytes_per_device: 8192
+  kv_capacity_bytes_per_device: 65536
+  hbf_capacity_bytes: 1048576
+  kv_cache_policy: write_aware
+```
+
+在当前小模型中每 token KV 为 32 字节，4/16/64-token 块的有效载荷为
+128/512/2048 字节，均映射到一个 4 KiB 页。增大块可减少填充浪费和请求次数，
+也可能增加部分有效页的读取量、改变准入粒度；实际模型应按每卡 KV 字节和物理
+DLU 对齐关系选择块大小，不能固定套用 64。已填满表示逻辑块封口，并不一定填满
+整个物理页。
+
+当前策略仍是脏淘汰时整页同步写回。尚无跨块打包的写合并缓冲区、按 dirty delta
+记录的日志、后台批量刷写与超时触发。后续实现这些能力必须同时计入 HBM 缓冲
+容量、未持久化版本的读取转发、压力刷写以及请求完成时取消写入，避免把缓存
+里尚未写入 HBF 的数据视为已经持久化。完整 Attention 仍逐 token 读取历史 KV，
+因此减少写回不保证减少 HBF 读取或 TTFT/TPOT。
 
 逻辑准入会为请求完整生成长度预留 KV 容量；容量不足的请求等待已有请求完成。
 单个请求超过配置的逻辑容量时明确失败。HBM 固定 KV 层沿用容量预算机制。
@@ -161,11 +191,19 @@ HBF 使用一个共享后端；KV 搬运经过一个串行提交队列，并与�
   与请求结束时丢弃的新增字节；二者之和应等于 `offloaded_append_bytes`。
 - `cache_hits` / `cache_misses`、`evictions` / `dirty_evictions` / `reloads`：块级事件数。
 - `hot_protections`：由于近期块优先策略，改为淘汰较新的冷块的次数。
+- `write_aware_protections`：因写入状态优先级而改变 LRU 淘汰对象的次数。
+- `partial_block_writebacks` / `sealed_block_writebacks`：未满/已填满逻辑块的写回次数；
+  两者之和等于成功的脏块淘汰数。
+- `rewrite_writebacks`：已有后备版本的块再次写回次数。
+- `write_amplification`：实际 KV HBF 写字节 / 新持久化的 dirty 字节；无写回时为 null，
+  不包含 NAND 内部 GC、磨损和额外元数据。
 - `migration_wait_ps_sum`：块获取过程中等待淘汰、回写、回迁的时间之和，跨设备可重叠。
 - `hbm_cache_peak_bytes_per_device` / `logical_peak_bytes_per_device`：缓存实际峰值和
   存活逻辑页峰值；`live_bytes_at_end` 应为 0。
 
 `storage_metrics.hbf_log`：配置容量、已分配物理空间，以及 KV HBF 读写字节与队列等待。
+`kv_write_dlu_ops` 是 KV 后端 4 KiB 写提交的成功次数，不含权重初始化，
+也不等同于 NAND 内部 program 次数。
 顶层原有 `hbf_fill_bytes`、`hbf_writeback_bytes` 保持权重指标语义，KV 使用上述独立字段。
 时间线增加 `hbm_kv_append/read/fill/evict`、`hbf_kv_fill/writeback/queue`，仍可导出
 Chrome/Perfetto，并计入请求关键路径。
